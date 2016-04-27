@@ -122,12 +122,12 @@ function foodhunt_scripts() {
 
 	if( is_front_page() ) {
 
-		wp_enqueue_script( 'bxslider', esc_url( get_template_directory_uri() ) . '/js/jquery.bxslider' . $suffix . '.js', array('jquery'), '4.1.2', true );
+		wp_enqueue_script( 'jquery-bxslider', esc_url( get_template_directory_uri() ) . '/js/jquery.bxslider' . $suffix . '.js', array('jquery'), '4.1.2', true );
 
-		wp_enqueue_script( 'parallax', esc_url( get_template_directory_uri() ) . '/js/jquery.parallax-1.1.3' . $suffix . '.js', array('jquery'), '1.1.3', true );
+		wp_enqueue_script( 'jquery-parallax', esc_url( get_template_directory_uri() ) . '/js/jquery.parallax-1.1.3' . $suffix . '.js', array('jquery'), '1.1.3', true );
 	}
 
-	wp_enqueue_script( 'ticker', esc_url( get_template_directory_uri() ) . '/js/jquery.ticker' . $suffix . '.js', array('jquery'), '1.2.1', true );
+	wp_enqueue_script( 'jquery-ticker', esc_url( get_template_directory_uri() ) . '/js/jquery.ticker' . $suffix . '.js', array('jquery'), '1.2.1', true );
 
 	wp_enqueue_script( 'foodhunt-custom', esc_url( get_template_directory_uri() ) . '/js/foodhunt-custom' . $suffix . '.js', array('jquery'), false, true );
 
