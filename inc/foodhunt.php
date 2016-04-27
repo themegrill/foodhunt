@@ -360,33 +360,25 @@ endif;
 
 /****************************************************************************************/
 
-/**
- * Detect plugin. For use on Front End only.
- */
-include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+add_filter( 'restaurantpress_widget_menu_settings', 'foodhunt_rp_widget_menu_settings' );
+add_action( 'restaurantpress_widget_menu_before', 'foodhunt_rp_widget_menu_before', 10, 2 );
+add_action( 'restaurantpress_widget_menu_after', 'foodhunt_rp_widget_menu_after' );
 
-// Check for RestaurantPress plugin.
-if( is_plugin_active( 'restaurantpress/restaurantpress.php' ) ) {
-	add_filter( 'restaurantpress_widget_menu_settings', 'foodhunt_rp_widget_menu_settings' );
-	add_action( 'restaurantpress_widget_menu_before', 'foodhunt_rp_widget_menu_before', 10, 2 );
-	add_action( 'restaurantpress_widget_menu_after', 'foodhunt_rp_widget_menu_after' );
+function foodhunt_rp_widget_menu_settings( $settings ) {
 
-	function foodhunt_rp_widget_menu_settings( $settings ) {
+	$settings['background_color'] = array(
+		'type'  => 'color',
+		'std'   => '#F5F5F5',
+		'label' => esc_html__( 'Background Color', 'foodhunt' )
+	);
 
-		$settings['background_color'] = array(
-			'type'  => 'color',
-			'std'   => '#F5F5F5',
-			'label' => esc_html__( 'Background Color', 'foodhunt' )
-		);
+	return $settings;
+}
 
-		return $settings;
-	}
+function foodhunt_rp_widget_menu_before( $args, $instance ) {
+	echo '<div class="section-wrapper rp-wrapper clearfix" style="background-color: ' . $instance['background_color'] .'"><div class="tg-container">';
+}
 
-	function foodhunt_rp_widget_menu_before( $args, $instance ) {
-		echo '<div class="section-wrapper rp-wrapper clearfix" style="background-color: ' . $instance['background_color'] .'"><div class="tg-container">';
-	}
-
-	function foodhunt_rp_widget_menu_after() {
-		echo '</div></div>';
-	}
+function foodhunt_rp_widget_menu_after() {
+	echo '</div></div>';
 }
