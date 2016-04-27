@@ -57,7 +57,7 @@
 
 			<div class="mobile-menu-wrapper">
 				<div class="tg-container">
-					<div class="menu-toggle hide">Menu</div>
+					<div class="menu-toggle hide"><?php esc_html_e( 'Menu', 'foodhunt' ) ?></div>
 					<ul id="menu-mobile" class="menu">
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary_one', 'items_wrap' => '%3$s', 'container' => 'false' ) ); ?>
