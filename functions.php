@@ -177,10 +177,5 @@ require get_template_directory() . '/inc/widgets.php';
  */
 require get_template_directory() . '/inc/foodhunt.php';
 
-/**
- * Admin meta-boxes file.
- */
-require get_template_directory() . '/inc/admin/meta-boxes.php';
-
 global $foodhunt_duplicate_posts;
 $foodhunt_duplicate_posts = array();
