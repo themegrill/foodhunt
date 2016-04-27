@@ -7,7 +7,7 @@
  * @since 0.1
  */
 
-if( is_archive() || is_home() || is_search() ) {
+if( is_archive() || is_home() || is_search() || is_attachment() ) {
 	/**
 	 * Checking WP-PageNaviplugin exist
 	 */
@@ -26,21 +26,11 @@ if( is_archive() || is_home() || is_search() ) {
 	endif;
 }
 
-if( is_single() ) {
-	if( is_attachment() ) { ?>
+if( is_single() ) { ?>
+	<ul class="default-wp-page clearfix">
 
-		<ul class="default-wp-page clearfix">
-			<li class="previous"><?php previous_image_link( false, esc_html__( '&larr; Previous', 'foodhunt' ) ); ?></li>
-			<li class="next"><?php next_image_link( false, esc_html__( 'Next &rarr;', 'foodhunt' ) ); ?></li>
-		</ul>
-	<?php }
-
-	else { ?>
-		<ul class="default-wp-page clearfix">
-
-			<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . esc_html_x( '&larr;', 'Previous post link', 'foodhunt' ) . '</span> %title' ); ?></li>
-			<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . esc_html_x( '&rarr;', 'Next post link', 'foodhunt' ) . '</span>' ); ?></li>
-		</ul>
+		<li class="previous"><?php previous_post_link( '%link', '<span class="meta-nav">' . esc_html_x( '&larr;', 'Previous post link', 'foodhunt' ) . '</span> %title' ); ?></li>
+		<li class="next"><?php next_post_link( '%link', '%title <span class="meta-nav">' . esc_html_x( '&rarr;', 'Next post link', 'foodhunt' ) . '</span>' ); ?></li>
+	</ul>
 	<?php
-	}
 } ?>
