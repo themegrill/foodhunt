@@ -103,7 +103,7 @@ class foodhunt_about_us_widget extends WP_Widget {
 
 		<p><?php esc_html_e( 'Select a page to display Title, Excerpt and Featured image.' , 'foodhunt' ) ?></p>
 		<label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php esc_html_e( 'Page', 'foodhunt' ); ?>:</label>
-		<?php wp_dropdown_pages( array( 'show_option_none' =>' ','name' => $this->get_field_name( 'page_id' ), 'selected' => $instance[ 'page_id' ] ) ); ?>
+		<?php wp_dropdown_pages( array( 'show_option_none' =>' ','name' => $this->get_field_name( 'page_id' ), 'selected' => $page_id ) ); ?>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'button_text' ); ?>"><?php esc_html_e( 'Button Text:', 'foodhunt' ); ?></label>
@@ -129,17 +129,18 @@ class foodhunt_about_us_widget extends WP_Widget {
 		</p>
 		<p><?php esc_html_e( 'Info: The Recommended size for featured image is 530px by 440px.', 'foodhunt' ); ?></p>
 		<p><?php esc_html_e( 'Note: Leave Button Redirect Link empty to redirect it to the respective page.', 'foodhunt' ); ?></p>
-		<?php }
+		<?php
+	}
 
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
-			$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
 
-			if ( current_user_can('unfiltered_html') ) {
-				$instance[ 'text' ] =  $new_instance[ 'text' ];
-			}
-			else {
-			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed
+		if ( current_user_can('unfiltered_html') ) {
+			$instance[ 'text' ] =  $new_instance[ 'text' ];
+		}
+		else {
+		$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed
 		}
 
 		$instance[ 'page_id' ] = absint( $new_instance[ 'page_id' ] );
@@ -180,42 +181,41 @@ class foodhunt_about_us_widget extends WP_Widget {
 						<?php
 						$the_query = new WP_Query( 'page_id='.$page_id );
 						while( $the_query->have_posts() ):$the_query->the_post();
-						$title_attribute = the_title_attribute( 'echo=0' );
 
-						if( has_post_thumbnail() ) { ?>
-						<figure class="about-img">
-							<?php the_post_thumbnail( 'full' ); ?>
-						</figure>
-						<?php } ?>
+							if( has_post_thumbnail() ) { ?>
+							<figure class="about-img">
+								<?php the_post_thumbnail( 'full' ); ?>
+							</figure>
+							<?php } ?>
 
-						<div class="about-content-wrapper">
-							<?php
-							$output = '<h3 class="about-title">' . get_the_title() . '</h3>';
+							<div class="about-content-wrapper">
+								<?php
+								$output = '<h3 class="about-title">' . esc_html( get_the_title() ) . '</h3>';
 
-							$output .= '<div class="about-desc">' . '<p>' . get_the_excerpt() . '</p></div>';
+								$output .= '<div class="about-desc">' . '<p>' . esc_html( get_the_excerpt() ) . '</p></div>';
 
-							if( $button_url == '' ) {
-								$button_url = get_permalink();
-							}
+								if( $button_url == '' ) {
+									$button_url = get_permalink();
+								}
 
-							if( !empty( $button_text ) ) {
-								$output .= '<a class="about-btn" href="'. esc_url( $button_url ) . '">' . esc_html( $button_text ) . ' <i class="fa ' . esc_attr( $button_icon ) . '"></i></a>';
-							}
+								if( !empty( $button_text ) ) {
+									$output .= '<a class="about-btn" href="'. esc_url( $button_url ) . '">' . esc_html( $button_text ) . ' <i class="fa ' . esc_attr( $button_icon ) . '"></i></a>';
+								}
 
-							echo $output;
-							?>
-						</div>
-					<?php endwhile;
+								echo $output;
+								?>
+							</div>
+						<?php endwhile;
 
-					// Reset Post Data
-					wp_reset_postdata(); ?>
-				</div><!-- .about-wrapper -->
-			<?php endif; ?>
-		</div><!-- .tg-container -->
-	</div>
+						// Reset Post Data
+						wp_reset_postdata(); ?>
+					</div><!-- .about-wrapper -->
+				<?php endif; ?>
+			</div><!-- .tg-container -->
+		</div>
 
-	<?php echo $after_widget;
-}
+		<?php echo $after_widget;
+	}
 }
 
 /**************************************************************************************/
@@ -276,7 +276,7 @@ class foodhunt_service_widget extends WP_Widget {
 				echo '<img id="' . $this->get_field_id( 'background_image' . 'preview') . '"src="' . esc_url( $instance[ 'background_image' ] ) . '"style="max-width: 250px;" /><br />';
 			endif;
 			?>
-			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo $background_image; ?>" style="margin-top: 5px;"/>
+			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top: 5px;"/>
 
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button_action" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php esc_attr_e( 'Upload Image', 'foodhunt' ) ?>" style="margin-top: 5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( 'background_image' ); ?>' ); return false;"/>
 		</p>
@@ -287,20 +287,20 @@ class foodhunt_service_widget extends WP_Widget {
 		</p>
 
 		<p><?php esc_html_e( 'Note: Background image (if used) will override the background color.', 'foodhunt' ); ?></p>
+		<?php
+	}
 
-		<?php }
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
 
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
+		$instance['background_color'] =  esc_attr( $new_instance['background_color'] );
+		$instance['background_image'] =  esc_url_raw( $new_instance['background_image'] );
+		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
 
-			$instance['background_color'] =  $new_instance['background_color'];
-			$instance['background_image'] =  esc_url_raw( $new_instance['background_image'] );
-			$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
-
-			if ( current_user_can('unfiltered_html') )
-				$instance[ 'text' ] =  $new_instance[ 'text' ];
-			else
-			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); //   wp_filter_post_kses() expects slashed
+		if ( current_user_can( 'unfiltered_html' ) )
+			$instance[ 'text' ] =  $new_instance[ 'text' ];
+		else
+		$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); //   wp_filter_post_kses() expects slashed
 
 		$instance[ 'number' ] = absint( $new_instance[ 'number' ] );
 
@@ -340,25 +340,26 @@ class foodhunt_service_widget extends WP_Widget {
 		$bg_image_class = 'no-bg-image';
 		$bg_image_style = '';
 		if ( !empty( $background_image ) ) {
-			$bg_image_style = 'style=background-image:url(' . $background_image . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;';
+			$bg_image_style = 'style=background-image:url(' . esc_url( $background_image ) . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;';
 			$bg_image_class = 'section-wrapper-with-bg-image';
 		}elseif ( $background_color != '#4a4a4a' ) {
-			$bg_image_style = 'style=background-color:' . $background_color . ';';
+			$bg_image_style = 'style=background-color:' . esc_attr( $background_color ) . ';';
 		}?>
 		<div class="section-wrapper clearfix <?php echo esc_attr( $bg_image_class ) ?>" <?php echo $bg_image_style; ?>>
 			<?php if ( !empty( $background_image ) ) { echo '<div class="section-overlay"> </div>'; } ?>
+
 			<div class="tg-container">
 				<?php if( !empty( $title ) || !empty( $text ) ) { ?>
-				<div class="section-title-wrapper">
+					<div class="section-title-wrapper">
 
-					<?php if( !empty( $title ) )  {
-						echo $before_title . esc_html( $title ) . $after_title;
-					}
+						<?php if( !empty( $title ) )  {
+							echo $before_title . esc_html( $title ) . $after_title;
+						}
 
-					if( !empty( $text ) ) {
-						echo '<h4 class="sub-title">' . esc_textarea( $text ) . '</h4>';
-					} ?>
-				</div>
+						if( !empty( $text ) ) {
+							echo '<h4 class="sub-title">' . esc_textarea( $text ) . '</h4>';
+						} ?>
+					</div>
 				<?php }
 
 				if( !empty( $page_array ) ) {
@@ -395,14 +396,14 @@ class foodhunt_service_widget extends WP_Widget {
 							wp_reset_postdata(); ?>
 						</div><!-- .tg-column-wrapper -->
 					</div>
-					<?php } ?>
-				</div>
+				<?php } ?>
 			</div>
-			<?php echo $after_widget;
-		}
+		</div>
+		<?php echo $after_widget;
 	}
+}
 
-	/**************************************************************************************/
+/**************************************************************************************/
 
 /**
  * Call to action widget.
@@ -460,7 +461,7 @@ class foodhunt_call_to_action_widget extends WP_Widget {
 				echo '<img id="' . $this->get_field_id( 'background_image' . 'preview') . '"src="' . esc_url( $instance[ 'background_image' ] ) . '"style="max-width: 250px;" /><br />';
 			endif;
 			?>
-			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo $background_image; ?>" style="margin-top: 5px;"/>
+			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top: 5px;"/>
 
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button_action" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php esc_attr_e( 'Upload Image', 'foodhunt' ) ?>" style="margin-top: 5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( 'background_image' ); ?>' ); return false;"/>
 		</p>
@@ -489,7 +490,7 @@ class foodhunt_call_to_action_widget extends WP_Widget {
 	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
-		if ( current_user_can('unfiltered_html') )
+		if ( current_user_can( 'unfiltered_html' ) )
 			$instance['text_main'] =  $new_instance['text_main'];
 		else
 			$instance['text_main'] = stripslashes( wp_filter_post_kses( addslashes($new_instance['text_main']) ) ); // wp_filter_post_kses() expects slashed
@@ -497,7 +498,7 @@ class foodhunt_call_to_action_widget extends WP_Widget {
 		$instance[ 'button_text' ] = sanitize_text_field( $new_instance[ 'button_text' ] );
 		$instance[ 'button_url' ] = esc_url_raw( $new_instance[ 'button_url' ] );
 		$instance[ 'background_image' ] =  esc_url_raw( $new_instance[ 'background_image' ] );
-		$instance[ 'background_color' ] =  $new_instance[ 'background_color' ];
+		$instance[ 'background_color' ] =  esc_attr( $new_instance[ 'background_color' ] );
 		$instance[ 'button_icon' ] = sanitize_text_field( $new_instance[ 'button_icon' ] );
 
 		return $instance;
@@ -519,10 +520,10 @@ class foodhunt_call_to_action_widget extends WP_Widget {
 		$bg_image_style = '';
 		$bg_image_class = 'no-bg-image';
 		if ( !empty( $background_image ) ) {
-			$bg_image_style = 'style=background-image:url(' . $background_image . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;';
+			$bg_image_style = 'style=background-image:url(' . esc_url( $background_image ) . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;';
 			$bg_image_class = 'section-wrapper-with-bg-image';
 		}elseif ( $background_color != '#d40305' ) {
-			$bg_image_style = 'style=background-color:' . $background_color . ';';
+			$bg_image_style = 'style=background-color:' . esc_attr( $background_color ) . ';';
 		}?>
 		<div class="section-wrapper <?php echo esc_attr( $bg_image_class ); ?> clearfix" <?php echo $bg_image_style; ?>>
 			<div class="section-overlay"> </div>
@@ -603,7 +604,7 @@ class foodhunt_our_team_widget extends WP_Widget {
 				echo '<img id="' . $this->get_field_id( 'background_image' . 'preview') . '"src="' . esc_url( $instance[ 'background_image' ] ) . '"style="max-width: 250px;" /><br />';
 			endif;
 			?>
-			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo $background_image; ?>" style="margin-top: 5px;"/>
+			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top: 5px;"/>
 
 			<input type="button" class="button button-primary custom_media_button" id="custom_media_button_action" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php esc_attr_e( 'Upload Image', 'foodhunt' ) ?>" style="margin-top: 5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( 'background_image' ); ?>' ); return false;"/>
 		</p>
@@ -614,20 +615,21 @@ class foodhunt_our_team_widget extends WP_Widget {
 		</p>
 
 		<p><?php esc_html_e( 'Note: Background image (if used) will override the background color.', 'foodhunt' ); ?></p>
-		<?php }
+		<?php
+	}
 
-		function update( $new_instance, $old_instance ) {
-			$instance = $old_instance;
-			$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
+	function update( $new_instance, $old_instance ) {
+		$instance = $old_instance;
+		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
 
-			if ( current_user_can('unfiltered_html') )
-				$instance[ 'text' ] =  $new_instance[ 'text' ];
-			else
-			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed
+		if ( current_user_can( 'unfiltered_html' ) )
+			$instance[ 'text' ] =  $new_instance[ 'text' ];
+		else
+		$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed
 
 		$instance[ 'number' ] = absint( $new_instance[ 'number' ] );
 		$instance['background_image'] =  esc_url_raw( $new_instance['background_image'] );
-		$instance['background_color'] =  $new_instance['background_color'];
+		$instance['background_color'] =  esc_attr( $new_instance['background_color'] );
 
 		return $instance;
 	}
@@ -664,10 +666,11 @@ class foodhunt_our_team_widget extends WP_Widget {
 		$bg_image_class = 'no-bg-image';
 		$bg_image_style = '';
 		if ( !empty( $background_image ) ) {
-			$bg_image_style = 'style=background-image:url(' . $background_image . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;';
+			$bg_image_style = 'style=background-image:url(' . esc_url( $background_image ) . ');background-repeat:no-repeat;background-size:cover;background-attachment:fixed;';
 			$bg_image_class = 'section-wrapper-with-bg-image';
-		}elseif ( $background_color != '#5c5c5c' ) {
-			$bg_image_style = 'style=background-color:' . $background_color . ';';
+		}
+		elseif ( $background_color != '#5c5c5c' ) {
+			$bg_image_style = 'style=background-color:' . esc_attr( $background_color ) . ';';
 		}
 
 		echo $before_widget; ?>
@@ -678,7 +681,7 @@ class foodhunt_our_team_widget extends WP_Widget {
 					<?php if( !empty( $title ) ) echo $before_title . esc_html( $title ) . $after_title;
 
 					if( !empty( $text ) ) { ?>
-					<h4 class="sub-title"><?php echo esc_textarea( $text ); ?></h4>
+						<h4 class="sub-title"><?php echo esc_textarea( $text ); ?></h4>
 					<?php } ?>
 				</div>
 
@@ -687,36 +690,36 @@ class foodhunt_our_team_widget extends WP_Widget {
 				<div class="chef-wrapper clearfix">
 					<div class="tg-column-wrapper clearfix">
 						<?php while( $get_featured_pages->have_posts() ):$get_featured_pages->the_post();
-						$foodhunt_duplicate_posts[] = $post->ID;
+							$foodhunt_duplicate_posts[] = $post->ID;
 
-						if ( $count % 3 == 0 && $count > 1 ) { ?> <div class="clearfix"></div> <?php }
-							$title_attribute = the_title_attribute( 'echo=0' ); ?>
+							if ( $count % 3 == 0 && $count > 1 ) { ?> <div class="clearfix"></div> <?php }
+								$title_attribute = the_title_attribute( 'echo=0' ); ?>
 
-						<div class="tg-column-3 chef-block">
+							<div class="tg-column-3 chef-block">
 
-							<?php if( has_post_thumbnail() ) { ?>
-							<figure class="chef-img">
-								<?php the_post_thumbnail( 'full' ); ?>
-							</figure>
-							<?php } ?>
+								<?php if( has_post_thumbnail() ) { ?>
+								<figure class="chef-img">
+									<?php the_post_thumbnail( 'full' ); ?>
+								</figure>
+								<?php } ?>
 
-							<div class="chef-content-wrapper">
-								<?php
-								$output = '';
-								$output .= '<h3 class="chef-title"> <a href="' . esc_url( get_permalink() ) . '" alt ="' . $title_attribute . '">' . get_the_title() . '</a></h3>';
-								$foodhunt_designation = get_post_meta( $post->ID, 'foodhunt_designation', true );
-								if( !empty( $foodhunt_designation ) ) {
-									$output .= '<div class="chef-designation">' . esc_html( $foodhunt_designation ) . '</div>';
-								}
+								<div class="chef-content-wrapper">
+									<?php
+									$output = '';
+									$output .= '<h3 class="chef-title"> <a href="' . esc_url( get_permalink() ) . '" alt ="' . $title_attribute . '">' . esc_html( get_the_title() ) . '</a></h3>';
+									$foodhunt_designation = get_post_meta( $post->ID, 'foodhunt_designation', true );
+									if( !empty( $foodhunt_designation ) ) {
+										$output .= '<div class="chef-designation">' . esc_html( $foodhunt_designation ) . '</div>';
+									}
 
-								$output .= '<div class="chef-desc">' . '<p>' . get_the_excerpt() . '</p></div>';
+									$output .= '<div class="chef-desc">' . '<p>' . esc_html( get_the_excerpt() ) . '</p></div>';
 
-								$output .= '<a class="chef-btn" href="' . esc_url( get_permalink() ) . '" title="' . $title_attribute . '" alt ="' . $title_attribute . '">' . esc_html__( 'Read More' , 'foodhunt' ) . '</a>';
+									$output .= '<a class="chef-btn" href="' . esc_url( get_permalink() ) . '" title="' . $title_attribute . '" alt ="' . $title_attribute . '">' . esc_html__( 'Read More' , 'foodhunt' ) . '</a>';
 
-								echo $output; ?>
+									echo $output; ?>
+								</div>
 							</div>
-						</div>
-						<?php $count++;
+							<?php $count++;
 						endwhile;
 
 						// Reset Post Data
@@ -724,12 +727,12 @@ class foodhunt_our_team_widget extends WP_Widget {
 					</div><!-- .team-content-wrapper -->
 				</div><!-- .chef-wrapper -->
 
-			<?php endif; ?>
-		</div><!-- .tg-container -->
-	</div>
+				<?php endif; ?>
+			</div><!-- .tg-container -->
+		</div>
 
-	<?php echo $after_widget;
-}
+		<?php echo $after_widget;
+	}
 }
 
 /**************************************************************************************/
@@ -757,8 +760,8 @@ class foodhunt_featured_posts_widget extends WP_Widget {
 		$title = esc_attr( $instance[ 'title' ] );
 		$text = esc_textarea( $instance[ 'text' ] );
 		$number = absint( $instance[ 'number' ] );
-		$type = $instance[ 'type' ];
-		$category = $instance[ 'category' ]; ?>
+		$type = esc_attr( $instance[ 'type' ] );
+		$category = absint( $instance[ 'category' ] ); ?>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'foodhunt' ); ?></label>
@@ -793,10 +796,10 @@ class foodhunt_featured_posts_widget extends WP_Widget {
 		if ( current_user_can( 'unfiltered_html' ) )
 			$instance[ 'text' ] =  $new_instance[ 'text' ];
 		else
-			$instance['text'] = stripslashes( wp_filter_post_kses( addslashes($new_instance[ 'text' ]) ) ); // wp_filter_post_kses() expects slashed
+			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes($new_instance[ 'text' ]) ) ); // wp_filter_post_kses() expects slashed
 		$instance[ 'number' ] = absint( $new_instance[ 'number' ] );
-		$instance[ 'type' ] = $new_instance[ 'type' ];
-		$instance[ 'category' ] = $new_instance[ 'category' ];
+		$instance[ 'type' ] = esc_attr( $new_instance[ 'type' ] );
+		$instance[ 'category' ] = absint( $new_instance[ 'category' ] );
 
 		return $instance;
 	}
@@ -842,81 +845,81 @@ class foodhunt_featured_posts_widget extends WP_Widget {
 				</div>
 
 				<div class="blog-wrapper clearfix">
-					<?php
-					$count = 1;
+					<?php $count = 1;
 					while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post();
-					$foodhunt_blog_class = 'blog-block';
-					if ( $count % 2 == 0 ) {
-						$foodhunt_blog_class .= ' blog-rtl';
-					}
+						$foodhunt_blog_class = 'blog-block';
+						if ( $count % 2 == 0 ) {
+							$foodhunt_blog_class .= ' blog-rtl';
+						}
 
-					if( has_post_thumbnail() ) { ?>
+						if( has_post_thumbnail() ) { ?>
 
-					<div class="<?php echo $foodhunt_blog_class; ?> clearfix">
+						<div class="<?php echo esc_attr( $foodhunt_blog_class ); ?> clearfix">
 
-						<div class="blog-img">
-							<?php the_post_thumbnail('foodhunt-featured-image'); ?>
-						</div>
+							<div class="blog-img">
+								<?php the_post_thumbnail('foodhunt-featured-image'); ?>
+							</div>
+						<?php }
+						else {
+						$foodhunt_blog_class .= ' no-featured-image'; ?>
 
-						<?php } else {
-							$foodhunt_blog_class .= ' no-featured-image'; ?>
+						<div class="<?php echo esc_attr( $foodhunt_blog_class ); ?> clearfix"> <?php } ?>
 
-							<div class="<?php echo esc_attr( $foodhunt_blog_class ); ?> clearfix"> <?php } ?>
+							<div class="blog-content-wrapper">
 
-								<div class="blog-content-wrapper">
+								<div class="blog-title-btn-wrap clearfix">
+									<h3 class="entry-title blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+									<a href="<?php the_permalink(); ?>" class="blog-btn" title="<?php the_title_attribute();?>"> <i class="fa fa-angle-right"> </i></a>
+								</div>
 
-									<div class="blog-title-btn-wrap clearfix">
-										<h3 class="entry-title blog-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-										<a href="<?php the_permalink(); ?>" class="blog-btn" title="<?php the_title_attribute();?>"> <i class="fa fa-angle-right"> </i></a>
-									</div>
+								<div class="entry-meta">
+									<span class="byline author">
+										<i class="fa fa-user"> </i>
+										<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo esc_html( get_the_author() ); ?>"><?php echo esc_html( get_the_author() ); ?></a>
+									</span>
 
-									<div class="entry-meta">
-										<span class="byline author">
-											<i class="fa fa-user"> </i>
-											<a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" title="<?php echo get_the_author(); ?>"><?php echo esc_html( get_the_author() ); ?></a>
+									<span class="posted-on">
+										<?php
+										$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
+										$time_string = sprintf( $time_string,
+											esc_attr( get_the_date( 'c' ) ),
+											esc_html( get_the_date() )
+											);
+										printf( '<i class="fa fa-calendar"> </i><a href="%1$s" title="%2$s" rel="bookmark"> %3$s</a>',
+											esc_url( get_permalink() ),
+											esc_attr( get_the_time() ),
+											$time_string
+											); ?>
+									</span>
+
+									<?php if ( comments_open() ) { ?>
+										<span class="comment">
+											<i class="fa fa-comment"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'foodhunt' ), esc_html__( 'Comment (1)', 'foodhunt' ), esc_html__( 'Comments (%)', 'foodhunt' ) );?>
 										</span>
+									<?php } ?>
+								</div>
 
-										<span class="posted-on">
-											<?php
-											$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+								<div class="entry-content blog-desc">
+									<?php the_excerpt(); ?>
+								</div>
+							</div><!-- blog content wrapper -->
+						</div><!-- .blog-block -->
 
-											$time_string = sprintf( $time_string,
-												esc_attr( get_the_date( 'c' ) ),
-												esc_html( get_the_date() )
-												);
-											printf( '<i class="fa fa-calendar"> </i><a href="%1$s" title="%2$s" rel="bookmark"> %3$s</a>',
-												esc_url( get_permalink() ),
-												esc_attr( get_the_time() ),
-												$time_string
-												); ?>
-											</span>
+						<?php $count++;
+					endwhile; ?>
+				</div><!-- .blog-wrapper -->
+			</div><!-- .tg-container -->
+		</div>
 
-											<?php if ( comments_open() ) { ?>
-											<span class="comment">
-												<i class="fa fa-comment"></i><?php comments_popup_link( esc_html__( 'Leave a comment', 'foodhunt' ), esc_html__( 'Comment (1)', 'foodhunt' ), esc_html__( 'Comments (%)', 'foodhunt' ) );?>
-											</span>
-											<?php } ?>
-										</div>
-
-										<div class="entry-content blog-desc">
-											<?php the_excerpt(); ?>
-										</div>
-									</div><!-- blog content wrapper -->
-								</div><!-- .blog-block -->
-								<?php $count++;
-								endwhile; ?>
-							</div><!-- .blog-wrapper -->
-						</div><!-- .tg-container -->
-					</div>
-
-					<?php
+		<?php
 		// Reset Post Data
-					wp_reset_postdata();
-					echo $after_widget;
-				}
-			}
+		wp_reset_postdata();
+		echo $after_widget;
+	}
+}
 
-			/**************************************************************************************/
+/**************************************************************************************/
 
 /**
  * Gallery widget section
@@ -997,23 +1000,23 @@ class foodhunt_portfolio_widget extends WP_Widget {
 			'post_type'             =>  array( 'page' ),
 			'post__in'              => $page_array,
 			'orderby'               => array( 'menu_order' => 'ASC', 'date' => 'DESC' )
-			) );
+		) );
 
-			echo $before_widget; ?>
+		echo $before_widget; ?>
 
-			<div class="section-wrapper clearfix">
-				<div class="tg-container">
+		<div class="section-wrapper clearfix">
+			<div class="tg-container">
 
-					<div class="section-title-wrapper">
-						<?php
-						if( !empty( $title ) ) { echo $before_title . esc_html( $title ) . $after_title; }
-						if( !empty( $text ) ) { ?> <h4 class="sub-title"> <?php echo esc_textarea( $text ); ?> </h4> <?php } ?>
-					</div>
+				<div class="section-title-wrapper">
+					<?php
+					if( !empty( $title ) ) { echo $before_title . esc_html( $title ) . $after_title; }
+					if( !empty( $text ) ) { ?> <h4 class="sub-title"> <?php echo esc_textarea( $text ); ?> </h4> <?php } ?>
+				</div>
 
-					<?php if( !empty( $page_array ) ) : ?>
+				<?php if( !empty( $page_array ) ) : ?>
 
-						<ul class="gallery-wrapper">
-							<?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post();
+					<ul class="gallery-wrapper">
+						<?php while( $get_featured_posts->have_posts() ):$get_featured_posts->the_post();
 							$foodhunt_duplicate_posts[] = $post->ID; ?>
 
 							<li class="gallery-list">
@@ -1021,18 +1024,20 @@ class foodhunt_portfolio_widget extends WP_Widget {
 								<?php if( has_post_thumbnail() ) {
 									the_post_thumbnail('foodhunt-featured-image');
 
-								} else { $image_popup_url = get_template_directory_uri() . '/images/portfolio-placehoder.jpg';
-								echo '<img src="' . esc_url( $image_popup_url ) . '">';
-							} ?>
+								}
+								else {
+									$image_popup_url = esc_url( get_template_directory_uri() ) . '/images/portfolio-placehoder.jpg';
+									echo '<img src="' . esc_url( $image_popup_url ) . '">';
+								} ?>
 
-							<a href="<?php the_permalink(); ?>" class="gallery-zoom"> <span> <?php echo '<i class="fa fa-link"> </i>'; ?> </span> </a>
-						</li>
-					<?php endwhile; ?>
-				</ul>
+								<a href="<?php the_permalink(); ?>" class="gallery-zoom"> <span> <?php echo '<i class="fa fa-link"> </i>'; ?> </span> </a>
+							</li>
+						<?php endwhile; ?>
+					</ul>
 
-				<?php
+					<?php
 					// Reset Post Data
-				wp_reset_postdata();
+					wp_reset_postdata();
 				endif; ?>
 			</div>
 		</div><!-- .section-wrapper -->
@@ -1086,15 +1091,16 @@ class foodhunt_contact_widget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'page_id' ); ?>"><?php esc_html_e( 'Select a Contact page:', 'foodhunt' ); ?>:</label>
 			<?php wp_dropdown_pages( array( 'show_option_none' =>' ','name' => $this->get_field_name( 'page_id' ), 'selected' => $instance[ 'page_id' ] ) ); ?>
 		</p>
-		<?php }
+		<?php
+	}
 
-		function update( $new_instance, $old_instance ) {
-			$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
+	function update( $new_instance, $old_instance ) {
+		$instance[ 'title' ] = sanitize_text_field( $new_instance[ 'title' ] );
 
-			if ( current_user_can('unfiltered_html') )
-				$instance[ 'text' ] =  $new_instance[ 'text' ];
-			else
-			$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed
+		if ( current_user_can('unfiltered_html') )
+			$instance[ 'text' ] =  $new_instance[ 'text' ];
+		else
+		$instance[ 'text' ] = stripslashes( wp_filter_post_kses( addslashes( $new_instance[ 'text' ] ) ) ); // wp_filter_post_kses() expects slashed
 
 		$instance[ 'page_id' ] = absint( $new_instance[ 'page_id' ] );
 		$instance[ 'shortcode' ] = sanitize_text_field( $new_instance[ 'shortcode' ] );
@@ -1127,29 +1133,29 @@ class foodhunt_contact_widget extends WP_Widget {
 				<div class="contact-wrapper">
 					<div class="tg-column-wrapper clearfix">
 						<?php if ( !empty ( $shortcode ) ) { ?>
-						<div class="tg-column-2 contact-form">
-							<?php echo do_shortcode( $shortcode ); ?>
-						</div>
+							<div class="tg-column-2 contact-form">
+
+								<?php echo do_shortcode( $shortcode ); ?>
+							</div>
 						<?php } ?>
 
 						<?php if( $page_id ) : ?>
 							<div class="tg-column-2 contact-details-wrapper">
-								<?php
-								$the_query = new WP_Query( 'page_id='.$page_id );
+
+								<?php $the_query = new WP_Query( 'page_id='.$page_id );
 								while( $the_query->have_posts() ):$the_query->the_post(); ?>
+									<h3 class="contact-title"> <?php the_title(); ?> </h3>
 
-								<h3 class="contact-title"> <?php the_title(); ?> </h3>
-
-								<div class="contact-content-wrapper"> <?php the_content(); ?> </div>
-							<?php endwhile; ?>
-						</div>
-					<?php endif;
+									<div class="contact-content-wrapper"> <?php the_content(); ?> </div>
+								<?php endwhile; ?>
+							</div>
+						<?php endif;
 						// Reset Post Data
-					wp_reset_postdata(); ?>
-				</div>
-			</div><!-- .contact-wrapper -->
-		</div><!-- .tg-container -->
-	</div>
-	<?php echo $after_widget;
-}
+						wp_reset_postdata(); ?>
+					</div>
+				</div><!-- .contact-wrapper -->
+			</div><!-- .tg-container -->
+		</div>
+		<?php echo $after_widget;
+	}
 }
