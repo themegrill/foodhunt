@@ -374,10 +374,10 @@ function foodhunt_customize_register( $wp_customize ) {
 			'section' => 'foodhunt_default_layout_section',
 			'settings' => 'foodhunt_default_layout',
 			'choices' => array(
-				'right-sidebar' => get_template_directory_uri() . '/inc/admin/images/right-sidebar.png',
-				'left-sidebar' => get_template_directory_uri() . '/inc/admin/images/left-sidebar.png',
-				'no-sidebar-full-width'	=> get_template_directory_uri() . '/inc/admin/images/no-sidebar-full-width-layout.png',
-				'no-sidebar-content-centered'	=> get_template_directory_uri() . '/inc/admin/images/no-sidebar-content-centered-layout.png'
+				'right-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
+				'left-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
+				'no-sidebar-full-width'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
+				'no-sidebar-content-centered'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png'
 			)
 		)
 	));
@@ -409,10 +409,10 @@ function foodhunt_customize_register( $wp_customize ) {
 			'section' => 'foodhunt_default_page_layout_section',
 			'settings' => 'foodhunt_default_page_layout',
 			'choices' => array(
-				'right-sidebar' => get_template_directory_uri() . '/inc/admin/images/right-sidebar.png',
-				'left-sidebar' => get_template_directory_uri() . '/inc/admin/images/left-sidebar.png',
-				'no-sidebar-full-width'	=> get_template_directory_uri() . '/inc/admin/images/no-sidebar-full-width-layout.png',
-				'no-sidebar-content-centered'	=> get_template_directory_uri() . '/inc/admin/images/no-sidebar-content-centered-layout.png'
+				'right-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
+				'left-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
+				'no-sidebar-full-width'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
+				'no-sidebar-content-centered'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png'
 			)
 		)
 	));
@@ -444,10 +444,10 @@ function foodhunt_customize_register( $wp_customize ) {
 			'section' => 'foodhunt_default_single_posts_layout_section',
 			'settings' => 'foodhunt_default_single_posts_layout',
 			'choices' => array(
-				'right-sidebar' => get_template_directory_uri() . '/inc/admin/images/right-sidebar.png',
-				'left-sidebar' => get_template_directory_uri() . '/inc/admin/images/left-sidebar.png',
-				'no-sidebar-full-width'	=> get_template_directory_uri() . '/inc/admin/images/no-sidebar-full-width-layout.png',
-				'no-sidebar-content-centered'	=> get_template_directory_uri() . '/inc/admin/images/no-sidebar-content-centered-layout.png'
+				'right-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
+				'left-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
+				'no-sidebar-full-width'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
+				'no-sidebar-content-centered'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png'
 			)
 		)
 	));
@@ -752,7 +752,7 @@ function foodhunt_color_escaping_option_sanitize($input) {
  * Enqueue scripts for customizer
  */
 function foodhunt_customizer_js() {
-   wp_enqueue_script( 'foodhunt_customizer_script', get_template_directory_uri() . '/js/customizer.js', array("jquery"), 'false', true  );
+   wp_enqueue_script( 'foodhunt_customizer_script', esc_url( get_template_directory_uri() ) . '/js/customizer.js', array("jquery"), 'false', true  );
 
    wp_localize_script( 'foodhunt_customizer_script', 'foodhunt_customizer_obj', array(
 
