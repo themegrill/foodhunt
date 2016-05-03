@@ -14,7 +14,7 @@ get_header(); ?>
 	<?php $foodhunt_layout = foodhunt_layout_class(); ?>
 
 	<main id="main" class="clearfix">
-		<div id="content" class="clearfix <?php echo $foodhunt_layout; ?>" >
+		<div id="content" class="clearfix <?php echo esc_attr( $foodhunt_layout ); ?>" >
 			<div class="tg-container">
 				<div id="primary">
 

@@ -69,6 +69,8 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 = Version 0.5 =
+* Tweaks - Escape and sanitize data in the widgets.
+* Tweaks - Created new file for Customize Control class.
 * Tweaks - Theme information is properly organized in Customize panel.
 
 = Version 0.4 =

@@ -35,7 +35,7 @@
 
 	<?php do_action( 'foodhunt_before_header' ); ?>
 
-	<header id="masthead" class="site-header <?php echo $foodhunt_logo_text; ?>" role="banner">
+	<header id="masthead" class="site-header <?php echo esc_attr( $foodhunt_logo_text ); ?>" role="banner">
 		<div class="header-wrapper clearfix">
 
 			<?php if( get_theme_mod( 'foodhunt_ticker_activation', '0' ) == '1' || has_nav_menu( 'social' ) ) { ?>
@@ -57,7 +57,7 @@
 
 			<div class="mobile-menu-wrapper">
 				<div class="tg-container">
-					<div class="menu-toggle hide">Menu</div>
+					<div class="menu-toggle hide"><?php esc_html_e( 'Menu', 'foodhunt' ) ?></div>
 					<ul id="menu-mobile" class="menu">
 
 						<?php wp_nav_menu( array( 'theme_location' => 'primary_one', 'items_wrap' => '%3$s', 'container' => 'false' ) ); ?>
