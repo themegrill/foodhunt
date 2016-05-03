@@ -62,20 +62,15 @@ module.exports = function( grunt ){
 
 		// Generate POT files.
 		makepot: {
-			options: {
-				type: 'wp-theme',
-				domainPath: 'languages',
-				potHeaders: {
-					'report-msgid-bugs-to': 'themegrill@gmail.com',
-					'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
-				}
-			},
 			dist: {
 				options: {
+					type: 'wp-theme',
+					domainPath: 'languages',
 					potFilename: 'foodhunt.pot',
-					exclude: [
-						'deploy/.*' // Exclude deploy directory
-					]
+					potHeaders: {
+						'report-msgid-bugs-to': 'themegrill@gmail.com',
+						'language-team': 'LANGUAGE <EMAIL@ADDRESS>'
+					}
 				}
 			}
 		},
@@ -110,29 +105,24 @@ module.exports = function( grunt ){
 			}
 		},
 
-		// Copy files to deploy.
-		copy: {
-			deploy: {
+		// Compress files and folders.
+		compress: {
+			options: {
+				archive: 'foodhunt.zip'
+			},
+			files: {
 				src: [
 					'**',
 					'!.*',
 					'!*.md',
+					'!*.zip',
 					'!.*/**',
-					'.htaccess',
 					'!Gruntfile.js',
 					'!package.json',
 					'!node_modules/**'
 				],
-				dest: 'deploy',
-				expand: true,
-				dot: true
-			}
-		},
-
-		// Clean the directory.
-		clean: {
-			deploy: {
-				src: [ 'deploy' ]
+				dest: 'foodhunt',
+				expand: true
 			}
 		}
 	});
@@ -140,11 +130,10 @@ module.exports = function( grunt ){
 	// Load NPM tasks to be used here
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 	grunt.loadNpmTasks( 'grunt-checktextdomain' );
+	grunt.loadNpmTasks( 'grunt-contrib-compress' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
-	grunt.loadNpmTasks( 'grunt-contrib-clean' );
 
 	// Register tasks
 	grunt.registerTask( 'default', [
@@ -157,9 +146,8 @@ module.exports = function( grunt ){
 		'makepot'
 	]);
 
-	grunt.registerTask( 'deploy', [
+	grunt.registerTask( 'zip', [
 		'dev',
-		'clean',
-		'copy'
+		'compress'
 	]);
 };
