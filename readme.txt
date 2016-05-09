@@ -32,7 +32,7 @@ Resources packed within the theme.
 * Sticky js v1.0.3, http://stickyjs.com/
   Copyright 2014 Anthony Garand http://garand.me, MIT Licensed
 
-* jQuery Parallax v1.1.3, Ian Lunn 
+* jQuery Parallax v1.1.3, Ian Lunn
   Licenses: Dual licensed under the MIT and GPL licenses
 
 * jQuery Ticker Plugin v1.2.1, Copyright 2014 Benjamin Harris
@@ -68,6 +68,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0 =
+* Tweaks - Moved all code of metaboxes.php to functions.php
+* Tweaks - Escaped missed out strings and variables.
+
 = Version 0.5 =
 * Tweaks - Escape and sanitize data in the widgets.
 * Tweaks - Created new file for Customize Control class.
