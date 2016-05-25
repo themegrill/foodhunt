@@ -259,13 +259,14 @@ class FoodHunt_Admin {
 
 			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins.', 'foodhunt' ); ?></p>
 			<ol>
+				<li><?php printf(__('<a href="%s" target="_blank">RestaurantPress</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/restaurantpress/')); ?></li>
+				<li><?php printf(__('<a href="%s" target="_blank">The Events Calendar</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/the-events-calendar/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">Contact Form 7</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/contact-form-7/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">WP-PageNavi</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/wp-pagenavi/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">WooCommerce</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/woocommerce/')); ?></li>
 				<li>
 					<?php printf(__('<a href="%s" target="_blank">Polylang</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/polylang/')); ?>
-					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
-				</li>
+					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?></li>
 				<li>
 					<?php printf(__('<a href="%s" target="_blank">WMPL</a>', 'foodhunt'), esc_url('https://wpml.org/')); ?>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
