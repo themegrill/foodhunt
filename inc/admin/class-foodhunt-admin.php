@@ -260,13 +260,20 @@ class FoodHunt_Admin {
 			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins.', 'foodhunt' ); ?></p>
 			<ol>
 				<li><?php printf(__('<a href="%s" target="_blank">RestaurantPress</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/restaurantpress/')); ?></li>
-				<li><?php printf(__('<a href="%s" target="_blank">The Events Calendar</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/the-events-calendar/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">Contact Form 7</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/contact-form-7/')); ?></li>
 				<li><?php printf(__('<a href="%s" target="_blank">WP-PageNavi</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/wp-pagenavi/')); ?></li>
-				<li><?php printf(__('<a href="%s" target="_blank">WooCommerce</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/woocommerce/')); ?></li>
+				<li>
+					<?php printf(__('<a href="%s" target="_blank">WooCommerce</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/woocommerce/')); ?>
+					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
+				</li>
+				<li>
+					<?php printf(__('<a href="%s" target="_blank">The Events Calendar</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/the-events-calendar/')); ?>
+					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
+				</li>
 				<li>
 					<?php printf(__('<a href="%s" target="_blank">Polylang</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/polylang/')); ?>
-					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?></li>
+					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
+				</li>
 				<li>
 					<?php printf(__('<a href="%s" target="_blank">WMPL</a>', 'foodhunt'), esc_url('https://wpml.org/')); ?>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
@@ -297,7 +304,116 @@ class FoodHunt_Admin {
 					</tr>
 				</thead>
 				<tbody>
-
+					<tr>
+						<td><h3><?php esc_html_e('Price', 'foodhunt'); ?></h3></td>
+						<td><?php esc_html_e('Free', 'foodhunt'); ?></td>
+						<td><?php esc_html_e('$69', 'foodhunt'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Slider', 'foodhunt'); ?></h3></td>
+						<td><?php esc_html_e('4 Slides', 'foodhunt'); ?></td>
+						<td><?php esc_html_e('Unlimited Slides', 'foodhunt'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Google Fonts', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><?php esc_html_e('600+', 'foodhunt'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Color Options', 'foodhunt'); ?></h3></td>
+						<td><?php esc_html_e('Primary Color', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('Primary Color option and more', 'foodhunt'); ?></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Font Size options', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('The Events Calendar Compatible', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Translation Ready', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Woocommerce Compatible', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('WPML Compatible', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Polylang Compatible', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Custom Widgets', 'foodhunt'); ?></h3></td>
+						<td><?php esc_html_e('7', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('12', 'foodhunt'); ?></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('TG: Call to Action Video Widget', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('TG: Fun Facts', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('TG: Our Clients', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('TG: Special Recipes', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('TG: Testimonial Widget', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('TG: Special Products', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Footer Editor', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Footer Sidebar', 'foodhunt'); ?></h3></td>
+						<td><?php esc_html_e('4 columns', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('1,2,3,4 columns', 'foodhunt'); ?></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Copyright alignment', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Demo Content', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-no"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Support', 'foodhunt'); ?></h3></td>
+						<td><?php esc_html_e('Forum', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('Emails/Priority Support Ticket', 'foodhunt'); ?></span></td>
+					</tr>
 				</tbody>
 			</table>
 
