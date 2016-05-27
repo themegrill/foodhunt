@@ -67,7 +67,7 @@ and we will include it within the theme from next version update.
 
 /**********************************************************/
 
-== CHANGE LOG ==
+== Changelog ==
 = Version 1.0 =
 * Tweaks - Moved all code of metaboxes.php to functions.php
 * Tweaks - Escaped missed out strings and variables.
