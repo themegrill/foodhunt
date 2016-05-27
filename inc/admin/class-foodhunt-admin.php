@@ -159,19 +159,19 @@ class FoodHunt_Admin {
 					<div class="col">
 						<h3><?php echo esc_html_e( 'Documentation', 'foodhunt' ); ?></h3>
 						<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'foodhunt' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/theme-instruction/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'foodhunt' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'http://docs.themegrill.com/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'foodhunt' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php echo esc_html_e( 'Got theme support question?', 'foodhunt' ); ?></h3>
 						<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'foodhunt' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support Forum', 'foodhunt' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support', 'foodhunt' ); ?></a></p>
 					</div>
 
 					<div class="col">
 						<h3><?php echo esc_html_e( 'Need more features?', 'foodhunt' ); ?></h3>
 						<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'foodhunt' ) ?></p>
-						<p><a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View Pro', 'foodhunt' ); ?></a></p>
+						<p><a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a></p>
 					</div>
 
 					<div class="col">
@@ -400,7 +400,7 @@ class FoodHunt_Admin {
 						<td><?php esc_html_e('1,2,3,4 columns', 'foodhunt'); ?></span></td>
 					</tr>
 					<tr>
-						<td><h3><?php esc_html_e('Copyright alignment', 'foodhunt'); ?></h3></td>
+						<td><h3><?php esc_html_e('Copyright Alignment', 'foodhunt'); ?></h3></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
