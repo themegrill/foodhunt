@@ -339,8 +339,8 @@ class FoodHunt_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Color Options', 'foodhunt'); ?></h3></td>
-						<td><?php esc_html_e('Primary Color', 'foodhunt'); ?></span></td>
-						<td><?php esc_html_e('Primary Color option and more', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('Primary Color', 'foodhunt'); ?></td>
+						<td><?php esc_html_e('Primary Color option and more', 'foodhunt'); ?></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Font Size options', 'foodhunt'); ?></h3></td>
@@ -374,7 +374,7 @@ class FoodHunt_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Custom Widgets', 'foodhunt'); ?></h3></td>
-						<td><?php esc_html_e('7', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('7', 'foodhunt'); ?></td>
 						<td><?php esc_html_e('12', 'foodhunt'); ?></td>
 					</tr>
 					<tr>
@@ -414,8 +414,8 @@ class FoodHunt_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Footer Sidebar', 'foodhunt'); ?></h3></td>
-						<td><?php esc_html_e('4 columns', 'foodhunt'); ?></span></td>
-						<td><?php esc_html_e('1,2,3,4 columns', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('4 columns', 'foodhunt'); ?></td>
+						<td><?php esc_html_e('1,2,3,4 columns', 'foodhunt'); ?></td>
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Copyright Alignment', 'foodhunt'); ?></h3></td>
@@ -429,8 +429,8 @@ class FoodHunt_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Support', 'foodhunt'); ?></h3></td>
-						<td><?php esc_html_e('Forum', 'foodhunt'); ?></span></td>
-						<td><?php esc_html_e('Emails/Priority Support Ticket', 'foodhunt'); ?></span></td>
+						<td><?php esc_html_e('Forum', 'foodhunt'); ?></td>
+						<td><?php esc_html_e('Emails/Priority Support Ticket', 'foodhunt'); ?></td>
 					</tr>
 				</tbody>
 			</table>
