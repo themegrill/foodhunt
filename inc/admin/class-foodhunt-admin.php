@@ -23,6 +23,7 @@ class FoodHunt_Admin {
 	 */
 	public function __construct() {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
+		add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 		add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
 	}
 
@@ -49,10 +50,36 @@ class FoodHunt_Admin {
 	 * Add admin notice.
 	 */
 	public function admin_notice() {
-		global $pagenow;
+		global $foodhunt_version, $pagenow;
 
+		wp_enqueue_style( 'foodhunt-message', get_template_directory_uri() . '/css/admin/message.css', array(), $foodhunt_version );
+
+		// Let's bail on theme activation.
 		if ( 'themes.php' == $pagenow && isset( $_GET['activated'] ) ) {
 			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
+			update_option( 'foodhunt_admin_notice_welcome', 1 );
+
+		// No option? Let run the notice wizard again..
+		} elseif( ! get_option( 'foodhunt_admin_notice_welcome' ) ) {
+			add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
+		}
+	}
+
+	/**
+	 * Hide a notice if the GET variable is set.
+	 */
+	public static function hide_notices() {
+		if ( isset( $_GET['foodhunt-hide-notice'] ) && isset( $_GET['_foodhunt_notice_nonce'] ) ) {
+			if ( ! wp_verify_nonce( $_GET['_foodhunt_notice_nonce'], 'foodhunt_hide_notices_nonce' ) ) {
+				wp_die( __( 'Action failed. Please refresh the page and retry.', 'foodhunt' ) );
+			}
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_die( __( 'Cheatin&#8217; huh?', 'foodhunt' ) );
+			}
+
+			$hide_notice = sanitize_text_field( $_GET['foodhunt-hide-notice'] );
+			update_option( 'foodhunt_admin_notice_' . $hide_notice, 1 );
 		}
 	}
 
@@ -61,9 +88,12 @@ class FoodHunt_Admin {
 	 */
 	public function welcome_notice() {
 		?>
-		<div class="updated notice is-dismissible">
-			<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing FoodHunt! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'foodhunt' ), '<a href="' . esc_url( admin_url( 'themes.php?page=foodhunt-welcome' ) ) . '">', '</a>' ); ?></p>
-			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=foodhunt-welcome' ) ); ?>" class="button" style="text-decoration: none;"><?php esc_html_e( 'Get started with FoodHunt', 'foodhunt' ); ?></a></p>
+		<div id="message" class="updated foodhunt-message">
+			<a class="foodhunt-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'foodhunt-hide-notice', 'welcome' ) ), 'foodhunt_hide_notices_nonce', '_foodhunt_notice_nonce' ) ); ?>"><?php _e( 'Dismiss', 'foodhunt' ); ?></a>
+			<p><?php printf( esc_html__( 'Welcome! Thank you for choosing FoodHunt! To fully take advantage of the best our theme can offer please make sure you visit our %swelcome page%s.', 'foodhunt' ), '<a href="' . esc_url( admin_url( 'themes.php?page=foodhunt-welcome' ) ) . '">', '</a>' ); ?></p>
+			<p class="submit">
+				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=foodhunt-welcome' ) ); ?>"><?php esc_html_e( 'Get started with FoodHunt', 'foodhunt' ); ?></a>
+			</p>
 		</div>
 		<?php
 	}
@@ -75,6 +105,7 @@ class FoodHunt_Admin {
 	 */
 	private function intro() {
 		global $foodhunt_version;
+
 		$theme = wp_get_theme( get_template() );
 
 		// Drop minor version if 0
@@ -223,7 +254,7 @@ class FoodHunt_Admin {
 
 			<?php $this->intro(); ?>
 
-			<p class="about-description"><?php esc_html_e( 'View changelog below.', 'foodhunt' ); ?></p>
+			<p class="about-description"><?php esc_html_e( 'View changelog below:', 'foodhunt' ); ?></p>
 
 			<?php
 				$changelog_file = apply_filters( 'foodhunt_changelog_file', get_template_directory() . '/readme.txt' );
@@ -275,7 +306,7 @@ class FoodHunt_Admin {
 
 			<?php $this->intro(); ?>
 
-			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins.', 'foodhunt' ); ?></p>
+			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins:', 'foodhunt' ); ?></p>
 			<ol>
 				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/social-icons/' ); ?>" target="_blank"><?php esc_html_e( 'Social Icons', 'foodhunt' ); ?></a>
 					<?php esc_html_e(' by ThemeGrill', 'foodhunt'); ?>
