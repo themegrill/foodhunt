@@ -112,11 +112,11 @@ class FoodHunt_Admin {
 		$major_version = substr( $foodhunt_version, 0, 3 );
 		?>
 		<div class="foodhunt-theme-info">
-				<h1>
-					<?php esc_html_e('About', 'foodhunt'); ?>
-					<?php echo $theme->display( 'Name' ); ?>
-					<?php printf( esc_html__( '%s', 'foodhunt' ), $major_version ); ?>
-				</h1>
+			<h1>
+				<?php esc_html_e('About', 'foodhunt'); ?>
+				<?php echo $theme->display( 'Name' ); ?>
+				<?php printf( '%s', $major_version ); ?>
+			</h1>
 
 			<div class="welcome-description-wrap">
 				<div class="about-text"><?php echo $theme->display( 'Description' ); ?></div>
@@ -130,11 +130,11 @@ class FoodHunt_Admin {
 		<p class="foodhunt-actions">
 			<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'foodhunt' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'http://demo.themegrill.com/foodhunt/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'foodhunt' ); ?></a>
+			<a href="<?php echo esc_url( 'http://demo.themegrill.com/foodhunt/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'foodhunt' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'http://themegrill.com/themes/foodhunt/' ) ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
+			<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
 
-			<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'http://wordpress.org/support/view/theme-reviews/foodhunt?filter=5' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'foodhunt' ); ?></a>
+			<a href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/foodhunt?filter=5#postform' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'foodhunt' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
