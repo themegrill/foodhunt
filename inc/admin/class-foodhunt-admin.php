@@ -465,6 +465,13 @@ class FoodHunt_Admin {
 						<td><?php esc_html_e('Forum', 'foodhunt'); ?></td>
 						<td><?php esc_html_e('Emails/Priority Support Ticket', 'foodhunt'); ?></td>
 					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td class="btn-wrapper">
+							<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'http://themegrill.com/themes/foodhunt-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'foodhunt' ); ?></a>
+						</td>
+					</tr>
 				</tbody>
 			</table>
 
