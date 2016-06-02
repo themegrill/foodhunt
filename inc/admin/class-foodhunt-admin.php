@@ -277,23 +277,25 @@ class FoodHunt_Admin {
 
 			<p class="about-description"><?php esc_html_e( 'This theme recommends following plugins.', 'foodhunt' ); ?></p>
 			<ol>
-				<li><?php printf(__('<a href="%s" target="_blank">RestaurantPress</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/restaurantpress/')); ?></li>
-				<li><?php printf(__('<a href="%s" target="_blank">Contact Form 7</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/contact-form-7/')); ?></li>
-				<li><?php printf(__('<a href="%s" target="_blank">WP-PageNavi</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/wp-pagenavi/')); ?></li>
-				<li>
-					<?php printf(__('<a href="%s" target="_blank">WooCommerce</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/woocommerce/')); ?>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/social-icons/' ); ?>" target="_blank"><?php esc_html_e( 'Social Icons', 'foodhunt' ); ?></a>
+					<?php esc_html_e(' by ThemeGrill', 'foodhunt'); ?>
+				</li>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/easy-social-sharing/' ); ?>" target="_blank"><?php esc_html_e( 'Easy Social Sharing', 'foodhunt' ); ?></a>
+					<?php esc_html_e(' by ThemeGrill', 'foodhunt'); ?>
+				</li>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/restaurantpress/' ); ?>" target="_blank"><?php esc_html_e( 'RestaurantPress', 'foodhunt' ); ?></a></li>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/contact-form-7/' ); ?>" target="_blank"><?php esc_html_e( 'Contact Form 7', 'foodhunt' ); ?></a></li>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/wp-pagenavi/' ); ?>" target="_blank"><?php esc_html_e( 'WP-PageNavi', 'foodhunt' ); ?></a></li>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/woocommerce/' ); ?>" target="_blank"><?php esc_html_e( 'WooCommerce', 'foodhunt' ); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
 				</li>
-				<li>
-					<?php printf(__('<a href="%s" target="_blank">The Events Calendar</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/the-events-calendar/')); ?>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/the-events-calendar/' ); ?>" target="_blank"><?php esc_html_e( 'The Events Calendar', 'foodhunt' ); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
 				</li>
-				<li>
-					<?php printf(__('<a href="%s" target="_blank">Polylang</a>', 'foodhunt'), esc_url('https://wordpress.org/plugins/polylang/')); ?>
+				<li><a href="<?php echo esc_url( 'https://wordpress.org/plugins/polylang/' ); ?>" target="_blank"><?php esc_html_e( 'Polylang', 'foodhunt' ); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
 				</li>
-				<li>
-					<?php printf(__('<a href="%s" target="_blank">WMPL</a>', 'foodhunt'), esc_url('https://wpml.org/')); ?>
+				<li><a href="<?php echo esc_url( 'https://wpml.org/' ); ?>" target="_blank"><?php esc_html_e( 'WPML', 'foodhunt' ); ?></a>
 					<?php esc_html_e('Fully Compatible in Pro Version', 'foodhunt'); ?>
 				</li>
 			</ol>
