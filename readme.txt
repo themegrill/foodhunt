@@ -68,6 +68,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.0.1 TBD =
+* Tweaks - Updated Font Awesome to version 4.6.3.
+
 = Version 1.0 =
 * Tweaks - Moved all code of metaboxes.php to functions.php
 * Tweaks - Escaped missed out strings and variables.
