@@ -72,6 +72,7 @@ and we will include it within the theme from next version update.
 = Version 1.0.1 TBD =
 * Tweaks - Updated Font Awesome to version 4.6.3.
 * Tweaks - Introduced welcome page for theme.
+* Tweaks - Refactor the media uploader used in widgets.
 * Feature - Theme is now compatible with WooCommerce.
 
 = Version 1.0 =
