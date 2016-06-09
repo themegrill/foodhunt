@@ -69,10 +69,11 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 
-= Version 1.0.1 TBD =
+= Version 1.0.1 - June 9, 2016 =
 * Tweaks - Updated Font Awesome to version 4.6.3.
 * Tweaks - Introduced welcome page for theme.
 * Tweaks - Refactor the media uploader used in widgets.
+* Tweaks - POT file updated.
 * Feature - Theme is now compatible with WooCommerce.
 
 = Version 1.0 =
