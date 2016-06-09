@@ -270,15 +270,15 @@ class foodhunt_service_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'background_image' ); ?>"> <?php esc_html_e( 'Background Image:', 'foodhunt' ); ?> </label> <br />
-
-			<?php
-			if ( $background_image  != '' ) :
-				echo '<img id="' . $this->get_field_id( 'background_image' . 'preview') . '"src="' . esc_url( $instance[ 'background_image' ] ) . '"style="max-width: 250px;" /><br />';
-			endif;
-			?>
-			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top: 5px;"/>
-
-			<input type="button" class="button button-primary custom_media_button" id="custom_media_button_action" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php esc_attr_e( 'Upload Image', 'foodhunt' ) ?>" style="margin-top: 5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( 'background_image' ); ?>' ); return false;"/>
+			<div class="media-uploader" id="<?php echo $this->get_field_id( 'background_image' ); ?>">
+				<div class="custom_media_preview">
+					<?php if ( $background_image != '' ) : ?>
+						<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="max-width:100%;" />
+					<?php endif; ?>
+				</div>
+				<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top:5px;" />
+				<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( 'background_image' ); ?>" data-choose="<?php echo esc_attr( 'Choose an image', 'foodhunt' ); ?>" data-update="<?php echo esc_attr( 'Use image', 'foodhunt' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php echo esc_html( 'Select an Image', 'foodhunt' ); ?></button>
+			</div>
 		</p>
 
 		<p>
@@ -455,15 +455,15 @@ class foodhunt_call_to_action_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'background_image' ); ?>"> <?php esc_html_e( 'Background Image:', 'foodhunt' ); ?> </label> <br />
-
-			<?php
-			if ( $background_image  != '' ) :
-				echo '<img id="' . $this->get_field_id( 'background_image' . 'preview') . '"src="' . esc_url( $instance[ 'background_image' ] ) . '"style="max-width: 250px;" /><br />';
-			endif;
-			?>
-			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top: 5px;"/>
-
-			<input type="button" class="button button-primary custom_media_button" id="custom_media_button_action" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php esc_attr_e( 'Upload Image', 'foodhunt' ) ?>" style="margin-top: 5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( 'background_image' ); ?>' ); return false;"/>
+			<div class="media-uploader" id="<?php echo $this->get_field_id( 'background_image' ); ?>">
+				<div class="custom_media_preview">
+					<?php if ( $background_image != '' ) : ?>
+						<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="max-width:100%;" />
+					<?php endif; ?>
+				</div>
+				<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top:5px;" />
+				<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( 'background_image' ); ?>" data-choose="<?php echo esc_attr( 'Choose an image', 'foodhunt' ); ?>" data-update="<?php echo esc_attr( 'Use image', 'foodhunt' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php echo esc_html( 'Select an Image', 'foodhunt' ); ?></button>
+			</div>
 		</p>
 
 		<p>
@@ -598,20 +598,20 @@ class foodhunt_our_team_widget extends WP_Widget {
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'background_image' ); ?>"> <?php esc_html_e( 'Background Image:', 'foodhunt' ); ?> </label> <br />
-
-			<?php
-			if ( $background_image  != '' ) :
-				echo '<img id="' . $this->get_field_id( 'background_image' . 'preview') . '"src="' . esc_url( $instance[ 'background_image' ] ) . '"style="max-width: 250px;" /><br />';
-			endif;
-			?>
-			<input type="text" class="widefat custom_media_url" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top: 5px;"/>
-
-			<input type="button" class="button button-primary custom_media_button" id="custom_media_button_action" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php esc_attr_e( 'Upload Image', 'foodhunt' ) ?>" style="margin-top: 5px; margin-right: 30px;" onclick="imageWidget.uploader( '<?php echo $this->get_field_id( 'background_image' ); ?>' ); return false;"/>
+			<div class="media-uploader" id="<?php echo $this->get_field_id( 'background_image' ); ?>">
+				<div class="custom_media_preview">
+					<?php if ( $background_image != '' ) : ?>
+						<img class="custom_media_preview_default" src="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="max-width:100%;" />
+					<?php endif; ?>
+				</div>
+				<input type="text" class="widefat custom_media_input" id="<?php echo $this->get_field_id( 'background_image' ); ?>" name="<?php echo $this->get_field_name( 'background_image' ); ?>" value="<?php echo esc_url( $instance[ 'background_image' ] ); ?>" style="margin-top:5px;" />
+				<button class="custom_media_upload button button-secondary button-large" id="<?php echo $this->get_field_id( 'background_image' ); ?>" data-choose="<?php echo esc_attr( 'Choose an image', 'foodhunt' ); ?>" data-update="<?php echo esc_attr( 'Use image', 'foodhunt' ); ?>" style="width:100%;margin-top:6px;margin-right:30px;"><?php echo esc_html( 'Select an Image', 'foodhunt' ); ?></button>
+			</div>
 		</p>
 
 		<p>
 			<label for="<?php echo $this->get_field_id( 'background_color' ); ?>"><?php esc_html_e( 'Background Color:', 'foodhunt' ); ?></label><br />
-			<input class="my-color-picker" type="text" data-default-color="#5c5c5c" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo  $background_color; ?>" />
+			<input class="my-color-picker" type="text" data-default-color="#5c5c5c" id="<?php echo $this->get_field_id( 'background_color' ); ?>" name="<?php echo $this->get_field_name( 'background_color' ); ?>" value="<?php echo $background_color; ?>" />
 		</p>
 
 		<p><?php esc_html_e( 'Note: Background image (if used) will override the background color.', 'foodhunt' ); ?></p>
