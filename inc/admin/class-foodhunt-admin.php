@@ -392,6 +392,11 @@ class FoodHunt_Admin {
 					</tr>
 					<tr>
 						<td><h3><?php esc_html_e('Woocommerce Compatible', 'foodhunt'); ?></h3></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+						<td><span class="dashicons dashicons-yes"></span></td>
+					</tr>
+					<tr>
+						<td><h3><?php esc_html_e('Woocommerce Page Sidebar', 'foodhunt'); ?></h3></td>
 						<td><span class="dashicons dashicons-no"></span></td>
 						<td><span class="dashicons dashicons-yes"></span></td>
 					</tr>
