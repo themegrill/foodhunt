@@ -68,8 +68,17 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+
 = Version TBD =
 * Tweaks - Enhancement for the media uploader scripts used in widgets.
+
+= Version 1.0.1 =
+* Tweaks - Updated Font Awesome to version 4.6.3.
+* Tweaks - Introduced welcome page for theme.
+* Tweaks - Refactor the media uploader used in widgets.
+* Tweaks - POT file updated.
+* Feature - Theme is now compatible with WooCommerce.
+* Fix - Slider displayed only on the static front page.
 
 = Version 1.0 =
 * Tweaks - Moved all code of metaboxes.php to functions.php
