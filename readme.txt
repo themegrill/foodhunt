@@ -67,7 +67,10 @@ and we will include it within the theme from next version update.
 
 /**********************************************************/
 
-== Changelog ==
+== CHANGE LOG ==
+
+= Version TBD =
+* Tweaks - Enhancement for the media uploader scripts used in widgets.
 
 = Version 1.0.1 =
 * Tweaks - Updated Font Awesome to version 4.6.3.
