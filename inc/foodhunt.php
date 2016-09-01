@@ -59,8 +59,15 @@ if ( ! function_exists( 'foodhunt_header_title' ) ) :
  */
 function foodhunt_header_title() {
 	if( is_archive() ) {
-		the_archive_title( '<h1 class="header-title">', '</h1>' );
-		the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		if ( function_exists( 'foodhunt_is_in_woocommerce_page' ) && foodhunt_is_in_woocommerce_page() ) {
+			echo '<h1 class="header-title">';
+			woocommerce_page_title( true );
+			echo '</h1>';
+		}
+		else {
+			the_archive_title( '<h1 class="header-title">', '</h1>' );
+			the_archive_description( '<div class="taxonomy-description">', '</div>' );
+		}
 	}
 	elseif( is_page()  ) {
 		the_title( '<h1 class="header-title">', '</h1>' );
@@ -532,3 +539,44 @@ function foodhunt_rp_widget_menu_before( $args, $instance ) {
 function foodhunt_rp_widget_menu_after() {
 	echo '</div></div>';
 }
+
+/****************************************************************************************/
+
+/**
+ * Making the theme Woocommrece compatible
+ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10 );
+
+add_filter( 'woocommerce_show_page_title', '__return_false' );
+
+add_action('woocommerce_before_main_content', 'foodhunt_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'foodhunt_wrapper_end', 10);
+add_action('woocommerce_sidebar', 'foodhunt_get_sidebar', 20);
+
+function foodhunt_wrapper_start() {
+	$foodhunt_layout = foodhunt_layout_class();
+	echo '<main id="main" class="clearfix"><div id="content" class="clearfix ' . $foodhunt_layout . '"><div class="tg-container"><div id="primary">';
+}
+
+function foodhunt_wrapper_end() {
+  echo '</div>';
+}
+
+function foodhunt_get_sidebar() {
+   foodhunt_sidebar_select();
+   echo '</div></div></main>';
+}
+
+add_theme_support( 'woocommerce' );
+
+if ( class_exists( 'woocommerce' ) && !function_exists( 'foodhunt_is_in_woocommerce_page' ) ):
+/*
+ * woocommerce - conditional to check if woocommerce related page showed
+ */
+function foodhunt_is_in_woocommerce_page() {
+return ( is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) ? true : false;
+}
+endif;

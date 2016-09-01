@@ -26,7 +26,7 @@
 <div id="page" class="hfeed site">
 
 	<?php
-		if( get_theme_mod( 'foodhunt_slider_activation', '0' ) == '1' && is_front_page() ) {
+		if( get_theme_mod( 'foodhunt_slider_activation', '0' ) == '1' && is_front_page() && !is_home() ) {
 			get_template_part( 'template-parts/content', 'slider' );
 			foodhunt_pass_slider_parameters();
 		}
