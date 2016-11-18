@@ -44,6 +44,12 @@ function foodhunt_setup() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
+	// Adds the support for the Custom Logo introduced in WordPress 4.5
+	add_theme_support( 'custom-logo', array(
+		'flex-width' => true,
+		'flex-height' => true,
+	));
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary_one' => esc_html__( 'Primary Left Menu', 'foodhunt' ),

@@ -70,7 +70,9 @@ and we will include it within the theme from next version update.
 == CHANGE LOG ==
 
 = Version TBD =
+* Feature - Added the Custom Site Logo feature introduced in WordPress 4.5
 * Tweaks - Enhancement for the media uploader scripts used in widgets.
+
 
 = Version 1.0.1 =
 * Tweaks - Updated Font Awesome to version 4.6.3.

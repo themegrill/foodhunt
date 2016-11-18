@@ -119,26 +119,29 @@ function foodhunt_customize_register( $wp_customize ) {
 	);
 
 	// Logo Upload
-	$wp_customize->add_setting(
-		'foodhunt_logo',
-		array(
-			'default'            => '',
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'esc_url_raw'
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Image_Control(
-			$wp_customize,
+	if ( !function_exists('the_custom_logo') || ( get_theme_mod('foodhunt_logo', '') != '' ) ) {
+		$wp_customize->add_setting(
 			'foodhunt_logo',
 			array(
-				'label'    => esc_html__( 'Upload logo' , 'foodhunt' ),
-				'section'  => 'foodhunt_header_logo',
-				'setting'  => 'foodhunt_logo'
+				'default'            => '',
+				'capability'         => 'edit_theme_options',
+				'sanitize_callback'  => 'esc_url_raw'
 			)
-		)
-	);
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Image_Control(
+				$wp_customize,
+				'foodhunt_logo',
+				array(
+					'label'    => esc_html__( 'Upload logo' , 'foodhunt' ),
+					'description' => __( '<strong>Info:</strong> This option will be remove in upcoming update. Please go to Site Identity section to upload the theme logo.', 'foodhunt' ),
+					'section'  => 'foodhunt_header_logo',
+					'setting'  => 'foodhunt_logo'
+				)
+			)
+		);
+	}
 
 	// Logo Placement
 	$wp_customize->add_setting(
