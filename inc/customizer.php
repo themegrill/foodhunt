@@ -135,7 +135,7 @@ function foodhunt_customize_register( $wp_customize ) {
 				'foodhunt_logo',
 				array(
 					'label'    => esc_html__( 'Upload logo' , 'foodhunt' ),
-					'description' => __( '<strong>Info:</strong> This option will be remove in upcoming update. Please go to Site Identity section to upload the theme logo.', 'foodhunt' ),
+					'description' => sprintf(__( '%sInfo:%s This option will be remove in upcoming update. Please go to Site Identity section to upload the theme logo.', 'foodhunt'  ), '<strong>', '</strong>'),
 					'section'  => 'foodhunt_header_logo',
 					'setting'  => 'foodhunt_logo'
 				)
