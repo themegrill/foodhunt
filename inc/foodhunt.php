@@ -580,3 +580,15 @@ function foodhunt_is_in_woocommerce_page() {
 return ( is_shop() || is_product_category() || is_product_tag() || is_product() || is_cart() || is_checkout() || is_account_page() ) ? true : false;
 }
 endif;
+
+// Displays the site logo
+if ( ! function_exists( 'foodhunt_the_custom_logo' ) ) {
+  /**
+   * Displays the optional custom logo.
+   */
+  function foodhunt_the_custom_logo() {
+    if ( function_exists( 'the_custom_logo' )  && ( get_theme_mod( 'foodhunt_logo','' ) == '') ) {
+      the_custom_logo();
+    }
+  }
+}

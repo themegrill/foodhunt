@@ -102,9 +102,16 @@
 							<?php endif; ?>
 						</div><!-- #header-text -->
 
-						<?php if( ( $foodhunt_logo_text == 'both' || $foodhunt_logo_text == 'logo-only' ) && get_theme_mod( 'foodhunt_logo', '' ) != '' ) { ?>
+						<?php if( ( $foodhunt_logo_text == 'both' || $foodhunt_logo_text == 'logo-only' ) ) { ?>
 							<div class="logo">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod( 'foodhunt_logo', '' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+								<?php if ( get_theme_mod('foodhunt_logo', '') != '') { ?>
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url(get_theme_mod( 'foodhunt_logo', '' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>"></a>
+								<?php } ?>
+
+								<?php if (function_exists('the_custom_logo') && has_custom_logo( $blog_id = 0 )) {
+									foodhunt_the_custom_logo();
+								} ?>
+
 							</div>
 						<?php } ?>
 					</div>
