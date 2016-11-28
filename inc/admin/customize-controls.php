@@ -70,18 +70,20 @@ class FOODHUNT_Image_Radio_Control extends WP_Customize_Control {
 	}
 }
 
-// Custom CSS setting
-class FOODHUNT_Custom_CSS_Control extends WP_Customize_Control {
+if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+	// Custom CSS setting
+	class FOODHUNT_Custom_CSS_Control extends WP_Customize_Control {
 
-	public $type = 'custom_css';
+		public $type = 'custom_css';
 
-	public function render_content() {
-	?>
-		<label>
-			<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
-			<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
-		</label>
-	<?php
+		public function render_content() {
+		?>
+			<label>
+				<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+				<textarea rows="5" style="width:100%;" <?php $this->link(); ?>><?php echo esc_textarea( $this->value() ); ?></textarea>
+			</label>
+		<?php
+		}
 	}
 }
 

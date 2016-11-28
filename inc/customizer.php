@@ -475,25 +475,28 @@ function foodhunt_customize_register( $wp_customize ) {
 		'settings' => 'foodhunt_primary_color'
 	)));
 
-	$wp_customize->add_section('foodhunt_custom_css_setting', array(
-		'priority' => 50,
-		'title' => esc_html__('Custom CSS', 'foodhunt'),
-		'panel' => 'foodhunt_design_options'
-	));
 
-	$wp_customize->add_setting('foodhunt_custom_css', array(
-		'default' => '',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'wp_filter_nohtml_kses',
-		'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-	));
-	$wp_customize->add_control(
-		new FOODHUNT_Custom_CSS_Control($wp_customize, 'foodhunt_custom_css', array(
-			'label' => esc_html__('Write your custom css', 'foodhunt'),
-			'section' => 'foodhunt_custom_css_setting',
-			'settings' => 'foodhunt_custom_css'
-		))
-	);
+	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
+		$wp_customize->add_section('foodhunt_custom_css_setting', array(
+			'priority' => 50,
+			'title' => esc_html__('Custom CSS', 'foodhunt'),
+			'panel' => 'foodhunt_design_options'
+		));
+
+		$wp_customize->add_setting('foodhunt_custom_css', array(
+			'default' => '',
+			'capability' => 'edit_theme_options',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
+			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
+		));
+		$wp_customize->add_control(
+			new FOODHUNT_Custom_CSS_Control($wp_customize, 'foodhunt_custom_css', array(
+				'label' => esc_html__('Write your custom css', 'foodhunt'),
+				'section' => 'foodhunt_custom_css_setting',
+				'settings' => 'foodhunt_custom_css'
+			))
+		);
+	}
 	// End of Design Options
 
 /**************************************************************************************/

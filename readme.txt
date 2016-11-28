@@ -69,6 +69,9 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 
+= Version TBD =
+* Feature - Migrated the Custom CSS code added in theme settings to Additional CSS section introduced in WordPress 4.7
+
 = Version 1.0.2 TBD =
 * Tweaks - Enhancement for the media uploader scripts used in widgets.
 * Feature - Added the Custom Site Logo feature introduced in WordPress 4.5
