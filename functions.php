@@ -124,7 +124,7 @@ function foodhunt_scripts() {
 
 	wp_enqueue_style( 'foodhunt-google-font', '//fonts.googleapis.com/css?family=Lato:400,300,700|Great+Vibes' );
 
-	wp_enqueue_style( 'font-awesome', esc_url( get_template_directory_uri() ).'/font-awesome/css/font-awesome' . $suffix . '.css', array(), '4.4.0' );
+	wp_enqueue_style( 'font-awesome', esc_url( get_template_directory_uri() ).'/font-awesome/css/font-awesome' . $suffix . '.css', array(), '4.7.0' );
 
 	if( is_front_page() ) {
 
