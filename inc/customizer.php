@@ -119,7 +119,7 @@ function foodhunt_customize_register( $wp_customize ) {
 	);
 
 	// Logo Upload
-	if ( !function_exists('the_custom_logo') || ( get_theme_mod('foodhunt_logo', '') != '' ) ) {
+	if ( !function_exists('the_custom_logo') ) {
 		$wp_customize->add_setting(
 			'foodhunt_logo',
 			array(

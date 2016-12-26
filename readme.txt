@@ -69,7 +69,7 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 
-= Version 1.0.2 TBD =
+= Version 1.0.2 - 2016-12-26 =
 * Tweaks - Updated Font Awessome to `v.4.7.0` for new icon  support.
 * Tweaks - Enhancement for the media uploader scripts used in widgets.
 * Feature - Added the Custom Site Logo feature introduced in WordPress 4.5

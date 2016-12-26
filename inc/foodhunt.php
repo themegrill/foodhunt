@@ -594,6 +594,25 @@ if ( ! function_exists( 'foodhunt_the_custom_logo' ) ) {
 }
 
 /**
+ * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
+ */
+function foodhunt_site_logo_migrate() {
+	if ( function_exists( 'the_custom_logo' ) && ! has_custom_logo( $blog_id = 0 ) ) {
+		$logo_url = get_theme_mod( 'foodhunt_logo' );
+
+		if ( $logo_url ) {
+			$customizer_site_logo_id = attachment_url_to_postid( $logo_url );
+			set_theme_mod( 'custom_logo', $customizer_site_logo_id );
+
+			// Delete the old Site Logo theme_mod option.
+			remove_theme_mod( 'foodhunt_logo' );
+		}
+	}
+}
+
+add_action( 'after_setup_theme', 'foodhunt_site_logo_migrate' );
+
+/**
  * Migrate any existing theme CSS codes added in Customize Options to the core option added in WordPress 4.7
  */
 function foodhunt_custom_css_migrate() {
