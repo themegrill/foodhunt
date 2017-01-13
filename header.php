@@ -35,6 +35,10 @@
 
 	<?php do_action( 'foodhunt_before_header' ); ?>
 
+	<?php if ( get_theme_mod( 'foodhunt_header_media_placement', 'header_media_below_main_menu' ) == 'header_media_above_site_title' ) {
+ 			foodhunt_the_custom_header_markup();
+ 		} ?>
+
 	<header id="masthead" class="site-header <?php echo esc_attr( $foodhunt_logo_text ); ?>" role="banner">
 		<div class="header-wrapper clearfix">
 
@@ -132,6 +136,10 @@
 			</div>
 		</div><!-- header-wrapper end -->
 	</header><!-- #masthead -->
+
+	<?php if ( get_theme_mod( 'foodhunt_header_media_placement', 'header_media_below_main_menu' ) == 'header_media_below_main_menu' ) {
+		foodhunt_the_custom_header_markup();
+ 	} ?>
 
 	<?php do_action( 'foodhunt_after_header' ); ?>
 
