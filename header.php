@@ -26,18 +26,18 @@
 <div id="page" class="hfeed site">
 
 	<?php
-		if( get_theme_mod( 'foodhunt_slider_activation', '0' ) == '1' && is_front_page() && !is_home() ) {
-			get_template_part( 'template-parts/content', 'slider' );
-			foodhunt_pass_slider_parameters();
-		}
-		$foodhunt_logo_text = get_theme_mod( 'foodhunt_logo_placement', 'text-only' );
-	?>
+
+	foodhunt_the_custom_header_markup();
+
+ 	if ( get_theme_mod( 'foodhunt_slider_activation', '0' ) == '1' && is_front_page() && !is_home() ) {
+		get_template_part( 'template-parts/content', 'slider' );
+		foodhunt_pass_slider_parameters();
+	}
+	$foodhunt_logo_text = get_theme_mod( 'foodhunt_logo_placement', 'text-only' );
+ 	?>
+
 
 	<?php do_action( 'foodhunt_before_header' ); ?>
-
-	<?php if ( get_theme_mod( 'foodhunt_header_media_placement', 'header_media_below_main_menu' ) == 'header_media_above_site_title' ) {
- 			foodhunt_the_custom_header_markup();
- 		} ?>
 
 	<header id="masthead" class="site-header <?php echo esc_attr( $foodhunt_logo_text ); ?>" role="banner">
 		<div class="header-wrapper clearfix">
@@ -136,10 +136,6 @@
 			</div>
 		</div><!-- header-wrapper end -->
 	</header><!-- #masthead -->
-
-	<?php if ( get_theme_mod( 'foodhunt_header_media_placement', 'header_media_below_main_menu' ) == 'header_media_below_main_menu' ) {
-		foodhunt_the_custom_header_markup();
- 	} ?>
 
 	<?php do_action( 'foodhunt_after_header' ); ?>
 
