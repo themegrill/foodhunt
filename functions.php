@@ -179,6 +179,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/widgets.php';
 
 /**
+ * Header Image Functions.
+ */
+require get_template_directory() . '/inc/custom-header.php';
+
+/**
  * Template Tag file.
  */
 require get_template_directory() . '/inc/foodhunt.php';
