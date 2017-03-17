@@ -192,6 +192,13 @@ global $foodhunt_duplicate_posts;
 $foodhunt_duplicate_posts = array();
 
 /**
+* Load Demo Importer Configs.
+*/
+if ( class_exists( 'TG_Demo_Importer' ) ) {
+	require get_template_directory() . '/inc/demo-config.php';
+}
+
+/**
  * Assign the FoodHunt version to a variable.
  */
 $theme            = wp_get_theme( 'foodhunt' );
@@ -200,11 +207,4 @@ $foodhunt_version = $theme['Version'];
 /* Calling in the admin area for the Welcome Page */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-foodhunt-admin.php';
-}
-
-/**
-* Load Demo Importer Configs.
-*/
-if ( class_exists( 'TG_Demo_Importer' ) ) {
-	require get_template_directory() . '/inc/demo-config.php';
 }

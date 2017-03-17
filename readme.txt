@@ -1,4 +1,4 @@
-﻿=== FoodHunt ===
+=== FoodHunt ===
 
 FoodHunt is modern style multi purpose theme specially focus for Restaurant websites. However, due to its flexibility and easiness it can be used to create any types of sites. You can get free support in http://themegrill.com/support-forum/ and check the demo at http://demo.themegrill.com/foodhunt/.
 
@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 
 = Version TBD =
 * Feature - Adds Support for Video Header introduced in WordPress 4.7
+* Feature - Added compatibility for ThemeGrill Demo Importer plugin
 
 = Version 1.0.2 - 2016-12-26 =
 * Tweaks - Updated Font Awessome to `v.4.7.0` for new icon  support.
