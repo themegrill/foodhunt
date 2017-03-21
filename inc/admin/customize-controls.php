@@ -96,19 +96,19 @@ class FOODHUNT_Important_Links extends WP_Customize_Control {
 		//Add Theme instruction, Support Forum, Demo Link
 		$important_links = array(
 			'theme-info' => array(
-				'link' => esc_url('http://themegrill.com/themes/foodhunt/'),
+				'link' => esc_url('https://themegrill.com/themes/foodhunt/'),
 				'text' => __('Theme Info', 'foodhunt'),
 			),
 			'documentation' => array(
-				'link' => esc_url( 'http://docs.themegrill.com/foodhunt/' ),
+				'link' => esc_url( 'https://docs.themegrill.com/foodhunt/' ),
 				'text' => esc_html__( 'Documentation', 'foodhunt' ),
 			),
 			'support' => array(
-				'link' => esc_url( 'http://themegrill.com/support-forum/' ),
+				'link' => esc_url( 'https://themegrill.com/support-forum/' ),
 				'text' => esc_html__( 'Support', 'foodhunt' ),
 			),
 			'demo' => array(
-				'link' => esc_url( 'http://demo.themegrill.com/foodhunt/' ),
+				'link' => esc_url( 'https://demo.themegrill.com/foodhunt/' ),
 				'text' => esc_html__( 'View Demo', 'foodhunt' ),
 			),
 			'rating' => array(
