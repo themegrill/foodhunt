@@ -82,6 +82,12 @@ function foodhunt_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+	// Added WooCommerce support.
+	add_theme_support( 'woocommerce' );
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 }
 endif; // foodhunt_setup
 add_action( 'after_setup_theme', 'foodhunt_setup' );

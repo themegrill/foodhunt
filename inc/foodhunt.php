@@ -570,8 +570,6 @@ function foodhunt_get_sidebar() {
    echo '</div></div></main>';
 }
 
-add_theme_support( 'woocommerce' );
-
 if ( class_exists( 'woocommerce' ) && !function_exists( 'foodhunt_is_in_woocommerce_page' ) ):
 /*
  * woocommerce - conditional to check if woocommerce related page showed
