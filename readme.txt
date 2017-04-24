@@ -69,7 +69,7 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 
-= Version TBD =
+= Version 1.0.3 - 2017-04-24 =
 * Feature - Adds Support for Video Header introduced in WordPress 4.7
 * Feature - Added compatibility for ThemeGrill Demo Importer plugin
 * Feature - Added Support for product gallery introduced in WooCoammerce 3

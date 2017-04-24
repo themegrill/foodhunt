@@ -1,17 +1,25 @@
-# Copyright (C) 2015 ThemeGrill
-# This file is distributed under the GNU General Public License v2 or later.
+# Copyright (C) 2017 ThemeGrill
+# This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: FoodHunt 0.2\n"
+"Project-Id-Version: FoodHunt 1.0.3\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2015-11-30 10:35:26+00:00\n"
+"POT-Creation-Date: 2017-04-24 11:08:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
-"X-Generator: grunt-wp-i18n 0.5.3\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+
+#: inc/admin/class-foodhunt-admin.php:415
+msgid "7"
+msgstr ""
+
+#: inc/admin/class-foodhunt-admin.php:416
+msgid "12"
+msgstr ""
 
 #: 404.php:24
 msgid "404"
@@ -24,14 +32,6 @@ msgstr ""
 #: 404.php:29
 msgid "Page Not Found"
 msgstr ""
-
-#: comments.php:33
-#, php-format
-msgctxt "comments title"
-msgid "One thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
 
 #: comments.php:42 comments.php:63
 msgid "Comment navigation"
@@ -53,28 +53,27 @@ msgstr ""
 msgid "close me"
 msgstr ""
 
-#: functions.php:49
+#: functions.php:55
 msgid "Primary Left Menu"
 msgstr ""
 
-#: functions.php:50
+#: functions.php:56
 msgid "Primary Right Menu"
 msgstr ""
 
-#: functions.php:51
+#: functions.php:57
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:52
+#: functions.php:58
 msgid "Footer Menu"
 msgstr ""
 
-#: header.php:60
+#: header.php:64
 msgid "Menu"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:36
-#: inc/admin/class-foodhunt-admin.php:116
+#: inc/admin/class-foodhunt-admin.php:36 inc/admin/class-foodhunt-admin.php:116
 msgid "About"
 msgstr ""
 
@@ -91,7 +90,6 @@ msgid "Dismiss"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:93
-#, php-format
 msgid ""
 "Welcome! Thank you for choosing FoodHunt! To fully take advantage of the "
 "best our theme can offer please make sure you visit our %swelcome page%s."
@@ -101,20 +99,20 @@ msgstr ""
 msgid "Get started with FoodHunt"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:131 inc/admin/customize-controls.php:98
+#: inc/admin/class-foodhunt-admin.php:131 inc/admin/customize-controls.php:100
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:133 inc/admin/customize-controls.php:110
+#: inc/admin/class-foodhunt-admin.php:133 inc/admin/customize-controls.php:112
 msgid "View Demo"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:135
-#: inc/admin/class-foodhunt-admin.php:205 inc/customizer.php:759
+#: inc/admin/class-foodhunt-admin.php:205 inc/customizer.php:765
 msgid "View PRO version"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:137 inc/admin/customize-controls.php:114
+#: inc/admin/class-foodhunt-admin.php:137 inc/admin/customize-controls.php:116
 msgid "Rate this theme"
 msgstr ""
 
@@ -143,7 +141,7 @@ msgid "Customize"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:191
-#: inc/admin/class-foodhunt-admin.php:193 inc/admin/customize-controls.php:102
+#: inc/admin/class-foodhunt-admin.php:193 inc/admin/customize-controls.php:104
 msgid "Documentation"
 msgstr ""
 
@@ -160,7 +158,7 @@ msgid "Please put it in our dedicated support forum."
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:199
-#: inc/admin/class-foodhunt-admin.php:469 inc/admin/customize-controls.php:106
+#: inc/admin/class-foodhunt-admin.php:469 inc/admin/customize-controls.php:108
 msgid "Support"
 msgstr ""
 
@@ -270,7 +268,7 @@ msgstr ""
 msgid "Features"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:353
+#. Theme Name of the plugin/theme
 msgid "FoodHunt"
 msgstr ""
 
@@ -352,14 +350,6 @@ msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:414
 msgid "Custom Widgets"
-msgstr ""
-
-#: inc/admin/class-foodhunt-admin.php:415
-msgid "7"
-msgstr ""
-
-#: inc/admin/class-foodhunt-admin.php:416
-msgid "12"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:419
@@ -466,198 +456,205 @@ msgstr ""
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:136
+#: inc/customizer.php:137
 msgid "Upload logo"
 msgstr ""
 
-#: inc/customizer.php:156
+#: inc/customizer.php:138
+msgid ""
+"%sInfo:%s This option will be removed in upcoming update. Please go to Site "
+"Identity section to upload the theme logo."
+msgstr ""
+
+#: inc/customizer.php:159
 msgid "Choose the required option"
 msgstr ""
 
-#: inc/customizer.php:160
+#: inc/customizer.php:163
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/customizer.php:161
+#: inc/customizer.php:164
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/customizer.php:162
+#: inc/customizer.php:165
 msgid "Show both Logo and Text"
 msgstr ""
 
-#: inc/customizer.php:163
+#: inc/customizer.php:166
 msgid "None"
 msgstr ""
 
-#: inc/customizer.php:173
+#: inc/customizer.php:176
 msgid "Header Title Bar"
 msgstr ""
 
-#: inc/customizer.php:174
+#: inc/customizer.php:177
 msgid ""
 "Display image as background just below the main Menu on Home page, archive "
 "and single pages."
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:197
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:212
 msgid "Contain all the Slider related settings"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:214
 msgid "Slider Options"
 msgstr ""
 
-#: inc/customizer.php:221
+#: inc/customizer.php:224
 msgid ""
 "Slider displays the Title, Content and Featured image of the page. The "
 "recommended size for slider image is 1920px by 1000px. Select the pages in "
 "the option provided below"
 msgstr ""
 
-#: inc/customizer.php:239
+#: inc/customizer.php:242
 msgid "Enable Slider"
 msgstr ""
 
-#: inc/customizer.php:259
+#: inc/customizer.php:262
 msgid "Enter Icon Class"
 msgstr ""
 
-#: inc/customizer.php:279
+#: inc/customizer.php:282
 msgid "Slide "
 msgstr ""
 
-#: inc/customizer.php:293
+#: inc/customizer.php:296
 msgid "Option to hide the slider controls"
 msgstr ""
 
-#: inc/customizer.php:311
+#: inc/customizer.php:314
 msgid "Hide slider Left/Right Arrows"
 msgstr ""
 
-#: inc/customizer.php:330
+#: inc/customizer.php:333
 msgid "Hide slider navigation Buttons"
 msgstr ""
 
-#: inc/customizer.php:344
+#: inc/customizer.php:347
 msgid "Contain all the Design related settings"
 msgstr ""
 
-#: inc/customizer.php:346
+#: inc/customizer.php:349
 msgid "Design Options"
 msgstr ""
 
-#: inc/customizer.php:355
+#: inc/customizer.php:358
 msgid "Default layout"
 msgstr ""
 
-#: inc/customizer.php:373
+#: inc/customizer.php:376
 msgid ""
-"Select default layout. This layout will be reflected in whole site archives, "
-"categories, search\tpage etc. The layout for a single post and page can be "
-"controlled from below options"
+"Select default layout. This layout will be reflected in whole site "
+"archives, categories, search\tpage etc. The layout for a single post and "
+"page can be controlled from below options"
 msgstr ""
 
-#: inc/customizer.php:390
+#: inc/customizer.php:393
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer.php:408
+#: inc/customizer.php:411
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is \tset for specific page"
 msgstr ""
 
-#: inc/customizer.php:425
+#: inc/customizer.php:428
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer.php:443
+#: inc/customizer.php:446
 msgid ""
-"Select default layout for single posts. This layout will be reflected in all "
-"single posts unless unique layout is set for specific post"
+"Select default layout for single posts. This layout will be reflected in "
+"all single posts unless unique layout is set for specific post"
 msgstr ""
 
-#: inc/customizer.php:458
+#: inc/customizer.php:461
 msgid "Primary color option"
 msgstr ""
 
-#: inc/customizer.php:470
+#: inc/customizer.php:473
 msgid ""
-"This will reflect in links, buttons and many others. Choose a color to match "
-"your site"
+"This will reflect in links, buttons and many others. Choose a color to "
+"match your site"
 msgstr ""
 
-#: inc/customizer.php:477
+#: inc/customizer.php:482
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:489
+#: inc/customizer.php:494
 msgid "Write your custom css"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:509
 msgid "Contain all Additional settings"
 msgstr ""
 
-#: inc/customizer.php:505
+#: inc/customizer.php:511
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:515
+#: inc/customizer.php:521
 msgid "Display full content or short description/excerpt on the Posts Page"
 msgstr ""
 
-#: inc/customizer.php:532
+#: inc/customizer.php:538
 msgid "Choose to show Excerpt or Full Post"
 msgstr ""
 
-#: inc/customizer.php:536
+#: inc/customizer.php:542
 msgid "Display Excerpt"
 msgstr ""
 
-#: inc/customizer.php:537
+#: inc/customizer.php:543
 msgid "Display Full Content"
 msgstr ""
 
-#: inc/customizer.php:548
+#: inc/customizer.php:554
 msgid ""
-"Hide specific or all the meta/information from the Blog posts and Single post"
+"Hide specific or all the meta/information from the Blog posts and Single "
+"post"
 msgstr ""
 
-#: inc/customizer.php:566
+#: inc/customizer.php:572
 msgid "Check to All the Meta."
 msgstr ""
 
-#: inc/customizer.php:585
+#: inc/customizer.php:591
 msgid "Check to hide Date."
 msgstr ""
 
-#: inc/customizer.php:604
+#: inc/customizer.php:610
 msgid "Check to hide Author."
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:629
 msgid "Check to hide Comment."
 msgstr ""
 
-#: inc/customizer.php:642
+#: inc/customizer.php:648
 msgid "Check to hide Category."
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:667
 msgid "Check to hide Tags."
 msgstr ""
 
-#: inc/customizer.php:674
+#: inc/customizer.php:680
 msgid "Foodhunt Important Links"
 msgstr ""
 
-#: inc/customizer.php:694
+#: inc/customizer.php:700
 msgid "Important Links"
 msgstr ""
 
@@ -681,22 +678,19 @@ msgstr ""
 msgid "WordPress"
 msgstr ""
 
-#: inc/foodhunt.php:359
+#. Author of the plugin/theme
 msgid "ThemeGrill"
 msgstr ""
 
 #: inc/foodhunt.php:361
-#, php-format
 msgid "Copyright &copy; %1$s %2$s."
 msgstr ""
 
 #: inc/foodhunt.php:361
-#, php-format
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
 #: inc/foodhunt.php:361
-#, php-format
 msgid "Powered by %s"
 msgstr ""
 
@@ -803,7 +797,6 @@ msgid "Button Icon Class:"
 msgstr ""
 
 #: inc/widgets.php:126 inc/widgets.php:481
-#, php-format
 msgid "For Icon Class <a href=\"%s\" target=\"_blank\">Refer here</a>"
 msgstr ""
 
@@ -813,7 +806,8 @@ msgstr ""
 
 #: inc/widgets.php:131
 msgid ""
-"Note: Leave Button Redirect Link empty to redirect it to the respective page."
+"Note: Leave Button Redirect Link empty to redirect it to the respective "
+"page."
 msgstr ""
 
 #: inc/widgets.php:228
@@ -846,6 +840,18 @@ msgstr ""
 msgid "Background Image:"
 msgstr ""
 
+#: inc/widgets.php:280 inc/widgets.php:465 inc/widgets.php:608
+msgid "Choose an image"
+msgstr ""
+
+#: inc/widgets.php:280 inc/widgets.php:465 inc/widgets.php:608
+msgid "Use image"
+msgstr ""
+
+#: inc/widgets.php:280 inc/widgets.php:465 inc/widgets.php:608
+msgid "Select an Image"
+msgstr ""
+
 #: inc/widgets.php:285 inc/widgets.php:470 inc/widgets.php:613
 msgid "Background Color:"
 msgstr ""
@@ -854,9 +860,8 @@ msgstr ""
 msgid "Note: Background image (if used) will override the background color."
 msgstr ""
 
-#: inc/widgets.php:390 inc/widgets.php:717
-#: template-parts/content-search.php:43 template-parts/content.php:54
-#: template-parts/content.php:59
+#: inc/widgets.php:390 inc/widgets.php:717 template-parts/content-search.php:43
+#: template-parts/content.php:54 template-parts/content.php:59
 msgid "Read More"
 msgstr ""
 
@@ -930,8 +935,8 @@ msgstr ""
 
 #: inc/widgets.php:959
 msgid ""
-"Note: Create the pages and select Gallery Template to display Gallery pages. "
-"The Recommended size for featured image is 340px by 340px."
+"Note: Create the pages and select Gallery Template to display Gallery "
+"pages. The Recommended size for featured image is 340px by 340px."
 msgstr ""
 
 #: inc/widgets.php:1056
@@ -962,29 +967,8 @@ msgstr ""
 msgid "Next &rarr;"
 msgstr ""
 
-#: navigation.php:32
-msgctxt "Previous post link"
-msgid "&larr;"
-msgstr ""
-
-#: navigation.php:33
-msgctxt "Next post link"
-msgid "&rarr;"
-msgstr ""
-
 #: search.php:24
-#, php-format
 msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:12
-msgctxt "placeholder"
-msgid "Search &hellip;"
-msgstr ""
-
-#: searchform.php:13
-msgctxt "submit button"
-msgid "Search"
 msgstr ""
 
 #: sidebar-left.php:19 sidebar.php:19
@@ -992,15 +976,13 @@ msgid "Example Widget"
 msgstr ""
 
 #: sidebar-left.php:20
-#, php-format
 msgid ""
-"This is an example widget to show how the Left Sidebar looks by default. You "
-"can add custom widgets from the %swidgets screen%s in the admin. If custom "
-"widgets is added than this will be replaced by those widgets."
+"This is an example widget to show how the Left Sidebar looks by default. "
+"You can add custom widgets from the %swidgets screen%s in the admin. If "
+"custom widgets is added than this will be replaced by those widgets."
 msgstr ""
 
 #: sidebar.php:20
-#, php-format
 msgid ""
 "This is an example widget to show how the Right Sidebar looks by default. "
 "You can add custom widgets from the %swidgets screen%s in the admin. If "
@@ -1012,9 +994,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content-none.php:20
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:24
@@ -1036,4 +1016,62 @@ msgstr ""
 
 #: template-parts/content-slider.php:49
 msgid "Read more"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://themegrill.com/themes/foodhunt/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"FoodHunt is modern style multi purpose theme specially focus for Restaurant "
+"websites. However, due to its flexibility and easiness it can be used to "
+"create any types of sites."
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themegrill.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Portfolio Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Restaurant Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Service Template"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Our Team Template"
+msgstr ""
+
+#: comments.php:33
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: navigation.php:32
+msgctxt "Previous post link"
+msgid "&larr;"
+msgstr ""
+
+#: navigation.php:33
+msgctxt "Next post link"
+msgid "&rarr;"
+msgstr ""
+
+#: searchform.php:12
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr ""
+
+#: searchform.php:13
+msgctxt "submit button"
+msgid "Search"
 msgstr ""
