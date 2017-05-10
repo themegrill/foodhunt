@@ -39,6 +39,8 @@ Resources packed within the theme.
   Licenses: MIT
   Source: https://github.com/BenjaminRH/jquery-ticker
 
+*TGM-Plugin-Activation by Thomas Griffin, Gary Jones, Juliette Reinders Folmer | GPL v2 Licensed
+
 * Other custom js files are our own creation and is licensed under the same license as this theme.
 
 All other resources and theme elements are licensed under the [GNU GPL](http://www.gnu.org/licenses/gpl-3.0.txt), version 3 or later.
