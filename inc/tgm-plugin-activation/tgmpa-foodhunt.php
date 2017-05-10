@@ -23,6 +23,11 @@ function foodhunt_register_required_plugins() {
 			'slug'      => 'themegrill-demo-importer',
 			'required'  => false,
 		),
+		array(
+			'name'      => 'Resturantpress',
+			'slug'      => 'restaurantpress',
+			'required'  => false,
+		),
 
 	);
 
