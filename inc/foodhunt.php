@@ -316,7 +316,7 @@ function foodhunt_darkcolor($hex, $steps) {
 	return $return;
 }
 
-add_action( 'wp_head', 'foodhunt_custom_css' );
+add_action( 'wp_head', 'foodhunt_custom_css', 100 );
 /**
  * Hooks the Custom Internal CSS to head section
  */
