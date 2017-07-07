@@ -134,7 +134,7 @@ class FoodHunt_Admin {
 
 			<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
 
-			<a href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/foodhunt?filter=5#postform' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'foodhunt' ); ?></a>
+			<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/foodhunt/reviews/?filter=5' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'foodhunt' ); ?></a>
 		</p>
 
 		<h2 class="nav-tab-wrapper">
