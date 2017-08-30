@@ -70,6 +70,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version TBD =
+* Tweaks - Introduce selective refresh for site title and description
+
 = Version 1.0.5 - 2017-05-25 =
 * Tweaks - Lirary file updated to v4.2.12
 * Fix - Header function 
