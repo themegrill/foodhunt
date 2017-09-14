@@ -1,4 +1,4 @@
-﻿=== FoodHunt ===
+=== FoodHunt ===
 
 FoodHunt is modern style multi purpose theme specially focus for Restaurant websites. However, due to its flexibility and easiness it can be used to create any types of sites. You can get free support in https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/foodhunt/.
 
@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 = Version TBD =
+* Tweak - Add theme support for Jetpack Responsive Videos.
 * Tweaks - Introduce selective refresh for site title and description
 
 = Version 1.0.5 - 2017-05-25 =

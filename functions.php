@@ -220,3 +220,10 @@ if ( is_admin() ) {
  */
 require get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
 require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-foodhunt.php';
+
+/**
+ * Load Jetpack compatibility file.
+ */
+if ( defined( 'JETPACK__VERSION' ) ) {
+	require_once get_template_directory() . '/inc/jetpack.php';
+}
