@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= Version TBD =
+= Version 1.0.6 2017-11-08 =
 * Tweak - Add theme support for Jetpack Responsive Videos.
 * Tweaks - Introduce selective refresh for site title and description
 
