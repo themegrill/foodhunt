@@ -19,6 +19,9 @@ function foodhunt_custom_controls() {
 add_action( 'customize_register', 'foodhunt_custom_controls' );
 
 function foodhunt_customize_register( $wp_customize ) {
+	// Transport postMessage variable set
+    $customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+
 	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 
@@ -62,6 +65,7 @@ function foodhunt_customize_register( $wp_customize ) {
 		array(
 			'default'            => 0,
 			'capability'         => 'edit_theme_options',
+			'transport'          => $customizer_selective_refresh,
 			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
 		)
 	);
@@ -74,6 +78,14 @@ function foodhunt_customize_register( $wp_customize ) {
 			'type'     => 'checkbox'
 		)
 	);
+
+	// Selective refresh for header news
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'foodhunt_ticker_activation', array(
+			'selector'        => '.header-ticker',
+			'render_callback' => '',
+		) );
+	}
 
 	// Ticker Text
 	$wp_customize->add_setting(
@@ -247,6 +259,7 @@ function foodhunt_customize_register( $wp_customize ) {
 		array(
 			'default'            => 0,
 			'capability'         => 'edit_theme_options',
+			'transport'          => $customizer_selective_refresh,
 			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
 		)
 	);
@@ -260,6 +273,14 @@ function foodhunt_customize_register( $wp_customize ) {
 			'priority' => 10
 		)
 	);
+
+	// Selective refresh for slider activation
+	if ( isset( $wp_customize->selective_refresh ) ) {
+		$wp_customize->selective_refresh->add_partial( 'foodhunt_slider_activation', array(
+			'selector'        => '#home-slider',
+			'render_callback' => '',
+		) );
+	}
 
 	// Slider Icon
 	$wp_customize->add_setting(
