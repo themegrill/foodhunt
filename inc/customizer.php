@@ -499,15 +499,16 @@ function foodhunt_customize_register( $wp_customize ) {
 	));
 
 	$wp_customize->add_setting('foodhunt_primary_color', array(
-		'default' => '#dd0103',
-		'capability' => 'edit_theme_options',
-		'sanitize_callback' => 'foodhunt_color_option_hex_sanitize',
+		'default'              => '#dd0103',
+		'capability'           => 'edit_theme_options',
+		'transport'            => 'postMessage',
+		'sanitize_callback'    => 'foodhunt_color_option_hex_sanitize',
 		'sanitize_js_callback' => 'foodhunt_color_escaping_option_sanitize'
 	));
 
 	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'foodhunt_primary_color', array(
-		'label' => esc_html__('This will reflect in links, buttons and many others. Choose a color to match your site', 'foodhunt'),
-		'section' => 'foodhunt_primary_color_setting',
+		'label'    => esc_html__('This will reflect in links, buttons and many others. Choose a color to match your site', 'foodhunt'),
+		'section'  => 'foodhunt_primary_color_setting',
 		'settings' => 'foodhunt_primary_color'
 	)));
 
