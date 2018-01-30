@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= Version TBD =
+= Version 1.0.7 2018-01-30 =
 * Tweak - Added selective refresh and live js for customizer option
 
 = Version 1.0.6 2017-11-08 =
