@@ -41,7 +41,11 @@ module.exports = function( grunt ){
 					cwd: '<%= dirs.js %>/',
 					src: [
 						'*.js',
-						'!*.min.js'
+						'!color-picker.js',
+						'!customizer.js',
+						'!image-uploader.js',
+						'!metabox-toggle.js',
+						'!.min.js'
 					],
 					dest: '<%= dirs.js %>/',
 					ext: '.min.js'

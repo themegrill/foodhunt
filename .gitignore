@@ -21,3 +21,4 @@ project.properties
 
 # Windows junk
 Thumbs.db
+/js/jquery.min.js
