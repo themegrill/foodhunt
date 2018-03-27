@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Setup demo importer packages.
  *
  * @param  array $packages
+ *
  * @return array
  */
 function foodhunt_demo_importer_packages( $packages ) {
@@ -23,6 +24,11 @@ function foodhunt_demo_importer_packages( $packages ) {
 		'foodhunt-free' => array(
 			'name'    => esc_html__( 'FoodHunt', 'foodhunt' ),
 			'preview' => 'https://demo.themegrill.com/foodhunt/',
+		),
+		'foodhunt-pro'  => array(
+			'name'     => esc_html__( 'FoodHunt Pro', 'foodhunt' ),
+			'preview'  => 'https://demo.themegrill.com/foodhunt-pro/',
+			'pro_link' => 'https://themegrill.com/themes/foodhunt/',
 		),
 	);
 
