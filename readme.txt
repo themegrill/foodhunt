@@ -70,6 +70,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version TBD =
+* Fix - Slider anchors unclickable in Firefox browsers versioned 59+.
+
 = Version 1.0.7 2018-01-30 =
 * Tweak - Added selective refresh and live js for customizer option
 
@@ -79,7 +82,7 @@ and we will include it within the theme from next version update.
 
 = Version 1.0.5 - 2017-05-25 =
 * Tweaks - Lirary file updated to v4.2.12
-* Fix - Header function 
+* Fix - Header function
 
 = Version 1.0.4 - 2017-05-10 =
 * Tweaks - Add TGMPA to recommend ThemeGrill Demo Importer plugin
