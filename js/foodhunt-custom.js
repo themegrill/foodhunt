@@ -87,7 +87,8 @@ jQuery( document ).ready( function () {
 		} );
 	} );
 
-	jQuery( '.search-form-wrapper .close' ).click( function () {
+	// Close search form
+	var closeSearchForm = function () {
 		jQuery( '.search-box' ).removeClass( 'active' );
 		jQuery( '#page' ).css( {
 			'filter': 'blur(0px)',
@@ -95,6 +96,16 @@ jQuery( document ).ready( function () {
 			'-moz-filter': 'blur(0px)'
 		} );
 
+	};
+
+	// on close me button
+	jQuery( '.search-form-wrapper .close' ).click( closeSearchForm ); // hide on close me click
+
+	// on esc key
+	document.addEventListener( 'keyup', function ( e ) {
+		if ( document.querySelectorAll( '.search-box.active' ).length > 0 && e.keyCode === 27 ) {
+			closeSearchForm();
+		}
 	} );
 
 	//stikcy menu
