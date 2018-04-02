@@ -1,7 +1,7 @@
 {
   "name": "foodhunt",
   "title": "FoodHunt",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "homepage": "https://themegrill.com/themes/foodhunt",
   "repository": {
     "type": "git",
@@ -10,7 +10,7 @@
   "license": "GPL-3.0+",
   "main": "Gruntfile.js",
   "devDependencies": {
-    "grunt": "^1.0.1",
+    "grunt": "^1.0.2",
     "grunt-bower-task": "^0.5.0",
     "grunt-checktextdomain": "~1.0.0",
     "grunt-contrib-compress": "~1.2.0",
@@ -23,5 +23,8 @@
   "engines": {
     "node": ">=0.8.0",
     "npm": ">=1.1.0"
+  },
+  "dependencies": {
+    "grunt-cli": "^1.2.0"
   }
 }

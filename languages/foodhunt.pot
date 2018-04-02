@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: FoodHunt 1.0.7\n"
+"Project-Id-Version: FoodHunt 1.0.9\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2018-01-30 08:22:40+00:00\n"
+"POT-Creation-Date: 2018-04-02 10:25:56+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,11 +13,11 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
 
-#: inc/admin/class-foodhunt-admin.php:415
+#: inc/admin/class-foodhunt-admin.php:459
 msgid "7"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:416
+#: inc/admin/class-foodhunt-admin.php:460
 msgid "12"
 msgstr ""
 
@@ -73,198 +73,202 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:36 inc/admin/class-foodhunt-admin.php:116
+#: inc/admin/class-foodhunt-admin.php:36 inc/admin/class-foodhunt-admin.php:119
 msgid "About"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:74
+#: inc/admin/class-foodhunt-admin.php:77
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:78
+#: inc/admin/class-foodhunt-admin.php:81
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:92
+#: inc/admin/class-foodhunt-admin.php:95
 msgid "Dismiss"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:93
+#: inc/admin/class-foodhunt-admin.php:96
 msgid ""
 "Welcome! Thank you for choosing FoodHunt! To fully take advantage of the "
 "best our theme can offer please make sure you visit our %swelcome page%s."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:95
+#: inc/admin/class-foodhunt-admin.php:98
 msgid "Get started with FoodHunt"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:131 inc/admin/customize-controls.php:100
+#: inc/admin/class-foodhunt-admin.php:134 inc/admin/customize-controls.php:100
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:133 inc/admin/customize-controls.php:112
+#: inc/admin/class-foodhunt-admin.php:136 inc/admin/customize-controls.php:112
 msgid "View Demo"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:135
-#: inc/admin/class-foodhunt-admin.php:205 inc/customizer.php:820
+#: inc/admin/class-foodhunt-admin.php:138
+#: inc/admin/class-foodhunt-admin.php:232 inc/customizer.php:820
 msgid "View PRO version"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:137 inc/admin/customize-controls.php:116
+#: inc/admin/class-foodhunt-admin.php:140 inc/admin/customize-controls.php:116
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:145
+#: inc/admin/class-foodhunt-admin.php:155
 msgid "Supported Plugins"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:148
+#: inc/admin/class-foodhunt-admin.php:163
 msgid "Free Vs Pro"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:151
+#: inc/admin/class-foodhunt-admin.php:171
 msgid "Changelog"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:185
+#: inc/admin/class-foodhunt-admin.php:205
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:186
+#: inc/admin/class-foodhunt-admin.php:206
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:187
+#: inc/admin/class-foodhunt-admin.php:208
 msgid "Customize"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:191
-#: inc/admin/class-foodhunt-admin.php:193 inc/admin/customize-controls.php:104
+#: inc/admin/class-foodhunt-admin.php:213
+#: inc/admin/class-foodhunt-admin.php:216 inc/admin/customize-controls.php:104
 msgid "Documentation"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:192
+#: inc/admin/class-foodhunt-admin.php:214
 msgid "Please view our documentation page to setup the theme."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:197
+#: inc/admin/class-foodhunt-admin.php:221
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:198
+#: inc/admin/class-foodhunt-admin.php:222
 msgid "Please put it in our dedicated support forum."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:199
-#: inc/admin/class-foodhunt-admin.php:469 inc/admin/customize-controls.php:108
+#: inc/admin/class-foodhunt-admin.php:224
+#: inc/admin/class-foodhunt-admin.php:513 inc/admin/customize-controls.php:108
 msgid "Support"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:203
+#: inc/admin/class-foodhunt-admin.php:229
 msgid "Need more features?"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:204
-#: inc/admin/class-foodhunt-admin.php:347
+#: inc/admin/class-foodhunt-admin.php:230
+#: inc/admin/class-foodhunt-admin.php:391
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:209
+#: inc/admin/class-foodhunt-admin.php:237
 msgid "Got sales related question?"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:210
+#: inc/admin/class-foodhunt-admin.php:238
 msgid "Please send it via our sales contact page."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:211
+#: inc/admin/class-foodhunt-admin.php:240
 msgid "Contact Page"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:217
-#: inc/admin/class-foodhunt-admin.php:225
+#: inc/admin/class-foodhunt-admin.php:247
+#: inc/admin/class-foodhunt-admin.php:255
 msgid "Translate"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:221
+#: inc/admin/class-foodhunt-admin.php:251
 msgid "Click below to translate this theme into your own language."
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:237
+#: inc/admin/class-foodhunt-admin.php:267
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:237
+#: inc/admin/class-foodhunt-admin.php:267
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:240
+#: inc/admin/class-foodhunt-admin.php:270
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:240
+#: inc/admin/class-foodhunt-admin.php:270
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:257
+#: inc/admin/class-foodhunt-admin.php:287
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:309
+#: inc/admin/class-foodhunt-admin.php:341
 msgid "This theme recommends following plugins:"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:311
+#: inc/admin/class-foodhunt-admin.php:344
 msgid "Social Icons"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:312
-#: inc/admin/class-foodhunt-admin.php:315
+#: inc/admin/class-foodhunt-admin.php:345
+#: inc/admin/class-foodhunt-admin.php:349
 msgid " by ThemeGrill"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:314
+#: inc/admin/class-foodhunt-admin.php:348
 msgid "Easy Social Sharing"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:317
+#: inc/admin/class-foodhunt-admin.php:352
 msgid "RestaurantPress"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:318
-msgid "Contact Form 7"
+#: inc/admin/class-foodhunt-admin.php:355
+msgid "Everest Forms – Easy Contact Form and Form Builder"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:319
+#: inc/admin/class-foodhunt-admin.php:356
+msgid " by WPEverest"
+msgstr ""
+
+#: inc/admin/class-foodhunt-admin.php:358
 msgid "WP-PageNavi"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:320
+#: inc/admin/class-foodhunt-admin.php:361
 msgid "WooCommerce"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:321
-#: inc/admin/class-foodhunt-admin.php:324
-#: inc/admin/class-foodhunt-admin.php:327
-#: inc/admin/class-foodhunt-admin.php:330
+#: inc/admin/class-foodhunt-admin.php:362
+#: inc/admin/class-foodhunt-admin.php:366
+#: inc/admin/class-foodhunt-admin.php:370
+#: inc/admin/class-foodhunt-admin.php:374
 msgid "Fully Compatible in Pro Version"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:323
+#: inc/admin/class-foodhunt-admin.php:365
 msgid "The Events Calendar"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:326
+#: inc/admin/class-foodhunt-admin.php:369
 msgid "Polylang"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:329
+#: inc/admin/class-foodhunt-admin.php:373
 msgid "WPML"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:352
+#: inc/admin/class-foodhunt-admin.php:396
 msgid "Features"
 msgstr ""
 
@@ -272,143 +276,143 @@ msgstr ""
 msgid "FoodHunt"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:354
+#: inc/admin/class-foodhunt-admin.php:398 inc/demo-config.php:29
 msgid "FoodHunt Pro"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:359
+#: inc/admin/class-foodhunt-admin.php:403
 msgid "Price"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:360
+#: inc/admin/class-foodhunt-admin.php:404
 msgid "Free"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:361
+#: inc/admin/class-foodhunt-admin.php:405
 msgid "$69"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:364
+#: inc/admin/class-foodhunt-admin.php:408
 msgid "Slider"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:365
+#: inc/admin/class-foodhunt-admin.php:409
 msgid "4 Slides"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:366
+#: inc/admin/class-foodhunt-admin.php:410
 msgid "Unlimited Slides"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:369
+#: inc/admin/class-foodhunt-admin.php:413
 msgid "Google Fonts"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:371
+#: inc/admin/class-foodhunt-admin.php:415
 msgid "600+"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:374
+#: inc/admin/class-foodhunt-admin.php:418
 msgid "Color Options"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:375
+#: inc/admin/class-foodhunt-admin.php:419
 msgid "Primary Color"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:376
+#: inc/admin/class-foodhunt-admin.php:420
 msgid "Primary Color option and more"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:379
+#: inc/admin/class-foodhunt-admin.php:423
 msgid "Font Size options"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:384
+#: inc/admin/class-foodhunt-admin.php:428
 msgid "The Events Calendar Compatible"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:389
+#: inc/admin/class-foodhunt-admin.php:433
 msgid "Translation Ready"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:394
+#: inc/admin/class-foodhunt-admin.php:438
 msgid "Woocommerce Compatible"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:399
+#: inc/admin/class-foodhunt-admin.php:443
 msgid "Woocommerce Page Sidebar"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:404
+#: inc/admin/class-foodhunt-admin.php:448
 msgid "WPML Compatible"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:409
+#: inc/admin/class-foodhunt-admin.php:453
 msgid "Polylang Compatible"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:414
+#: inc/admin/class-foodhunt-admin.php:458
 msgid "Custom Widgets"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:419
+#: inc/admin/class-foodhunt-admin.php:463
 msgid "TG: Call to Action Video Widget"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:424
+#: inc/admin/class-foodhunt-admin.php:468
 msgid "TG: Fun Facts"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:429
+#: inc/admin/class-foodhunt-admin.php:473
 msgid "TG: Our Clients"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:434
+#: inc/admin/class-foodhunt-admin.php:478
 msgid "TG: Special Recipes"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:439
+#: inc/admin/class-foodhunt-admin.php:483
 msgid "TG: Testimonial Widget"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:444
+#: inc/admin/class-foodhunt-admin.php:488
 msgid "TG: Special Products"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:449
+#: inc/admin/class-foodhunt-admin.php:493
 msgid "Footer Editor"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:454
+#: inc/admin/class-foodhunt-admin.php:498
 msgid "Footer Sidebar"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:455
+#: inc/admin/class-foodhunt-admin.php:499
 msgid "4 columns"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:456
+#: inc/admin/class-foodhunt-admin.php:500
 msgid "1,2,3,4 columns"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:459
+#: inc/admin/class-foodhunt-admin.php:503
 msgid "Copyright Alignment"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:464
+#: inc/admin/class-foodhunt-admin.php:508
 msgid "Demo Content"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:470
+#: inc/admin/class-foodhunt-admin.php:514
 msgid "Forum"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:471
+#: inc/admin/class-foodhunt-admin.php:515
 msgid "Emails/Priority Support Ticket"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:477
+#: inc/admin/class-foodhunt-admin.php:521
 msgid "View Pro"
 msgstr ""
 
@@ -735,34 +739,34 @@ msgid "Background Color"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:327
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:45
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:62
 msgid "Install Required Plugins"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:328
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:46
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:63
 msgid "Install Plugins"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:330
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:48
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:65
 #. translators: %s: plugin name.
 msgid "Installing Plugin: %s"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:332
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:50
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:67
 #. translators: %s: plugin name.
 msgid "Updating Plugin: %s"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:333
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:51
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:68
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:370
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:88
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:105
 #. translators: 1: plugin name(s).
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
@@ -770,21 +774,21 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:375
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:93
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:110
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:380
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:98
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:115
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:385
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:103
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:120
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -797,24 +801,24 @@ msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:387
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:3159
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:104
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:121
 msgid "Plugin activated successfully."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:388
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:2952
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:105
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:122
 msgid "The following plugin was activated successfully:"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:390
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:107
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:124
 #. translators: 1: plugin name.
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:392
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:109
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:126
 #. translators: 1: plugin name.
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
@@ -822,25 +826,25 @@ msgid ""
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:394
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:111
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:128
 #. translators: 1: dashboard link.
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:395
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:112
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:129
 msgid "Dismiss this notice"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:396
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:113
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:130
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:397
-#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:114
+#: inc/tgm-plugin-activation/tgmpa-foodhunt.php:131
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
