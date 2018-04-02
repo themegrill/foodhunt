@@ -85,6 +85,11 @@ jQuery( document ).ready( function () {
 			'-webkit-filter': 'blur(8px)',
 			'-moz-filter': 'blur(8px)'
 		} );
+
+		// focus after some time to fix conflict with toggleClass
+		setTimeout(function() {
+			document.getElementsByClassName( 'search-box active' )[0].getElementsByTagName( 'input' )[0].focus();
+		}, 200);
 	} );
 
 	// Close search form
