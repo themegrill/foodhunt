@@ -78,7 +78,7 @@ jQuery( document ).ready( function () {
 	}
 
 	//search popup
-	jQuery( '.search-icon i' ).click( function () {
+	jQuery( '.search-icon' ).click( function () {
 		jQuery( '.search-box' ).toggleClass( 'active' );
 		jQuery( '#page' ).css( {
 			'filter': 'blur(8px)',
