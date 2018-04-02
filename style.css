@@ -1831,7 +1831,7 @@ body {
 }
 
 .search-icon {
-	padding: 50px 0 50px 30px;
+	padding: 41px 0 41px 15px;
 	color: #ffffff;
 	-webkit-transition: all 0.3s ease;
 	-moz-transition: all 0.3s ease;
@@ -1839,6 +1839,10 @@ body {
 	-o-transition: all 0.3s ease;
 	transition: all 0.3s ease;
 	cursor: pointer;
+}
+
+.search-icon .fa {
+    padding: 15px;
 }
 
 .search-icon:hover {
