@@ -70,7 +70,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= Version TBD =
+= TBD =
+* Fix - Blur screen on revealing search form and responsive menu autoclose
+
+= Version 1.0.8 2018-03-27 =
 * Fix - Slider anchors unclickable in Firefox browsers versioned 59+.
 
 = Version 1.0.7 2018-01-30 =
