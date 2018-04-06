@@ -3,8 +3,9 @@ jQuery( document ).ready( function () {
 	// Slider Setting
 	if ( typeof jQuery.fn.bxSlider !== 'undefined' && typeof foodhunt_slider_value !== 'undefined' ) {
 
-		var slider_controls = '1' == foodhunt_slider_value.slider_controls ? false : true;
-		var slider_pager = '1' == foodhunt_slider_value.slider_pager ? false : true;
+		/* global foodhunt_slider_value */
+		var slider_controls = ( '1' === foodhunt_slider_value.slider_controls ? false : true );
+		var slider_pager = ( '1' === foodhunt_slider_value.slider_pager ? false : true );
 
 		jQuery( '#home-slider .bxslider' ).bxSlider( {
 			auto: true,
