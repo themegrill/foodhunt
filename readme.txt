@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.2.0 2018-04-06 =
 * Fix - Mobile menu toggle.
 
 = Version 1.0.9 2018-04-02 =
