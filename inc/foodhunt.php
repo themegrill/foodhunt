@@ -356,7 +356,7 @@ function foodhunt_footer_copyright() {
 
 	$wp_link = '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'foodhunt' ) . '">' . esc_html__( 'WordPress', 'foodhunt' ) . '</a>';
 
-	$tg_link =  '<a href="'. 'https://themegrill.com/themes/foodhunt' .'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'foodhunt' ).'" rel="designer">'.__( 'ThemeGrill', 'foodhunt') .'</a>';
+	$tg_link =  '<a href="'. 'https://themegrill.com/themes/foodhunt' .'" target="_blank" title="'.esc_attr__( 'ThemeGrill', 'foodhunt' ).'" rel="author">'.__( 'ThemeGrill', 'foodhunt') .'</a>';
 
 	$default_footer_value = sprintf( esc_html__( 'Copyright &copy; %1$s %2$s.', 'foodhunt' ), date( 'Y' ), $site_link ) . ' ' . sprintf( esc_html__( 'Theme: %1$s by %2$s.', 'foodhunt' ), 'FoodHunt', $tg_link ) . ' ' . sprintf( esc_html__( 'Powered by %s', 'foodhunt' ), $wp_link );
 
