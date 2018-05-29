@@ -582,6 +582,52 @@ function foodhunt_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Related posts display
+	$wp_customize->add_section(
+		'foodhunt_related_posts_display_section',
+		array(
+			'priority' => 10,
+			'title'    => esc_html__( 'Related Posts', 'foodhunt' ),
+			'panel'    => 'foodhunt_additional_options',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'foodhunt_related_posts_display_setting',
+		array(
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'foodhunt_related_posts_display_setting',
+		array(
+			'type'    => 'checkbox',
+			'label'   => esc_html__( 'Check to activate related posts .', 'foodhunt' ),
+			'section' => 'foodhunt_related_posts_display_section',
+			'setting' => 'foodhunt_related_posts_display_setting',
+		)
+	);
+
+	$wp_customize->add_setting( 'foodhunt_related_posts_display', array(
+		'default'           => 'categories',
+		'capability'        => 'edit_theme_options',
+		'sanitize_callback' => 'foodhunt_radio_sanitize',
+	) );
+
+	$wp_customize->add_control( 'foodhunt_related_posts_display', array(
+		'type'     => 'radio',
+		'label'    => esc_html__( 'Related Posts Must Be Shown As:', 'foodhunt' ),
+		'section'  => 'foodhunt_related_posts_display_section',
+		'settings' => 'foodhunt_related_posts_display',
+		'choices'  => array(
+			'categories' => esc_html__( 'Related Posts By Categories', 'foodhunt' ),
+			'tags'       => esc_html__( 'Related Posts By Tags', 'foodhunt' ),
+		),
+	) );
+
 	// Hide Meta from the archives and single post
 	$wp_customize->add_section(
 		'foodhunt_meta',
