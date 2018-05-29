@@ -2726,6 +2726,24 @@ body {
 	width: 100%;
 }
 
+/* author-bio */
+.author-box {
+	background: #f2f2f2;
+	padding: 20px;
+}
+
+.author-img {
+	float: left;
+}
+
+.author-discription-wrap {
+	margin-left: 120px;
+}
+
+.author-discription-wrap .author-name {
+	clear: none;
+}
+
 /*--------------------------------------------------------------
    27.0 secondary CSS
 --------------------------------------------------------------*/
@@ -3962,6 +3980,14 @@ iframe#wp-custom-header-video {
 
 	.search-form {
 		width: 90%;
+	}
+
+	.author-img {
+		float: none;
+	}
+
+	.author-discription-wrap {
+		margin-left: 0;
 	}
 }
 
