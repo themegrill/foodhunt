@@ -1038,6 +1038,35 @@ object {
 	max-width: 100%;
 }
 
+.related-posts-wrapper .related-posts-main-title {
+	margin-bottom: 30px;
+}
+
+.related-posts-wrapper .related-posts{
+	margin-left: -3%;
+}
+
+.related-posts-wrapper .related-posts-thumbnail{
+	margin-bottom: 15px;
+}
+
+.related-posts-wrapper .entry-title {
+	font-size: 18px;
+}
+
+.related-posts-wrapper .entry-title a {
+	color: #333333;
+}
+.related-posts-wrapper .entry-meta .posted-on,
+.related-posts-wrapper .entry-meta .byline {
+	padding-right: 10px;
+	display: inline-block;
+	font-size: 14px;
+}
+.related-posts-wrapper .entry-meta .fa {
+	padding-right: 5px;
+}
+
 /*--------------------------------------------------------------
   15.0 sidebar CSS
 --------------------------------------------------------------*/
@@ -3869,6 +3898,16 @@ iframe#wp-custom-header-video {
 	.Oops {
 		font-size: 40px;
 		padding-top: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	
+	.related-posts-wrapper .related-posts {
+		margin-left: 0;
+	}
+	.related-posts-wrapper .tg-column-3 {
+		width: 100%;
 	}
 }
 
