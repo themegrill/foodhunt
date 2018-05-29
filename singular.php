@@ -28,6 +28,18 @@ get_header(); ?>
 							get_template_part( 'template-parts/content', 'single' );
 
 							get_template_part( 'navigation', 'none' );
+
+							if ( 'post' == get_post_type() && ( get_theme_mod( 'foodhunt_author_bio_display', 0 ) == 1 ) ) {
+								if ( get_the_author_meta( 'description' ) ) : ?>
+									<div class="author-box clearfix">
+										<div class="author-img"><?php echo get_avatar( get_the_author_meta( 'user_email' ), '100' ); ?></div>
+										<div class="author-discription-wrap">
+											<h4 class="author-name"><?php the_author_meta( 'display_name' ); ?></h4>
+											<p class="author-description"><?php the_author_meta( 'description' ); ?></p>
+										</div>
+									</div>
+								<?php endif;
+							}
 						}
 
 						// If comments are open or we have at least one comment, load up the comment template.
