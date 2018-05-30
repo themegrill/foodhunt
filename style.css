@@ -634,6 +634,10 @@ h1.entry-title a {
 	display: none;
 }
 
+.published {
+	display: inline-block;
+}
+
 .single .byline,
 .group-blog .byline,
 .posted-on,
@@ -1067,6 +1071,9 @@ object {
 	padding-right: 5px;
 }
 
+.related-posts-wrapper .entry-meta span:before {
+	display:none;
+}
 /*--------------------------------------------------------------
   15.0 sidebar CSS
 --------------------------------------------------------------*/
@@ -3902,7 +3909,7 @@ iframe#wp-custom-header-video {
 }
 
 @media (max-width: 767px) {
-	
+
 	.related-posts-wrapper .related-posts {
 		margin-left: 0;
 	}
