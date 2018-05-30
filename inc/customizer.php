@@ -549,6 +549,35 @@ function foodhunt_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Author Bio Display options
+	$wp_customize->add_section(
+		'foodhunt_author_bio_display_section',
+		array(
+			'priority' => 10,
+			'title'    => esc_html__( 'Author Bio Options', 'foodhunt' ),
+			'panel'    => 'foodhunt_additional_options',
+		)
+	);
+
+	$wp_customize->add_setting(
+		'foodhunt_author_bio_display',
+		array(
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'foodhunt_author_bio_display',
+		array(
+			'label'   => esc_html__( 'Check to display the Author Bio in single post page.', 'foodhunt' ),
+			'section' => 'foodhunt_author_bio_display_section',
+			'type'    => 'checkbox',
+			'setting' => 'foodhunt_author_bio_display',
+		)
+	);
+
 	// Content Display options
 	$wp_customize->add_section(
 		'foodhunt_content_display',
