@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.2.1 2018-05-30 =
 * Feature - Added Author Bio display option
 * Feature - Added Related posts display option
 

@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: FoodHunt 1.2.0\n"
+"Project-Id-Version: FoodHunt 1.2.1\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2018-04-06 06:27:01+00:00\n"
+"POT-Creation-Date: 2018-05-30 06:21:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -108,7 +108,7 @@ msgid "View Demo"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:138
-#: inc/admin/class-foodhunt-admin.php:232 inc/customizer.php:820
+#: inc/admin/class-foodhunt-admin.php:232 inc/customizer.php:895
 msgid "View PRO version"
 msgstr ""
 
@@ -608,57 +608,85 @@ msgstr ""
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:558
+#: inc/customizer.php:557
+msgid "Author Bio Options"
+msgstr ""
+
+#: inc/customizer.php:574
+msgid "Check to display the Author Bio in single post page."
+msgstr ""
+
+#: inc/customizer.php:587
 msgid "Display full content or short description/excerpt on the Posts Page"
 msgstr ""
 
-#: inc/customizer.php:575
+#: inc/customizer.php:604
 msgid "Choose to show Excerpt or Full Post"
 msgstr ""
 
-#: inc/customizer.php:579
+#: inc/customizer.php:608
 msgid "Display Excerpt"
 msgstr ""
 
-#: inc/customizer.php:580
+#: inc/customizer.php:609
 msgid "Display Full Content"
 msgstr ""
 
-#: inc/customizer.php:591
+#: inc/customizer.php:619
+msgid "Related Posts"
+msgstr ""
+
+#: inc/customizer.php:637
+msgid "Check to activate related posts ."
+msgstr ""
+
+#: inc/customizer.php:651
+msgid "Related Posts Must Be Shown As:"
+msgstr ""
+
+#: inc/customizer.php:655
+msgid "Related Posts By Categories"
+msgstr ""
+
+#: inc/customizer.php:656
+msgid "Related Posts By Tags"
+msgstr ""
+
+#: inc/customizer.php:666
 msgid ""
 "Hide specific or all the meta/information from the Blog posts and Single "
 "post"
 msgstr ""
 
-#: inc/customizer.php:609
+#: inc/customizer.php:684
 msgid "Check to All the Meta."
 msgstr ""
 
-#: inc/customizer.php:628
+#: inc/customizer.php:703
 msgid "Check to hide Date."
 msgstr ""
 
-#: inc/customizer.php:647
+#: inc/customizer.php:722
 msgid "Check to hide Author."
 msgstr ""
 
-#: inc/customizer.php:666
+#: inc/customizer.php:741
 msgid "Check to hide Comment."
 msgstr ""
 
-#: inc/customizer.php:685
+#: inc/customizer.php:760
 msgid "Check to hide Category."
 msgstr ""
 
-#: inc/customizer.php:704
+#: inc/customizer.php:779
 msgid "Check to hide Tags."
 msgstr ""
 
-#: inc/customizer.php:717
+#: inc/customizer.php:792
 msgid "Foodhunt Important Links"
 msgstr ""
 
-#: inc/customizer.php:737
+#: inc/customizer.php:812
 msgid "Important Links"
 msgstr ""
 
@@ -736,6 +764,10 @@ msgstr ""
 
 #: inc/foodhunt.php:529
 msgid "Background Color"
+msgstr ""
+
+#: inc/related-posts.php:8
+msgid "You May Also Like"
 msgstr ""
 
 #: inc/tgm-plugin-activation/class-tgm-plugin-activation.php:327
