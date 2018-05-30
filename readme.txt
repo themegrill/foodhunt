@@ -70,6 +70,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
+= TBD =
+* Feature - Added Author Bio display option
+* Feature - Added Related posts display option
+
 = Version 1.2.0 2018-04-06 =
 * Fix - Mobile menu toggle.
 
