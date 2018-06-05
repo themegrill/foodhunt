@@ -1307,14 +1307,6 @@ body {
 	display: none;
 }
 
-#page {
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	transition: all 0.5s ease;
-}
-
 /*--------------------------------------------------------------
 18.0 Slider CSS
 --------------------------------------------------------------*/
