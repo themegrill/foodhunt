@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.2.2 2018-06-06 =
 * Fix - Page blinking while closing search box.
 
 = Version 1.2.1 2018-05-30 =
