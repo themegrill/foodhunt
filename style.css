@@ -1545,16 +1545,14 @@ body {
 
 .social-icons-wrapper li {
 	float: left;
-	margin-left: 10px;
 }
 
 .social-icons-wrapper li a {
 	border-left: 1px solid rgba(255, 255, 255, 0.15);
 	display: block;
-	height: 35px;
-	line-height: 35px;
-	padding: 10px 15px;
-	width: 20px;
+	height: 40px;
+	width: 40px;
+	position: relative;
 }
 
 .social-icons-wrapper li a::before {
@@ -1571,6 +1569,10 @@ body {
 	-ms-transition: color 0.5s ease;
 	-o-transition: color 0.5s ease;
 	transition: color 0.5s ease;
+	position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
 }
 
 .social-icons-wrapper li a[href*="facebook.com"],
@@ -1578,7 +1580,8 @@ body {
 .social-icons-wrapper li a[href*="twitter.com"],
 .social-icons-wrapper li a[href*="plus.google.com"],
 .social-icons-wrapper li a[href*="youtube.com"],
-.social-icons-wrapper li a[href*="pinterest.com"] {
+.social-icons-wrapper li a[href*="pinterest.com"],
+.social-icons-wrapper li a[href*="linkedin.com"] {
 	font: 0/0 a;
 	color: transparent;
 }
@@ -1588,7 +1591,8 @@ body {
 .social-icons-wrapper li a[href*="twitter.com"]::before,
 .social-icons-wrapper li a[href*="plus.google.com"]::before,
 .social-icons-wrapper li a[href*="youtube.com"]::before,
-.social-icons-wrapper li a[href*="pinterest.com"]::before {
+.social-icons-wrapper li a[href*="pinterest.com"]::before,
+.social-icons-wrapper li a[href*="linkedin.com"]::before {
 	content: '\f09a';
 	font-size: 16px;
 	line-height: 20px;
@@ -1613,7 +1617,11 @@ body {
 }
 
 .social-icons-wrapper li a[href*="instagram.com"]::before {
-	content: '\f16d';;
+	content: '\f16d';
+}
+
+.social-icons-wrapper li a[href*="linkedin.com"]::before {
+	content: '\f08c';
 }
 
 .social-icons-wrapper li a:hover::before {
@@ -3679,8 +3687,18 @@ iframe#wp-custom-header-video {
 
 	.social-icons-wrapper li {
 		float: none;
-		margin-left: 10px;
 		display: inline-block;
+	}
+
+	.social-icons-wrapper li a[href*="facebook.com"],
+	.social-icons-wrapper li a[href*="instagram.com"],
+	.social-icons-wrapper li a[href*="twitter.com"],
+	.social-icons-wrapper li a[href*="plus.google.com"],
+	.social-icons-wrapper li a[href*="youtube.com"],
+	.social-icons-wrapper li a[href*="pinterest.com"],
+	.social-icons-wrapper li a[href*="pinterest.com"],
+	.social-icons-wrapper li a[href*="linkedin.com"] {
+		padding: 18px 0px;
 	}
 
 	#home-slider .slider-title {
