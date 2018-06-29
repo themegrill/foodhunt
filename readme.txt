@@ -71,7 +71,8 @@ and we will include it within the theme from next version update.
 
 == CHANGE LOG ==
 = TBD =
-* Fix - Image upload issue in advertisement widgets for customizer option
+* Fix - Image upload issue in image uploader button for customizer option
+
 
 = Version 1.2.2 2018-06-06 =
 * Fix - Page blinking while closing search box.
