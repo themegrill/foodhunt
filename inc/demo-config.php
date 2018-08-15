@@ -36,3 +36,34 @@ function foodhunt_demo_importer_packages( $packages ) {
 }
 
 add_filter( 'themegrill_demo_importer_packages', 'foodhunt_demo_importer_packages' );
+
+/**
+ * Update taxonomies ids for restaurantpress
+ *
+ * @param  string $demo_id
+ * @param  array  $demo_data
+ */
+function restaurantpress_data_update_free( $demo_id, $demo_data ) {
+	if ( ! empty( $demo_data['restaurantpress_data_update'] ) ) {
+		foreach ( $demo_data['restaurantpress_data_update'] as $data_type => $data_value ) {
+			$data = [];
+			switch ( $data_type ) {
+				case 'food_group':
+					foreach ( $data_value as $group_name => $taxonomy_values ) {
+						$group = get_page_by_title( $group_name, OBJECT, $data_type );
+						foreach ( $taxonomy_values as $option_key => $taxonomy ) {
+							$term = get_term_by( 'name', $taxonomy, 'food_menu_cat' );
+							if ( is_object( $term ) && $term->term_id ) {
+								$data[] = $term->term_id;
+							}
+						}
+						update_post_meta( $group->ID, 'food_grouping', $data );
+						unset( $data );
+					}
+					break;
+			}
+		}
+	}
+}
+
+add_action( 'themegrill_ajax_demo_imported', 'restaurantpress_data_update_free', 10, 2 );
