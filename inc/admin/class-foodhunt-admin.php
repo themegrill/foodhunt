@@ -135,7 +135,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 
 				<a href="<?php echo esc_url( 'http://demo.themegrill.com/foodhunt/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'foodhunt' ); ?></a>
 
-				<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
 
 				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/foodhunt/reviews/?filter=5' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'foodhunt' ); ?></a>
 			</p>
@@ -229,7 +229,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 							<h3><?php esc_html_e( 'Need more features?', 'foodhunt' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'foodhunt' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
 							</p>
 						</div>
 
@@ -518,7 +518,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'http://themegrill.com/themes/foodhunt-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'foodhunt' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-free-vs-pro-table&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'foodhunt' ); ?></a>
 						</td>
 					</tr>
 					</tbody>
