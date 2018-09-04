@@ -2,9 +2,9 @@
 /**
  * FoodHunt Theme Customizer.
  *
- * @package ThemeGrill
+ * @package    ThemeGrill
  * @subpackage FoodHunt
- * @since 0.1
+ * @since      0.1
  */
 
 /**
@@ -20,22 +20,73 @@ add_action( 'customize_register', 'foodhunt_custom_controls' );
 
 function foodhunt_customize_register( $wp_customize ) {
 	// Transport postMessage variable set
-    $customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
+	$customizer_selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 
-	$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
-	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
+	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
 	if ( isset( $wp_customize->selective_refresh ) ) {
 		$wp_customize->selective_refresh->add_partial( 'blogname', array(
-		'selector'        => '#site-title a',
-		'render_callback' => 'foodhunt_customize_partial_blogname',
+			'selector'        => '#site-title a',
+			'render_callback' => 'foodhunt_customize_partial_blogname',
 		) );
 
 		$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
-		'selector'        => '#site-description',
-		'render_callback' => 'foodhunt_customize_partial_blogdescription',
+			'selector'        => '#site-description',
+			'render_callback' => 'foodhunt_customize_partial_blogdescription',
 		) );
 	}
+
+	/**
+	 * Class to include upsell link campaign for theme.
+	 *
+	 * Class FOODHUNT_Upsell_Section
+	 */
+	class FOODHUNT_Upsell_Section extends WP_Customize_Section {
+		public $type = 'foodhunt-upsell-section';
+		public $url  = '';
+		public $id   = '';
+
+		/**
+		 * Gather the parameters passed to client JavaScript via JSON.
+		 *
+		 * @return array The array to be exported to the client as JSON.
+		 */
+		public function json() {
+			$json        = parent::json();
+			$json['url'] = esc_url( $this->url );
+			$json['id']  = $this->id;
+
+			return $json;
+		}
+
+		/**
+		 * An Underscore (JS) template for rendering this section.
+		 */
+		protected function render_template() {
+			?>
+			<li id="accordion-section-{{ data.id }}" class="foodhunt-upsell-accordion-section control-section-{{ data.type }} cannot-expand accordion-section">
+				<h3 class="accordion-section-title"><a href="{{{ data.url }}}" target="_blank">{{ data.title }}</a></h3>
+			</li>
+			<?php
+		}
+	}
+
+// Register `FOODHUNT_Upsell_Section` type section.
+	$wp_customize->register_section_type( 'FOODHUNT_Upsell_Section' );
+
+// Add `FOODHUNT_Upsell_Section` to display pro link.
+	$wp_customize->add_section(
+		new FOODHUNT_Upsell_Section( $wp_customize, 'foodhunt_upsell_section',
+			array(
+				'title'      => esc_html__( 'View PRO version', 'foodhunt' ),
+				'url'        => 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-customizer&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro',
+				'capability' => 'edit_theme_options',
+				'priority'   => 1,
+			)
+		)
+	);
+
 
 	// Header Options
 	$wp_customize->add_panel(
@@ -44,7 +95,7 @@ function foodhunt_customize_register( $wp_customize ) {
 			'capabitity'  => 'edit_theme_options',
 			'description' => esc_html__( 'Contain all the Header related settings', 'foodhunt' ),
 			'priority'    => 160,
-			'title'       => esc_html__( 'Header Options', 'foodhunt' )
+			'title'       => esc_html__( 'Header Options', 'foodhunt' ),
 		)
 	);
 
@@ -52,10 +103,10 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_ticker_section',
 		array(
-			'priority'   => 10,
+			'priority'    => 10,
 			'description' => esc_html__( 'Display Latest post Titles in the Header Top Bar.', 'foodhunt' ),
-			'title'      => esc_html__( 'Header News', 'foodhunt' ),
-			'panel'      => 'foodhunt_header_options'
+			'title'       => esc_html__( 'Header News', 'foodhunt' ),
+			'panel'       => 'foodhunt_header_options',
 		)
 	);
 
@@ -63,19 +114,19 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_ticker_activation',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'transport'          => $customizer_selective_refresh,
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'transport'         => $customizer_selective_refresh,
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_ticker_activation',
 		array(
-			'label'    => esc_html__( 'Enable Header News' , 'foodhunt' ),
-			'section'  => 'foodhunt_ticker_section',
-			'type'     => 'checkbox'
+			'label'   => esc_html__( 'Enable Header News', 'foodhunt' ),
+			'section' => 'foodhunt_ticker_section',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -91,17 +142,17 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_ticker_text',
 		array(
-			'default'            => esc_html__( 'Special:', 'foodhunt' ),
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'wp_filter_nohtml_kses'
+			'default'           => esc_html__( 'Special:', 'foodhunt' ),
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_ticker_text',
 		array(
-			'label'    => esc_html__( 'Text before Post Titles:' , 'foodhunt' ),
-			'section'  => 'foodhunt_ticker_section'
+			'label'   => esc_html__( 'Text before Post Titles:', 'foodhunt' ),
+			'section' => 'foodhunt_ticker_section',
 		)
 	);
 
@@ -110,28 +161,28 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_header_sticky',
 		array(
-			'priority'   => 20,
+			'priority'    => 20,
 			'description' => esc_html__( 'Header is Sticky by default', 'foodhunt' ),
-			'title'      => esc_html__( 'Header Sticky Option', 'foodhunt' ),
-			'panel'      => 'foodhunt_header_options'
+			'title'       => esc_html__( 'Header Sticky Option', 'foodhunt' ),
+			'panel'       => 'foodhunt_header_options',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'foodhunt_non_sticky',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_non_sticky',
 		array(
-			'label'    => esc_html__( 'Check to make Header Non-sticky' , 'foodhunt' ),
-			'section'  => 'foodhunt_header_sticky',
-			'type'     => 'checkbox'
+			'label'   => esc_html__( 'Check to make Header Non-sticky', 'foodhunt' ),
+			'section' => 'foodhunt_header_sticky',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -139,20 +190,20 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_header_logo',
 		array(
-			'priority'   => 30,
-			'title'      => esc_html__( 'Header Logo', 'foodhunt' ),
-			'panel'      => 'foodhunt_header_options'
+			'priority' => 30,
+			'title'    => esc_html__( 'Header Logo', 'foodhunt' ),
+			'panel'    => 'foodhunt_header_options',
 		)
 	);
 
 	// Logo Upload
-	if ( !function_exists('the_custom_logo') ) {
+	if ( ! function_exists( 'the_custom_logo' ) ) {
 		$wp_customize->add_setting(
 			'foodhunt_logo',
 			array(
-				'default'            => '',
-				'capability'         => 'edit_theme_options',
-				'sanitize_callback'  => 'esc_url_raw'
+				'default'           => '',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'esc_url_raw',
 			)
 		);
 
@@ -161,10 +212,10 @@ function foodhunt_customize_register( $wp_customize ) {
 				$wp_customize,
 				'foodhunt_logo',
 				array(
-					'label'    => esc_html__( 'Upload logo' , 'foodhunt' ),
-					'description' => sprintf(__( '%sInfo:%s This option will be removed in upcoming update. Please go to Site Identity section to upload the theme logo.', 'foodhunt'  ), '<strong>', '</strong>'),
-					'section'  => 'foodhunt_header_logo',
-					'setting'  => 'foodhunt_logo'
+					'label'       => esc_html__( 'Upload logo', 'foodhunt' ),
+					'description' => sprintf( __( '%sInfo:%s This option will be removed in upcoming update. Please go to Site Identity section to upload the theme logo.', 'foodhunt' ), '<strong>', '</strong>' ),
+					'section'     => 'foodhunt_header_logo',
+					'setting'     => 'foodhunt_logo',
 				)
 			)
 		);
@@ -174,24 +225,24 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_logo_placement',
 		array(
-			'default'            => 'text-only',
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_radio_sanitize'
+			'default'           => 'text-only',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_radio_sanitize',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_logo_placement',
 		array(
-			'label'    => esc_html__( 'Choose the required option', 'foodhunt' ),
-			'section'  => 'foodhunt_header_logo',
-			'type'     => 'radio',
-			'choices'  => array(
+			'label'   => esc_html__( 'Choose the required option', 'foodhunt' ),
+			'section' => 'foodhunt_header_logo',
+			'type'    => 'radio',
+			'choices' => array(
 				'logo-only'   => esc_html__( 'Header Logo Only', 'foodhunt' ),
 				'text-only'   => esc_html__( 'Header Text Only', 'foodhunt' ),
 				'both'        => esc_html__( 'Show both Logo and Text', 'foodhunt' ),
-				'header-none' => esc_html__( 'None', 'foodhunt' )
-			)
+				'header-none' => esc_html__( 'None', 'foodhunt' ),
+			),
 		)
 	);
 
@@ -199,10 +250,10 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_header_title',
 		array(
-			'priority'   => 40,
-			'title'      => esc_html__( 'Header Title Bar', 'foodhunt' ),
-			'description' => esc_html__( 'Display image as background just below the main Menu on Home page, archive and single pages.', 'foodhunt'),
-			'panel'      => 'foodhunt_header_options'
+			'priority'    => 40,
+			'title'       => esc_html__( 'Header Title Bar', 'foodhunt' ),
+			'description' => esc_html__( 'Display image as background just below the main Menu on Home page, archive and single pages.', 'foodhunt' ),
+			'panel'       => 'foodhunt_header_options',
 		)
 	);
 
@@ -210,9 +261,9 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_header_title_bar',
 		array(
-			'default'            => '',
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'esc_url_raw'
+			'default'           => '',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'esc_url_raw',
 		)
 	);
 
@@ -221,15 +272,15 @@ function foodhunt_customize_register( $wp_customize ) {
 			$wp_customize,
 			'foodhunt_header_title_bar',
 			array(
-				'label'    => esc_html__( 'Upload Image' , 'foodhunt' ),
-				'section'  => 'foodhunt_header_title',
-				'setting'  => 'foodhunt_header_title_bar'
+				'label'   => esc_html__( 'Upload Image', 'foodhunt' ),
+				'section' => 'foodhunt_header_title',
+				'setting' => 'foodhunt_header_title_bar',
 			)
 		)
 	);
 	// End of Header Options
 
-/**************************************************************************************/
+	/**************************************************************************************/
 
 	// Slider Options
 	$wp_customize->add_panel(
@@ -238,7 +289,7 @@ function foodhunt_customize_register( $wp_customize ) {
 			'capabitity'  => 'edit_theme_options',
 			'description' => esc_html__( 'Contain all the Slider related settings', 'foodhunt' ),
 			'priority'    => 180,
-			'title'       => esc_html__( 'Slider Options', 'foodhunt' )
+			'title'       => esc_html__( 'Slider Options', 'foodhunt' ),
 		)
 	);
 
@@ -246,10 +297,10 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_header_slider',
 		array(
-			'priority'   => 10,
-			'title'      => 'Slider Settings',
-			'description' => esc_html__( 'Slider displays the Title, Content and Featured image of the page. The recommended size for slider image is 1920px by 1000px. Select the pages in the option provided below' , 'foodhunt' ),
-			'panel'      => 'foodhunt_slider_options'
+			'priority'    => 10,
+			'title'       => 'Slider Settings',
+			'description' => esc_html__( 'Slider displays the Title, Content and Featured image of the page. The recommended size for slider image is 1920px by 1000px. Select the pages in the option provided below', 'foodhunt' ),
+			'panel'       => 'foodhunt_slider_options',
 		)
 	);
 
@@ -257,20 +308,20 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_slider_activation',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'transport'          => $customizer_selective_refresh,
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'transport'         => $customizer_selective_refresh,
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_slider_activation',
 		array(
-			'label'    => esc_html__( 'Enable Slider' , 'foodhunt' ),
+			'label'    => esc_html__( 'Enable Slider', 'foodhunt' ),
 			'section'  => 'foodhunt_header_slider',
 			'type'     => 'checkbox',
-			'priority' => 10
+			'priority' => 10,
 		)
 	);
 
@@ -286,39 +337,39 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_slider_icon',
 		array(
-			'default'            => 'fa-cutlery',
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'wp_filter_nohtml_kses'
+			'default'           => 'fa-cutlery',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'wp_filter_nohtml_kses',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_slider_icon',
 		array(
-			'label'    => esc_html__( 'Enter Icon Class' , 'foodhunt' ),
+			'label'    => esc_html__( 'Enter Icon Class', 'foodhunt' ),
 			'section'  => 'foodhunt_header_slider',
-			'priority' => 20
+			'priority' => 20,
 		)
 	);
 
 	// Slider Images Selection Setting
-	for( $i = 1; $i <= 4; $i++ ) {
+	for ( $i = 1; $i <= 4; $i ++ ) {
 		$wp_customize->add_setting(
-			'foodhunt_slide'.$i,
+			'foodhunt_slide' . $i,
 			array(
-				'default'            => '',
-				'capability'         => 'edit_theme_options',
-				'sanitize_callback'  => 'foodhunt_sanitize_integer'
+				'default'           => '',
+				'capability'        => 'edit_theme_options',
+				'sanitize_callback' => 'foodhunt_sanitize_integer',
 			)
 		);
 
 		$wp_customize->add_control(
-			'foodhunt_slide'.$i,
+			'foodhunt_slide' . $i,
 			array(
-				'label'    => esc_html__( 'Slide ', 'foodhunt' ).$i,
+				'label'    => esc_html__( 'Slide ', 'foodhunt' ) . $i,
 				'section'  => 'foodhunt_header_slider',
 				'type'     => 'dropdown-pages',
-				'priority' =>  $i+30
+				'priority' => $i + 30,
 			)
 		);
 	}
@@ -327,10 +378,10 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_controls_section',
 		array(
-			'priority'   => 20,
-			'title'      => 'Slider Controls',
-			'description' => esc_html__( 'Option to hide the slider controls' , 'foodhunt' ),
-			'panel'      => 'foodhunt_slider_options'
+			'priority'    => 20,
+			'title'       => 'Slider Controls',
+			'description' => esc_html__( 'Option to hide the slider controls', 'foodhunt' ),
+			'panel'       => 'foodhunt_slider_options',
 		)
 	);
 
@@ -338,18 +389,18 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_slider_controls',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_slider_controls',
 		array(
-			'label'    => esc_html__( 'Hide slider Left/Right Arrows' , 'foodhunt' ),
-			'section'  => 'foodhunt_controls_section',
-			'type'     => 'checkbox'
+			'label'   => esc_html__( 'Hide slider Left/Right Arrows', 'foodhunt' ),
+			'section' => 'foodhunt_controls_section',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -357,23 +408,23 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_slider_pager',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_slider_pager',
 		array(
-			'label'    => esc_html__( 'Hide slider navigation Buttons' , 'foodhunt' ),
-			'section'  => 'foodhunt_controls_section',
-			'type'     => 'checkbox'
+			'label'   => esc_html__( 'Hide slider navigation Buttons', 'foodhunt' ),
+			'section' => 'foodhunt_controls_section',
+			'type'    => 'checkbox',
 		)
 	);
 	// End of Slider Options
 
-/**************************************************************************************/
+	/**************************************************************************************/
 
 	// Design Options
 	$wp_customize->add_panel(
@@ -382,7 +433,7 @@ function foodhunt_customize_register( $wp_customize ) {
 			'capabitity'  => 'edit_theme_options',
 			'description' => esc_html__( 'Contain all the Design related settings', 'foodhunt' ),
 			'priority'    => 200,
-			'title'       => esc_html__( 'Design Options', 'foodhunt' )
+			'title'       => esc_html__( 'Design Options', 'foodhunt' ),
 		)
 	);
 
@@ -391,152 +442,152 @@ function foodhunt_customize_register( $wp_customize ) {
 		'foodhunt_default_layout_section',
 		array(
 			'priority' => 10,
-			'title' => esc_html__('Default layout', 'foodhunt'),
-			'panel'=> 'foodhunt_design_options'
+			'title'    => esc_html__( 'Default layout', 'foodhunt' ),
+			'panel'    => 'foodhunt_design_options',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'foodhunt_default_layout',
 		array(
-			'default' => 'right-sidebar',
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'foodhunt_radio_sanitize'
+			'default'           => 'right-sidebar',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_radio_sanitize',
 		)
 	);
 	$wp_customize->add_control( new FOODHUNT_Image_Radio_Control(
 		$wp_customize,
 		'foodhunt_default_layout',
 		array(
-			'type' => 'radio',
-			'label' => esc_html__('Select default layout. This layout will be reflected in whole site archives, categories, search	page etc. The layout for a single post and page can be controlled from below options', 'foodhunt'),
-			'section' => 'foodhunt_default_layout_section',
+			'type'     => 'radio',
+			'label'    => esc_html__( 'Select default layout. This layout will be reflected in whole site archives, categories, search	page etc. The layout for a single post and page can be controlled from below options', 'foodhunt' ),
+			'section'  => 'foodhunt_default_layout_section',
 			'settings' => 'foodhunt_default_layout',
-			'choices' => array(
-				'right-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
-				'left-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
-				'no-sidebar-full-width'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
-				'no-sidebar-content-centered'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png'
-			)
+			'choices'  => array(
+				'right-sidebar'               => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
+				'left-sidebar'                => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
+				'no-sidebar-full-width'       => esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
+				'no-sidebar-content-centered' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png',
+			),
 		)
-	));
+	) );
 
 	// default layout for pages
 	$wp_customize->add_section(
 		'foodhunt_default_page_layout_section',
 		array(
 			'priority' => 20,
-			'title' => esc_html__('Default layout for pages only', 'foodhunt'),
-			'panel'=> 'foodhunt_design_options'
+			'title'    => esc_html__( 'Default layout for pages only', 'foodhunt' ),
+			'panel'    => 'foodhunt_design_options',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'foodhunt_default_page_layout',
 		array(
-			'default' => 'right-sidebar',
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'foodhunt_radio_sanitize'
+			'default'           => 'right-sidebar',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_radio_sanitize',
 		)
 	);
 	$wp_customize->add_control( new FOODHUNT_Image_Radio_Control(
 		$wp_customize,
 		'foodhunt_default_page_layout',
 		array(
-			'type' => 'radio',
-			'label' => esc_html__('Select default layout for pages. This layout will be reflected in all pages unless unique layout is 	set for specific page', 'foodhunt'),
-			'section' => 'foodhunt_default_page_layout_section',
+			'type'     => 'radio',
+			'label'    => esc_html__( 'Select default layout for pages. This layout will be reflected in all pages unless unique layout is 	set for specific page', 'foodhunt' ),
+			'section'  => 'foodhunt_default_page_layout_section',
 			'settings' => 'foodhunt_default_page_layout',
-			'choices' => array(
-				'right-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
-				'left-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
-				'no-sidebar-full-width'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
-				'no-sidebar-content-centered'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png'
-			)
+			'choices'  => array(
+				'right-sidebar'               => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
+				'left-sidebar'                => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
+				'no-sidebar-full-width'       => esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
+				'no-sidebar-content-centered' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png',
+			),
 		)
-	));
+	) );
 
 	// default layout for single posts
 	$wp_customize->add_section(
 		'foodhunt_default_single_posts_layout_section',
 		array(
 			'priority' => 30,
-			'title' => esc_html__('Default layout for single posts only', 'foodhunt'),
-			'panel'=> 'foodhunt_design_options'
+			'title'    => esc_html__( 'Default layout for single posts only', 'foodhunt' ),
+			'panel'    => 'foodhunt_design_options',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'foodhunt_default_single_posts_layout',
 		array(
-			'default' => 'right-sidebar',
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'foodhunt_radio_sanitize'
+			'default'           => 'right-sidebar',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_radio_sanitize',
 		)
 	);
-	$wp_customize->add_control(	new FOODHUNT_Image_Radio_Control(
+	$wp_customize->add_control( new FOODHUNT_Image_Radio_Control(
 		$wp_customize,
 		'foodhunt_default_single_posts_layout',
 		array(
-			'type' => 'radio',
-			'label' => esc_html__('Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post', 'foodhunt'),
-			'section' => 'foodhunt_default_single_posts_layout_section',
+			'type'     => 'radio',
+			'label'    => esc_html__( 'Select default layout for single posts. This layout will be reflected in all single posts unless unique layout is set for specific post', 'foodhunt' ),
+			'section'  => 'foodhunt_default_single_posts_layout_section',
 			'settings' => 'foodhunt_default_single_posts_layout',
-			'choices' => array(
-				'right-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
-				'left-sidebar' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
-				'no-sidebar-full-width'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
-				'no-sidebar-content-centered'	=> esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png'
-			)
+			'choices'  => array(
+				'right-sidebar'               => esc_url( get_template_directory_uri() ) . '/inc/admin/images/right-sidebar.png',
+				'left-sidebar'                => esc_url( get_template_directory_uri() ) . '/inc/admin/images/left-sidebar.png',
+				'no-sidebar-full-width'       => esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-full-width-layout.png',
+				'no-sidebar-content-centered' => esc_url( get_template_directory_uri() ) . '/inc/admin/images/no-sidebar-content-centered-layout.png',
+			),
 		)
-	));
+	) );
 
 	// primary color options
-	$wp_customize->add_section('foodhunt_primary_color_setting', array(
+	$wp_customize->add_section( 'foodhunt_primary_color_setting', array(
 		'priority' => 40,
-		'title' => esc_html__('Primary color option', 'foodhunt'),
-		'panel' => 'foodhunt_design_options'
-	));
+		'title'    => esc_html__( 'Primary color option', 'foodhunt' ),
+		'panel'    => 'foodhunt_design_options',
+	) );
 
-	$wp_customize->add_setting('foodhunt_primary_color', array(
+	$wp_customize->add_setting( 'foodhunt_primary_color', array(
 		'default'              => '#dd0103',
 		'capability'           => 'edit_theme_options',
 		'transport'            => 'postMessage',
 		'sanitize_callback'    => 'foodhunt_color_option_hex_sanitize',
-		'sanitize_js_callback' => 'foodhunt_color_escaping_option_sanitize'
-	));
+		'sanitize_js_callback' => 'foodhunt_color_escaping_option_sanitize',
+	) );
 
-	$wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'foodhunt_primary_color', array(
-		'label'    => esc_html__('This will reflect in links, buttons and many others. Choose a color to match your site', 'foodhunt'),
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'foodhunt_primary_color', array(
+		'label'    => esc_html__( 'This will reflect in links, buttons and many others. Choose a color to match your site', 'foodhunt' ),
 		'section'  => 'foodhunt_primary_color_setting',
-		'settings' => 'foodhunt_primary_color'
-	)));
+		'settings' => 'foodhunt_primary_color',
+	) ) );
 
 
 	if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
-		$wp_customize->add_section('foodhunt_custom_css_setting', array(
+		$wp_customize->add_section( 'foodhunt_custom_css_setting', array(
 			'priority' => 50,
-			'title' => esc_html__('Custom CSS', 'foodhunt'),
-			'panel' => 'foodhunt_design_options'
-		));
+			'title'    => esc_html__( 'Custom CSS', 'foodhunt' ),
+			'panel'    => 'foodhunt_design_options',
+		) );
 
-		$wp_customize->add_setting('foodhunt_custom_css', array(
-			'default' => '',
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'wp_filter_nohtml_kses',
-			'sanitize_js_callback' => 'wp_filter_nohtml_kses'
-		));
+		$wp_customize->add_setting( 'foodhunt_custom_css', array(
+			'default'              => '',
+			'capability'           => 'edit_theme_options',
+			'sanitize_callback'    => 'wp_filter_nohtml_kses',
+			'sanitize_js_callback' => 'wp_filter_nohtml_kses',
+		) );
 		$wp_customize->add_control(
-			new FOODHUNT_Custom_CSS_Control($wp_customize, 'foodhunt_custom_css', array(
-				'label' => esc_html__('Write your custom css', 'foodhunt'),
-				'section' => 'foodhunt_custom_css_setting',
-				'settings' => 'foodhunt_custom_css'
-			))
+			new FOODHUNT_Custom_CSS_Control( $wp_customize, 'foodhunt_custom_css', array(
+				'label'    => esc_html__( 'Write your custom css', 'foodhunt' ),
+				'section'  => 'foodhunt_custom_css_setting',
+				'settings' => 'foodhunt_custom_css',
+			) )
 		);
 	}
 	// End of Design Options
 
-/**************************************************************************************/
+	/**************************************************************************************/
 
 	// Additional Options
 	$wp_customize->add_panel(
@@ -545,7 +596,7 @@ function foodhunt_customize_register( $wp_customize ) {
 			'capabitity'  => 'edit_theme_options',
 			'description' => esc_html__( 'Contain all Additional settings', 'foodhunt' ),
 			'priority'    => 220,
-			'title'       => esc_html__( 'Additional Options', 'foodhunt' )
+			'title'       => esc_html__( 'Additional Options', 'foodhunt' ),
 		)
 	);
 
@@ -582,32 +633,32 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_content_display',
 		array(
-			'priority'   => 10,
-			'title'      => 'Posts page content display',
+			'priority'    => 10,
+			'title'       => 'Posts page content display',
 			'description' => esc_html__( 'Display full content or short description/excerpt on the Posts Page', 'foodhunt' ),
-			'panel'      => 'foodhunt_additional_options'
+			'panel'       => 'foodhunt_additional_options',
 		)
 	);
 
 	$wp_customize->add_setting(
 		'foodhunt_content',
 		array(
-			'default'            => 'excerpt',
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_radio_sanitize'
+			'default'           => 'excerpt',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_radio_sanitize',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_content',
 		array(
-			'label'    => esc_html__( 'Choose to show Excerpt or Full Post', 'foodhunt' ),
-			'section'  => 'foodhunt_content_display',
-			'type'     => 'radio',
-			'choices'  => array(
+			'label'   => esc_html__( 'Choose to show Excerpt or Full Post', 'foodhunt' ),
+			'section' => 'foodhunt_content_display',
+			'type'    => 'radio',
+			'choices' => array(
 				'excerpt' => esc_html__( 'Display Excerpt', 'foodhunt' ),
-				'full' => esc_html__( 'Display Full Content', 'foodhunt' )
-			)
+				'full'    => esc_html__( 'Display Full Content', 'foodhunt' ),
+			),
 		)
 	);
 
@@ -661,10 +712,10 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'foodhunt_meta',
 		array(
-			'priority'   => 20,
-			'title'      => 'Posts Meta/Information',
+			'priority'    => 20,
+			'title'       => 'Posts Meta/Information',
 			'description' => esc_html__( 'Hide specific or all the meta/information from the Blog posts and Single post', 'foodhunt' ),
-			'panel'      => 'foodhunt_additional_options'
+			'panel'       => 'foodhunt_additional_options',
 		)
 	);
 
@@ -672,18 +723,18 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_hide_meta',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_hide_meta',
 		array(
-			'label'    => esc_html__( 'Check to All the Meta.', 'foodhunt' ),
-			'section'  => 'foodhunt_meta',
-			'type'     => 'checkbox',
+			'label'   => esc_html__( 'Check to All the Meta.', 'foodhunt' ),
+			'section' => 'foodhunt_meta',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -691,18 +742,18 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_hide_date',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_hide_date',
 		array(
-			'label'    => esc_html__( 'Check to hide Date.', 'foodhunt' ),
-			'section'  => 'foodhunt_meta',
-			'type'     => 'checkbox',
+			'label'   => esc_html__( 'Check to hide Date.', 'foodhunt' ),
+			'section' => 'foodhunt_meta',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -710,18 +761,18 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_hide_author',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_hide_author',
 		array(
-			'label'    => esc_html__( 'Check to hide Author.', 'foodhunt' ),
-			'section'  => 'foodhunt_meta',
-			'type'     => 'checkbox',
+			'label'   => esc_html__( 'Check to hide Author.', 'foodhunt' ),
+			'section' => 'foodhunt_meta',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -729,18 +780,18 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_hide_comment',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_hide_comment',
 		array(
-			'label'    => esc_html__( 'Check to hide Comment.', 'foodhunt' ),
-			'section'  => 'foodhunt_meta',
-			'type'     => 'checkbox',
+			'label'   => esc_html__( 'Check to hide Comment.', 'foodhunt' ),
+			'section' => 'foodhunt_meta',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -748,18 +799,18 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_hide_cat',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_hide_cat',
 		array(
-			'label'    => esc_html__( 'Check to hide Category.', 'foodhunt' ),
-			'section'  => 'foodhunt_meta',
-			'type'     => 'checkbox',
+			'label'   => esc_html__( 'Check to hide Category.', 'foodhunt' ),
+			'section' => 'foodhunt_meta',
+			'type'    => 'checkbox',
 		)
 	);
 
@@ -767,56 +818,25 @@ function foodhunt_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'foodhunt_hide_tags',
 		array(
-			'default'            => 0,
-			'capability'         => 'edit_theme_options',
-			'sanitize_callback'  => 'foodhunt_sanitize_checkbox'
+			'default'           => 0,
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'foodhunt_sanitize_checkbox',
 		)
 	);
 
 	$wp_customize->add_control(
 		'foodhunt_hide_tags',
 		array(
-			'label'    => esc_html__( 'Check to hide Tags.', 'foodhunt' ),
-			'section'  => 'foodhunt_meta',
-			'type'     => 'checkbox',
+			'label'   => esc_html__( 'Check to hide Tags.', 'foodhunt' ),
+			'section' => 'foodhunt_meta',
+			'type'    => 'checkbox',
 		)
 	);
 	// End of Additional Options
 
-/**************************************************************************************/
-
-	$wp_customize->add_section(
-		'foodhunt_important_links',
-		array(
-			'priority' => 1,
-			'title' => esc_html__( 'Foodhunt Important Links', 'foodhunt' ),
-		)
-	);
-
-	/**
-	 * This setting has the dummy Sanitizaition function as it contains no value to be sanitized
-	 */
-	$wp_customize->add_setting(
-		'foodhunt_important_links',
-		array(
-			'capability' => 'edit_theme_options',
-			'sanitize_callback' => 'foodhunt_links_sanitize'
-		)
-	);
-
-	$wp_customize->add_control(
-		new FOODHUNT_Important_Links(
-			$wp_customize,
-			'important_links',
-			array(
-				'label' => esc_html__( 'Important Links', 'foodhunt' ),
-				'section' => 'foodhunt_important_links',
-				'settings' => 'foodhunt_important_links'
-			)
-		)
-	);
-	// Theme Important Links Ended
+	/**************************************************************************************/
 }
+
 add_action( 'customize_register', 'foodhunt_customize_register' );
 
 /**
@@ -825,7 +845,7 @@ add_action( 'customize_register', 'foodhunt_customize_register' );
  * @return void
  */
 function foodhunt_customize_partial_blogname() {
-   bloginfo( 'name' );
+	bloginfo( 'name' );
 }
 
 /**
@@ -834,29 +854,32 @@ function foodhunt_customize_partial_blogname() {
  * @return void
  */
 function foodhunt_customize_partial_blogdescription() {
-   bloginfo( 'description' );
+	bloginfo( 'description' );
 }
 
 /**************************************************************************************/
 
 // Checkbox sanitization
-function foodhunt_sanitize_checkbox($input) {
+function foodhunt_sanitize_checkbox( $input ) {
 	if ( $input == 1 ) {
 		return 1;
 	} else {
 		return 0;
 	}
 }
+
 // Sanitize Integer
 function foodhunt_sanitize_integer( $input ) {
-	if( is_numeric( $input ) ) {
+	if ( is_numeric( $input ) ) {
 		return intval( $input );
 	}
 }
+
 // Text sanitization
 function foodhunt_text_sanitize( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
+
 // Sanitize Radio Button
 function foodhunt_radio_sanitize( $input, $setting ) {
 
@@ -871,14 +894,17 @@ function foodhunt_radio_sanitize( $input, $setting ) {
 }
 
 // color sanitization
-function foodhunt_color_option_hex_sanitize($color) {
-	if ($unhashed = sanitize_hex_color_no_hash($color))
-	return '#' . $unhashed;
+function foodhunt_color_option_hex_sanitize( $color ) {
+	if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
+		return '#' . $unhashed;
+	}
 
 	return $color;
 }
-function foodhunt_color_escaping_option_sanitize($input) {
-	$input = esc_attr($input);
+
+function foodhunt_color_escaping_option_sanitize( $input ) {
+	$input = esc_attr( $input );
+
 	return $input;
 }
 
@@ -888,14 +914,9 @@ function foodhunt_color_escaping_option_sanitize($input) {
  * Enqueue scripts for customizer
  */
 function foodhunt_customizer_js() {
-   wp_enqueue_script( 'foodhunt_customizer_script', esc_url( get_template_directory_uri() ) . '/js/customizer.js', array("jquery"), 'false', true  );
-
-   wp_localize_script( 'foodhunt_customizer_script', 'foodhunt_customizer_obj', array(
-
-      'pro' => __('View PRO version','foodhunt')
-
-   ) );
+	wp_enqueue_script( 'foodhunt_customizer_script', esc_url( get_template_directory_uri() ) . '/js/customizer.js', array( "jquery" ), 'false', true );
 }
+
 add_action( 'customize_controls_enqueue_scripts', 'foodhunt_customizer_js' );
 add_action( 'customize_preview_init', 'foodhunt_customizer_js' );
 /*
@@ -904,34 +925,81 @@ add_action( 'customize_preview_init', 'foodhunt_customizer_js' );
 add_action( 'customize_controls_print_footer_scripts', 'foodhunt_customizer_custom_scripts' );
 
 function foodhunt_customizer_custom_scripts() { ?>
-<style>
-	/* Theme Instructions Panel CSS */
-	li#accordion-section-foodhunt_important_links h3.accordion-section-title, li#accordion-section-foodhunt_important_links h3.accordion-section-title:focus { background-color: #32C4D1 !important; color: #fff !important; }
-	li#accordion-section-foodhunt_important_links h3.accordion-section-title:hover { background-color: #32C4D1 !important; color: #fff !important; }
-	li#accordion-section-foodhunt_important_links h3.accordion-section-title:after { color: #fff !important; }
-	/* Upsell button CSS */
-	.themegrill-pro-info,
-	.customize-control-foodhunt-important-links a {
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
-		background: #008EC2;
-		color: #fff;
-		display: block;
-		margin: 15px 0 0;
-		padding: 5px 0;
-		text-align: center;
-		font-weight: 600;
-	}
+	<style>
+		/* Theme Instructions Panel CSS */
+		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title {
+			background-color: #dd0103 !important;
+			border-left-color: #a92717 !important;
+		}
 
-	.customize-control-foodhunt-important-links a{
-		padding: 8px 0;
-	}
+		#accordion-section-foodhunt_upsell_section h3 a:after {
+			content: '\f345';
+			color: #fff;
+			position: absolute;
+			top: 12px;
+			right: 10px;
+			z-index: 1;
+			font: 400 20px/1 dashicons;
+			speak: none;
+			display: block;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			text-decoration: none!important;
+		}
 
-	.themegrill-pro-info:hover,
-	.customize-control-foodhunt-important-links a:hover {
-		color: #ffffff;
-		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
-		background:#2380BA;
-	}
-</style>
-<?php
+		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title a {
+			display: block;
+			color: #fff !important;
+			text-decoration: none;
+		}
+
+		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title a:focus {
+			box-shadow: none;
+		}
+
+		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title:hover {
+			background-color: #cc0002 !important;
+		}
+
+		/* Upsell button CSS */
+		.themegrill-pro-info,
+		.customize-control-foodhunt-important-links a {
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8fc800+0,8fc800+100;Green+Flat+%232 */
+			background: #008EC2;
+			color: #fff;
+			display: block;
+			margin: 15px 0 0;
+			padding: 5px 0;
+			text-align: center;
+			font-weight: 600;
+		}
+
+		.customize-control-foodhunt-important-links a {
+			padding: 8px 0;
+		}
+
+		.themegrill-pro-info:hover,
+		.customize-control-foodhunt-important-links a:hover {
+			color: #ffffff;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#006e2e+0,006e2e+100;Green+Flat+%233 */
+			background: #2380BA;
+		}
+	</style>
+	<script>
+		( function ( $, api ) {
+			api.sectionConstructor['foodhunt-upsell-section'] = api.Section.extend( {
+
+				// No events for this type of section.
+				attachEvents : function () {
+				},
+
+				// Always make the section active.
+				isContextuallyActive : function () {
+					return true;
+				}
+			} );
+		} )( jQuery, wp.customize );
+
+	</script>
+	<?php
 }

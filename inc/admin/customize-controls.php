@@ -86,39 +86,3 @@ if ( ! function_exists( 'wp_update_custom_css_post' ) ) {
 		}
 	}
 }
-
-// Theme important links
-class FOODHUNT_Important_Links extends WP_Customize_Control {
-
-	public $type = "foodhunt-important-links";
-
-	public function render_content() {
-		//Add Theme instruction, Support Forum, Demo Link
-		$important_links = array(
-			'theme-info' => array(
-				'link' => esc_url('https://themegrill.com/themes/foodhunt/'),
-				'text' => __('Theme Info', 'foodhunt'),
-			),
-			'documentation' => array(
-				'link' => esc_url( 'https://docs.themegrill.com/foodhunt/' ),
-				'text' => esc_html__( 'Documentation', 'foodhunt' ),
-			),
-			'support' => array(
-				'link' => esc_url( 'https://themegrill.com/support-forum/' ),
-				'text' => esc_html__( 'Support', 'foodhunt' ),
-			),
-			'demo' => array(
-				'link' => esc_url( 'https://demo.themegrill.com/foodhunt/' ),
-				'text' => esc_html__( 'View Demo', 'foodhunt' ),
-			),
-			'rating' => array(
-				'link' => esc_url('http://wordpress.org/support/view/theme-reviews/foodhunt?filter=5'),
-				'text' => __( 'Rate this theme', 'foodhunt' ),
-			)
-		);
-
-		foreach ( $important_links as $important_link ) {
-			echo '<p><a target="_blank" href="' . $important_link['link'] . '" >' . esc_attr( $important_link['text'] ) . ' </a></p>';
-		}
-	}
-}

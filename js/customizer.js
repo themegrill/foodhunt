@@ -6,14 +6,6 @@
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
 
-jQuery(document).ready(function() {
-
-   jQuery('#customize-info .preview-notice').append(
-		'<a class="themegrill-pro-info" href="https://themegrill.com/themes/foodhunt-pro/" target="_blank">{pro}</a>'
-		.replace('{pro}',foodhunt_customizer_obj.pro)
-	);
-});
-
 (function ( $ ) {
 		// Site title
 		wp.customize( 'blogname', function ( value ) {

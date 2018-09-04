@@ -63,7 +63,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 				update_option( 'foodhunt_admin_notice_welcome', 1 );
 
 				// No option? Let run the notice wizard again..
-			} else if ( ! get_option( 'foodhunt_admin_notice_welcome' ) ) {
+			} elseif ( ! get_option( 'foodhunt_admin_notice_welcome' ) ) {
 				add_action( 'admin_notices', array( $this, 'welcome_notice' ) );
 			}
 		}
@@ -131,11 +131,11 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 			</div>
 
 			<p class="foodhunt-actions">
-				<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'foodhunt' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-about&utm_medium=theme-info-link&utm_campaign=theme-info' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Theme Info', 'foodhunt' ); ?></a>
 
 				<a href="<?php echo esc_url( 'http://demo.themegrill.com/foodhunt/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Demo', 'foodhunt' ); ?></a>
 
-				<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
+				<a href="<?php echo esc_url( 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
 
 				<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/foodhunt/reviews/?filter=5' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'foodhunt' ); ?></a>
 			</p>
@@ -213,7 +213,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 							<h3><?php esc_html_e( 'Documentation', 'foodhunt' ); ?></h3>
 							<p><?php esc_html_e( 'Please view our documentation page to setup the theme.', 'foodhunt' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'http://docs.themegrill.com/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Documentation', 'foodhunt' ); ?></a>
+								<a href="<?php echo esc_url( 'https://docs.themegrill.com/foodhunt/?utm_source=foodhunt-about&utm_medium=documentation-link&utm_campaign=documentation' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Documentation', 'foodhunt' ); ?></a>
 							</p>
 						</div>
 
@@ -221,7 +221,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 							<h3><?php esc_html_e( 'Got theme support question?', 'foodhunt' ); ?></h3>
 							<p><?php esc_html_e( 'Please put it in our dedicated support forum.', 'foodhunt' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'http://themegrill.com/support-forum/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Support', 'foodhunt' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/support-forum/?utm_source=foodhunt-about&utm_medium=support-forum-link&utm_campaign=support-forum' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Support', 'foodhunt' ); ?></a>
 							</p>
 						</div>
 
@@ -229,7 +229,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 							<h3><?php esc_html_e( 'Need more features?', 'foodhunt' ); ?></h3>
 							<p><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'foodhunt' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'http://themegrill.com/themes/foodhunt/' ); ?>" class="button button-secondary"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-about&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'View PRO version', 'foodhunt' ); ?></a>
 							</p>
 						</div>
 
@@ -237,7 +237,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 							<h3><?php esc_html_e( 'Got sales related question?', 'foodhunt' ); ?></h3>
 							<p><?php esc_html_e( 'Please send it via our sales contact page.', 'foodhunt' ) ?></p>
 							<p>
-								<a href="<?php echo esc_url( 'http://themegrill.com/contact/' ); ?>" class="button button-secondary"><?php esc_html_e( 'Contact Page', 'foodhunt' ); ?></a>
+								<a href="<?php echo esc_url( 'https://themegrill.com/contact/?utm_source=foodhunt-about&utm_medium=contact-page-link&utm_campaign=contact-page' ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'Contact Page', 'foodhunt' ); ?></a>
 							</p>
 						</div>
 
@@ -518,7 +518,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 						<td></td>
 						<td></td>
 						<td class="btn-wrapper">
-							<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'http://themegrill.com/themes/foodhunt-pro/' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'foodhunt' ); ?></a>
+							<a href="<?php echo esc_url( apply_filters( 'foodhunt_pro_theme_url', 'https://themegrill.com/themes/foodhunt/?utm_source=foodhunt-free-vs-pro-table&utm_medium=view-pro-link&utm_campaign=view-pro#free-vs-pro' ) ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'View Pro', 'foodhunt' ); ?></a>
 						</td>
 					</tr>
 					</tbody>
