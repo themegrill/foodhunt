@@ -928,8 +928,8 @@ function foodhunt_customizer_custom_scripts() { ?>
 	<style>
 		/* Theme Instructions Panel CSS */
 		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title {
-			background-color: #32C4D1 !important;
-			border-left-color: #1e929c !important;
+			background-color: #dd0103 !important;
+			border-left-color: #a92717 !important;
 		}
 
 		#accordion-section-foodhunt_upsell_section h3 a:after {
@@ -958,7 +958,7 @@ function foodhunt_customizer_custom_scripts() { ?>
 		}
 
 		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title:hover {
-			background-color: #26b3bf !important;
+			background-color: #cc0002 !important;
 		}
 
 		/* Upsell button CSS */
