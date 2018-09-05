@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 msgid ""
 msgstr ""
-"Project-Id-Version: FoodHunt 1.2.2\n"
+"Project-Id-Version: FoodHunt 1.2.3\n"
 "Report-Msgid-Bugs-To: themegrill@gmail.com\n"
-"POT-Creation-Date: 2018-06-06 04:57:02+00:00\n"
+"POT-Creation-Date: 2018-09-05 08:53:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -99,20 +99,20 @@ msgstr ""
 msgid "Get started with FoodHunt"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:134 inc/admin/customize-controls.php:100
+#: inc/admin/class-foodhunt-admin.php:134
 msgid "Theme Info"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:136 inc/admin/customize-controls.php:112
+#: inc/admin/class-foodhunt-admin.php:136
 msgid "View Demo"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:138
-#: inc/admin/class-foodhunt-admin.php:232 inc/customizer.php:895
+#: inc/admin/class-foodhunt-admin.php:232 inc/customizer.php:82
 msgid "View PRO version"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:140 inc/admin/customize-controls.php:116
+#: inc/admin/class-foodhunt-admin.php:140
 msgid "Rate this theme"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgid "Customize"
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:213
-#: inc/admin/class-foodhunt-admin.php:216 inc/admin/customize-controls.php:104
+#: inc/admin/class-foodhunt-admin.php:216
 msgid "Documentation"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgid "Please put it in our dedicated support forum."
 msgstr ""
 
 #: inc/admin/class-foodhunt-admin.php:224
-#: inc/admin/class-foodhunt-admin.php:513 inc/admin/customize-controls.php:108
+#: inc/admin/class-foodhunt-admin.php:513
 msgid "Support"
 msgstr ""
 
@@ -276,7 +276,7 @@ msgstr ""
 msgid "FoodHunt"
 msgstr ""
 
-#: inc/admin/class-foodhunt-admin.php:398 inc/demo-config.php:29
+#: inc/admin/class-foodhunt-admin.php:398 inc/demo-config.php:26
 msgid "FoodHunt Pro"
 msgstr ""
 
@@ -416,289 +416,284 @@ msgstr ""
 msgid "View Pro"
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:96
 msgid "Contain all the Header related settings"
 msgstr ""
 
-#: inc/customizer.php:47
+#: inc/customizer.php:98
 msgid "Header Options"
 msgstr ""
 
-#: inc/customizer.php:56
+#: inc/customizer.php:107
 msgid "Display Latest post Titles in the Header Top Bar."
 msgstr ""
 
-#: inc/customizer.php:57
+#: inc/customizer.php:108
 msgid "Header News"
 msgstr ""
 
-#: inc/customizer.php:76
+#: inc/customizer.php:127
 msgid "Enable Header News"
 msgstr ""
 
-#: inc/customizer.php:94 inc/foodhunt.php:104
+#: inc/customizer.php:145 inc/foodhunt.php:104
 msgid "Special:"
 msgstr ""
 
-#: inc/customizer.php:103
+#: inc/customizer.php:154
 msgid "Text before Post Titles:"
 msgstr ""
 
-#: inc/customizer.php:114
+#: inc/customizer.php:165
 msgid "Header is Sticky by default"
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:166
 msgid "Header Sticky Option"
 msgstr ""
 
-#: inc/customizer.php:132
+#: inc/customizer.php:183
 msgid "Check to make Header Non-sticky"
 msgstr ""
 
-#: inc/customizer.php:143
+#: inc/customizer.php:194
 msgid "Header Logo"
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:215
 msgid "Upload logo"
 msgstr ""
 
-#: inc/customizer.php:165
+#: inc/customizer.php:216
 msgid ""
 "%sInfo:%s This option will be removed in upcoming update. Please go to Site "
 "Identity section to upload the theme logo."
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:237
 msgid "Choose the required option"
 msgstr ""
 
-#: inc/customizer.php:190
+#: inc/customizer.php:241
 msgid "Header Logo Only"
 msgstr ""
 
-#: inc/customizer.php:191
+#: inc/customizer.php:242
 msgid "Header Text Only"
 msgstr ""
 
-#: inc/customizer.php:192
+#: inc/customizer.php:243
 msgid "Show both Logo and Text"
 msgstr ""
 
-#: inc/customizer.php:193
+#: inc/customizer.php:244
 msgid "None"
 msgstr ""
 
-#: inc/customizer.php:203
+#: inc/customizer.php:254
 msgid "Header Title Bar"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:255
 msgid ""
 "Display image as background just below the main Menu on Home page, archive "
 "and single pages."
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:275
 msgid "Upload Image"
 msgstr ""
 
-#: inc/customizer.php:239
+#: inc/customizer.php:290
 msgid "Contain all the Slider related settings"
 msgstr ""
 
-#: inc/customizer.php:241
+#: inc/customizer.php:292
 msgid "Slider Options"
 msgstr ""
 
-#: inc/customizer.php:251
+#: inc/customizer.php:302
 msgid ""
 "Slider displays the Title, Content and Featured image of the page. The "
 "recommended size for slider image is 1920px by 1000px. Select the pages in "
 "the option provided below"
 msgstr ""
 
-#: inc/customizer.php:270
+#: inc/customizer.php:321
 msgid "Enable Slider"
 msgstr ""
 
-#: inc/customizer.php:298
+#: inc/customizer.php:349
 msgid "Enter Icon Class"
 msgstr ""
 
-#: inc/customizer.php:318
+#: inc/customizer.php:369
 msgid "Slide "
 msgstr ""
 
-#: inc/customizer.php:332
+#: inc/customizer.php:383
 msgid "Option to hide the slider controls"
 msgstr ""
 
-#: inc/customizer.php:350
+#: inc/customizer.php:401
 msgid "Hide slider Left/Right Arrows"
 msgstr ""
 
-#: inc/customizer.php:369
+#: inc/customizer.php:420
 msgid "Hide slider navigation Buttons"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:434
 msgid "Contain all the Design related settings"
 msgstr ""
 
-#: inc/customizer.php:385
+#: inc/customizer.php:436
 msgid "Design Options"
 msgstr ""
 
-#: inc/customizer.php:394
+#: inc/customizer.php:445
 msgid "Default layout"
 msgstr ""
 
-#: inc/customizer.php:412
+#: inc/customizer.php:463
 msgid ""
 "Select default layout. This layout will be reflected in whole site "
 "archives, categories, search\tpage etc. The layout for a single post and "
 "page can be controlled from below options"
 msgstr ""
 
-#: inc/customizer.php:429
+#: inc/customizer.php:480
 msgid "Default layout for pages only"
 msgstr ""
 
-#: inc/customizer.php:447
+#: inc/customizer.php:498
 msgid ""
 "Select default layout for pages. This layout will be reflected in all pages "
 "unless unique layout is \tset for specific page"
 msgstr ""
 
-#: inc/customizer.php:464
+#: inc/customizer.php:515
 msgid "Default layout for single posts only"
 msgstr ""
 
-#: inc/customizer.php:482
+#: inc/customizer.php:533
 msgid ""
 "Select default layout for single posts. This layout will be reflected in "
 "all single posts unless unique layout is set for specific post"
 msgstr ""
 
-#: inc/customizer.php:497
+#: inc/customizer.php:548
 msgid "Primary color option"
 msgstr ""
 
-#: inc/customizer.php:510
+#: inc/customizer.php:561
 msgid ""
 "This will reflect in links, buttons and many others. Choose a color to "
 "match your site"
 msgstr ""
 
-#: inc/customizer.php:519
+#: inc/customizer.php:570
 msgid "Custom CSS"
 msgstr ""
 
-#: inc/customizer.php:531
+#: inc/customizer.php:582
 msgid "Write your custom css"
 msgstr ""
 
-#: inc/customizer.php:546
+#: inc/customizer.php:597
 msgid "Contain all Additional settings"
 msgstr ""
 
-#: inc/customizer.php:548
+#: inc/customizer.php:599
 msgid "Additional Options"
 msgstr ""
 
-#: inc/customizer.php:557
+#: inc/customizer.php:608
 msgid "Author Bio Options"
 msgstr ""
 
-#: inc/customizer.php:574
+#: inc/customizer.php:625
 msgid "Check to display the Author Bio in single post page."
 msgstr ""
 
-#: inc/customizer.php:587
+#: inc/customizer.php:638
 msgid "Display full content or short description/excerpt on the Posts Page"
 msgstr ""
 
-#: inc/customizer.php:604
+#: inc/customizer.php:655
 msgid "Choose to show Excerpt or Full Post"
 msgstr ""
 
-#: inc/customizer.php:608
+#: inc/customizer.php:659
 msgid "Display Excerpt"
 msgstr ""
 
-#: inc/customizer.php:609
+#: inc/customizer.php:660
 msgid "Display Full Content"
 msgstr ""
 
-#: inc/customizer.php:619
+#: inc/customizer.php:670
 msgid "Related Posts"
 msgstr ""
 
-#: inc/customizer.php:637
+#: inc/customizer.php:688
 msgid "Check to activate related posts ."
 msgstr ""
 
-#: inc/customizer.php:651
+#: inc/customizer.php:702
 msgid "Related Posts Must Be Shown As:"
 msgstr ""
 
-#: inc/customizer.php:655
+#: inc/customizer.php:706
 msgid "Related Posts By Categories"
 msgstr ""
 
-#: inc/customizer.php:656
+#: inc/customizer.php:707
 msgid "Related Posts By Tags"
 msgstr ""
 
-#: inc/customizer.php:666
+#: inc/customizer.php:717
 msgid ""
 "Hide specific or all the meta/information from the Blog posts and Single "
 "post"
 msgstr ""
 
-#: inc/customizer.php:684
+#: inc/customizer.php:735
 msgid "Check to All the Meta."
 msgstr ""
 
-#: inc/customizer.php:703
+#: inc/customizer.php:754
 msgid "Check to hide Date."
 msgstr ""
 
-#: inc/customizer.php:722
+#: inc/customizer.php:773
 msgid "Check to hide Author."
 msgstr ""
 
-#: inc/customizer.php:741
+#: inc/customizer.php:792
 msgid "Check to hide Comment."
 msgstr ""
 
-#: inc/customizer.php:760
+#: inc/customizer.php:811
 msgid "Check to hide Category."
 msgstr ""
 
-#: inc/customizer.php:779
+#: inc/customizer.php:830
 msgid "Check to hide Tags."
 msgstr ""
 
-#: inc/customizer.php:792
-msgid "Foodhunt Important Links"
-msgstr ""
-
-#: inc/customizer.php:812
-msgid "Important Links"
-msgstr ""
-
-#: inc/foodhunt.php:190 inc/widgets.php:898
+#: inc/foodhunt.php:190
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:161
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/foodhunt.php:190 inc/widgets.php:898
+#: inc/foodhunt.php:190
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:161
 msgid "Comment (1)"
 msgstr ""
 
-#: inc/foodhunt.php:190 inc/widgets.php:898
+#: inc/foodhunt.php:190
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:161
 msgid "Comments (%)"
 msgstr ""
 
@@ -1137,6 +1132,238 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: inc/widgets/class-foodhunt-about-us-widget.php:8
+msgid "Suitable for About Us page."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:10
+msgid "TG: Featured Single Page"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:32
+#: inc/widgets/class-foodhunt-contact-widget.php:28
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:30
+#: inc/widgets/class-foodhunt-our-team-widget.php:35
+#: inc/widgets/class-foodhunt-portfolio-widget.php:26
+#: inc/widgets/class-foodhunt-service-widget.php:33
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:36
+#: inc/widgets/class-foodhunt-contact-widget.php:32
+#: inc/widgets/class-foodhunt-our-team-widget.php:38
+#: inc/widgets/class-foodhunt-portfolio-widget.php:30
+#: inc/widgets/class-foodhunt-service-widget.php:37
+msgid "Description:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:39
+msgid "Select a page to display Title, Excerpt and Featured image."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:40
+msgid "Page"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:44
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:38
+msgid "Button Text:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:49
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:43
+msgid "Button Redirect Link:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:54
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:69
+msgid "Button Icon Class:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:61
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:76
+msgid "For Icon Class <a href=\"%s\" target=\"_blank\">Refer here</a>"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:65
+msgid "Info: The Recommended size for featured image is 530px by 440px."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-about-us-widget.php:66
+msgid ""
+"Note: Leave Button Redirect Link empty to redirect it to the respective "
+"page."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:8
+msgid "Use this widget to show the call to action section."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:10
+msgid "TG: Call To Action"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:32
+#: inc/widgets/class-foodhunt-our-team-widget.php:31
+#: inc/widgets/class-foodhunt-service-widget.php:29
+msgid "Widget SETTINGS :"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:35
+msgid "Call to Action Main Text:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:48
+#: inc/widgets/class-foodhunt-our-team-widget.php:49
+#: inc/widgets/class-foodhunt-service-widget.php:48
+msgid "DESIGN SETTINGS :"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:52
+#: inc/widgets/class-foodhunt-our-team-widget.php:53
+#: inc/widgets/class-foodhunt-service-widget.php:52
+msgid "Background Image:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:60
+#: inc/widgets/class-foodhunt-our-team-widget.php:61
+#: inc/widgets/class-foodhunt-service-widget.php:60
+msgid "Choose an image"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:60
+#: inc/widgets/class-foodhunt-our-team-widget.php:61
+#: inc/widgets/class-foodhunt-service-widget.php:60
+msgid "Use image"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:60
+#: inc/widgets/class-foodhunt-our-team-widget.php:61
+#: inc/widgets/class-foodhunt-service-widget.php:60
+msgid "Select an Image"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:65
+#: inc/widgets/class-foodhunt-our-team-widget.php:66
+#: inc/widgets/class-foodhunt-service-widget.php:65
+msgid "Background Color:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-call-to-action-widget.php:81
+#: inc/widgets/class-foodhunt-our-team-widget.php:70
+#: inc/widgets/class-foodhunt-service-widget.php:69
+msgid "Note: Background image (if used) will override the background color."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-contact-widget.php:8
+msgid "Show your Contact page."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-contact-widget.php:10
+msgid "TG: Contact Us"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-contact-widget.php:36
+msgid "Install the Contact Form 7 Plugin and paste the shortcode here:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-contact-widget.php:38
+msgid "Shortcode:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-contact-widget.php:43
+msgid "Select a Contact page:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:9
+msgid "Display latest posts or posts of specific category."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:11
+msgid "TG: Featured Posts"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:33
+msgid "Description"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:37
+msgid "Number of posts to display:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:42
+msgid "Show latest Posts"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:43
+msgid "Show posts from a category"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:47
+msgid "Select category"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-featured-posts-widget.php:51
+msgid ""
+"Info: To display posts from specific category, select the Category in above "
+"radio option than select the category from the drop-down list."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-our-team-widget.php:8
+msgid "Show your Team Members."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-our-team-widget.php:10
+msgid "TG: Our Team"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-our-team-widget.php:42
+#: inc/widgets/class-foodhunt-portfolio-widget.php:34
+#: inc/widgets/class-foodhunt-service-widget.php:41
+msgid "Number of pages to display:"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-our-team-widget.php:46
+msgid ""
+"Note: Create the pages and select Our Team Template to display Our Team "
+"pages. The Recommended size for featured image is 380px by 380px."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-our-team-widget.php:170
+#: inc/widgets/class-foodhunt-service-widget.php:170
+#: template-parts/content-search.php:43 template-parts/content.php:54
+#: template-parts/content.php:59
+msgid "Read More"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-portfolio-widget.php:9
+msgid "Display some pages as Portfolio or Gallery."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-portfolio-widget.php:11
+msgid "TG: Portfolio"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-portfolio-widget.php:38
+msgid ""
+"Note: Create the pages and select Gallery Template to display Gallery "
+"pages. The Recommended size for featured image is 340px by 340px."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-service-widget.php:8
+msgid "Display some pages as services."
+msgstr ""
+
+#: inc/widgets/class-foodhunt-service-widget.php:10
+msgid "TG: Service"
+msgstr ""
+
+#: inc/widgets/class-foodhunt-service-widget.php:45
+msgid ""
+"Note: Create the pages and select Services Template to display Services "
+"pages. The Recommended size for featured image is 290px by 290px."
+msgstr ""
+
 #: inc/widgets.php:18
 msgid "Shows widgets at Right side."
 msgstr ""
@@ -1159,207 +1386,6 @@ msgstr ""
 
 #: inc/widgets.php:49
 msgid "Show widgets at Footer section."
-msgstr ""
-
-#: inc/widgets.php:73
-msgid "Suitable for About Us page."
-msgstr ""
-
-#: inc/widgets.php:75
-msgid "TG: Featured Single Page"
-msgstr ""
-
-#: inc/widgets.php:97 inc/widgets.php:253 inc/widgets.php:582
-#: inc/widgets.php:767 inc/widgets.php:947 inc/widgets.php:1076
-msgid "Title:"
-msgstr ""
-
-#: inc/widgets.php:101 inc/widgets.php:257 inc/widgets.php:585
-#: inc/widgets.php:951 inc/widgets.php:1080
-msgid "Description:"
-msgstr ""
-
-#: inc/widgets.php:104
-msgid "Select a page to display Title, Excerpt and Featured image."
-msgstr ""
-
-#: inc/widgets.php:105
-msgid "Page"
-msgstr ""
-
-#: inc/widgets.php:109 inc/widgets.php:443
-msgid "Button Text:"
-msgstr ""
-
-#: inc/widgets.php:114 inc/widgets.php:448
-msgid "Button Redirect Link:"
-msgstr ""
-
-#: inc/widgets.php:119 inc/widgets.php:474
-msgid "Button Icon Class:"
-msgstr ""
-
-#: inc/widgets.php:126 inc/widgets.php:481
-msgid "For Icon Class <a href=\"%s\" target=\"_blank\">Refer here</a>"
-msgstr ""
-
-#: inc/widgets.php:130
-msgid "Info: The Recommended size for featured image is 530px by 440px."
-msgstr ""
-
-#: inc/widgets.php:131
-msgid ""
-"Note: Leave Button Redirect Link empty to redirect it to the respective "
-"page."
-msgstr ""
-
-#: inc/widgets.php:228
-msgid "Display some pages as services."
-msgstr ""
-
-#: inc/widgets.php:230
-msgid "TG: Service"
-msgstr ""
-
-#: inc/widgets.php:249 inc/widgets.php:437 inc/widgets.php:578
-msgid "Widget SETTINGS :"
-msgstr ""
-
-#: inc/widgets.php:261 inc/widgets.php:589 inc/widgets.php:955
-msgid "Number of pages to display:"
-msgstr ""
-
-#: inc/widgets.php:265
-msgid ""
-"Note: Create the pages and select Services Template to display Services "
-"pages. The Recommended size for featured image is 290px by 290px."
-msgstr ""
-
-#: inc/widgets.php:268 inc/widgets.php:453 inc/widgets.php:596
-msgid "DESIGN SETTINGS :"
-msgstr ""
-
-#: inc/widgets.php:272 inc/widgets.php:457 inc/widgets.php:600
-msgid "Background Image:"
-msgstr ""
-
-#: inc/widgets.php:280 inc/widgets.php:465 inc/widgets.php:608
-msgid "Choose an image"
-msgstr ""
-
-#: inc/widgets.php:280 inc/widgets.php:465 inc/widgets.php:608
-msgid "Use image"
-msgstr ""
-
-#: inc/widgets.php:280 inc/widgets.php:465 inc/widgets.php:608
-msgid "Select an Image"
-msgstr ""
-
-#: inc/widgets.php:285 inc/widgets.php:470 inc/widgets.php:613
-msgid "Background Color:"
-msgstr ""
-
-#: inc/widgets.php:289 inc/widgets.php:486 inc/widgets.php:617
-msgid "Note: Background image (if used) will override the background color."
-msgstr ""
-
-#: inc/widgets.php:390 inc/widgets.php:717 template-parts/content-search.php:43
-#: template-parts/content.php:54 template-parts/content.php:59
-msgid "Read More"
-msgstr ""
-
-#: inc/widgets.php:413
-msgid "Use this widget to show the call to action section."
-msgstr ""
-
-#: inc/widgets.php:415
-msgid "TG: Call To Action"
-msgstr ""
-
-#: inc/widgets.php:440
-msgid "Call to Action Main Text:"
-msgstr ""
-
-#: inc/widgets.php:555
-msgid "Show your Team Members."
-msgstr ""
-
-#: inc/widgets.php:557
-msgid "TG: Our Team"
-msgstr ""
-
-#: inc/widgets.php:593
-msgid ""
-"Note: Create the pages and select Our Team Template to display Our Team "
-"pages. The Recommended size for featured image is 380px by 380px."
-msgstr ""
-
-#: inc/widgets.php:746
-msgid "Display latest posts or posts of specific category."
-msgstr ""
-
-#: inc/widgets.php:748
-msgid "TG: Featured Posts"
-msgstr ""
-
-#: inc/widgets.php:770
-msgid "Description"
-msgstr ""
-
-#: inc/widgets.php:774
-msgid "Number of posts to display:"
-msgstr ""
-
-#: inc/widgets.php:779
-msgid "Show latest Posts"
-msgstr ""
-
-#: inc/widgets.php:780
-msgid "Show posts from a category"
-msgstr ""
-
-#: inc/widgets.php:784
-msgid "Select category"
-msgstr ""
-
-#: inc/widgets.php:788
-msgid ""
-"Info: To display posts from specific category, select the Category in above "
-"radio option than select the category from the drop-down list."
-msgstr ""
-
-#: inc/widgets.php:930
-msgid "Display some pages as Portfolio or Gallery."
-msgstr ""
-
-#: inc/widgets.php:932
-msgid "TG: Portfolio"
-msgstr ""
-
-#: inc/widgets.php:959
-msgid ""
-"Note: Create the pages and select Gallery Template to display Gallery "
-"pages. The Recommended size for featured image is 340px by 340px."
-msgstr ""
-
-#: inc/widgets.php:1056
-msgid "Show your Contact page."
-msgstr ""
-
-#: inc/widgets.php:1058
-msgid "TG: Contact Us"
-msgstr ""
-
-#: inc/widgets.php:1084
-msgid "Install the Contact Form 7 Plugin and paste the shortcode here:"
-msgstr ""
-
-#: inc/widgets.php:1086
-msgid "Shortcode:"
-msgstr ""
-
-#: inc/widgets.php:1091
-msgid "Select a Contact page:"
 msgstr ""
 
 #: navigation.php:22

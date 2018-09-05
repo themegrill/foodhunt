@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.2.3 2018-09-05 =
 * Fix - Image upload issue in image uploader button for customizer option
 * Update - Upsell link
 
