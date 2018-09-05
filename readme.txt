@@ -72,7 +72,7 @@ and we will include it within the theme from next version update.
 == CHANGE LOG ==
 = TBD =
 * Fix - Image upload issue in image uploader button for customizer option
-
+* Update - Upsell link
 
 = Version 1.2.2 2018-06-06 =
 * Fix - Page blinking while closing search box.
