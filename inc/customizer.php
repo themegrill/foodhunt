@@ -235,7 +235,7 @@ function foodhunt_customize_register( $wp_customize ) {
 		'foodhunt_logo_placement',
 		array(
 			'label'   => esc_html__( 'Choose the required option', 'foodhunt' ),
-			'section' => 'foodhunt_header_logo',
+			'section' => 'title_tagline',
 			'type'    => 'radio',
 			'choices' => array(
 				'logo-only'   => esc_html__( 'Header Logo Only', 'foodhunt' ),
