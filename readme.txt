@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == CHANGE LOG ==
-= TBD =
+= Version 1.2.4 2018-09-14 =
 * Fix - Function redeclare error for demo import
 
 = Version 1.2.3 2018-09-05 =
