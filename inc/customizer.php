@@ -196,31 +196,6 @@ function foodhunt_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Logo Upload
-	if ( ! function_exists( 'the_custom_logo' ) ) {
-		$wp_customize->add_setting(
-			'foodhunt_logo',
-			array(
-				'default'           => '',
-				'capability'        => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		$wp_customize->add_control(
-			new WP_Customize_Image_Control(
-				$wp_customize,
-				'foodhunt_logo',
-				array(
-					'label'       => esc_html__( 'Upload logo', 'foodhunt' ),
-					'description' => sprintf( __( '%sInfo:%s This option will be removed in upcoming update. Please go to Site Identity section to upload the theme logo.', 'foodhunt' ), '<strong>', '</strong>' ),
-					'section'     => 'foodhunt_header_logo',
-					'setting'     => 'foodhunt_logo',
-				)
-			)
-		);
-	}
-
 	// Logo Placement
 	$wp_customize->add_setting(
 		'foodhunt_logo_placement',
@@ -944,7 +919,7 @@ function foodhunt_customizer_custom_scripts() { ?>
 			display: block;
 			-webkit-font-smoothing: antialiased;
 			-moz-osx-font-smoothing: grayscale;
-			text-decoration: none!important;
+			text-decoration: none !important;
 		}
 
 		li#accordion-section-foodhunt_upsell_section h3.accordion-section-title a {
