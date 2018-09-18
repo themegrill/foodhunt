@@ -70,6 +70,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Remove - Backward compatible for header logo
+
 = Version 1.2.4 2018-09-14 =
 * Fix - Function redeclare error for demo import
 
