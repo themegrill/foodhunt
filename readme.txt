@@ -70,7 +70,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version 1.2.5 2018-10-08 =
 * Remove - Backward compatible for header logo
 * Fix - Theme changelog display in about page.
 
