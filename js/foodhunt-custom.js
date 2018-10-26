@@ -80,7 +80,7 @@ jQuery( document ).ready( function () {
 
 	//search popup
 	jQuery( '.search-icon' ).click( function () {
-		jQuery( '.search-box' ).toggleClass( 'active' );
+		jQuery( '.search-box' ).addClass( 'active' );
 		jQuery( '#page' ).css( {
 			'filter': 'blur(8px)',
 			'-webkit-filter': 'blur(8px)',
