@@ -70,6 +70,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+=Version 1.2.6 2018-10-26 =
+* Fix - Search toggle button in menu.
+
 = Version 1.2.5 2018-10-08 =
 * Remove - Backward compatible for header logo
 * Fix - Theme changelog display in about page.
