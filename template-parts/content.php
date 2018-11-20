@@ -19,8 +19,7 @@
 	<div class="<?php echo esc_attr( $image_class ) ?>">
 		<?php if( has_post_thumbnail() ) { ?>
 			<div class="entry-thumbnail">
-				<?php
-				$image           = '';
+				<?php $image     = '';
 				$title_attribute = the_title_attribute( 'echo=0' );
 				$thumb_id        = get_post_thumbnail_id( get_the_ID() );
 				$img_altr        = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
