@@ -45,7 +45,7 @@ module.exports = function( grunt ){
 						'!customizer.js',
 						'!image-uploader.js',
 						'!metabox-toggle.js',
-						'!.min.js'
+						'!*.min.js'
 					],
 					dest: '<%= dirs.js %>/',
 					ext: '.min.js'
