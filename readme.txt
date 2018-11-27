@@ -70,6 +70,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Fix - Menu toggle button
+* Tweak - Add alt attributes to missed img tags
+
 =Version 1.2.6 2018-10-26 =
 * Fix - Search toggle button in menu.
 
