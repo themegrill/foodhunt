@@ -116,11 +116,19 @@ class foodhunt_featured_posts_widget extends WP_Widget {
 				}
 
 				if( has_post_thumbnail() ) { ?>
+				<?php $title_attribute = the_title_attribute( 'echo=0' );
+				$thumb_id              = get_post_thumbnail_id( get_the_ID() );
+				$img_altr              = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+				$img_alt               = ! empty( $img_altr ) ? $img_altr : $title_attribute;
+				$post_thumbnail_attr   = array(
+					'alt'   => esc_attr( $img_alt ),
+					'title' => esc_attr( $title_attribute ),
+				); ?>
 
 				<div class="<?php echo esc_attr( $foodhunt_blog_class ); ?> clearfix">
 
 					<div class="blog-img">
-						<?php the_post_thumbnail('foodhunt-featured-image'); ?>
+						<?php the_post_thumbnail('foodhunt-featured-image', $post_thumbnail_attr); ?>
 					</div>
 					<?php }
 					else {

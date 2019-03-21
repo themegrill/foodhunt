@@ -19,13 +19,18 @@
 	<div class="<?php echo esc_attr( $image_class ) ?>">
 		<?php if( has_post_thumbnail() ) { ?>
 			<div class="entry-thumbnail">
-				<?php
-			     	$image = '';
-			     	$title_attribute = the_title_attribute( 'echo=0' );
-			     	$image .= '<a href="' . get_permalink() . '" title="'. $title_attribute .'">';
-			     	$image .= get_the_post_thumbnail( $post->ID, 'foodhunt-blog', array( 'title' => $title_attribute, 'alt' => $title_attribute ) ).'</a>';
+				<?php $image     = '';
+				$title_attribute = the_title_attribute( 'echo=0' );
+				$thumb_id        = get_post_thumbnail_id( get_the_ID() );
+				$img_altr        = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+				$img_alt         = ! empty( $img_altr ) ? $img_altr : $title_attribute;
+				$image           .= '<a href="' . get_permalink() . '" title="' . $title_attribute . '">';
+				$image           .= get_the_post_thumbnail( $post->ID, 'foodhunt-blog', array(
+						'title' => $title_attribute,
+						'alt'   => $img_alt,
+					) ) . '</a>';
 
-			     	echo $image;
+				echo $image;
 				?>
 			</div> <!-- entry-thumbnail-end -->
 		<?php } ?>

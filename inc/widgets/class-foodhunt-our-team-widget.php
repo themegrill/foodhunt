@@ -151,8 +151,14 @@ class foodhunt_our_team_widget extends WP_Widget {
 								<div class="tg-column-3 chef-block">
 
 									<?php if( has_post_thumbnail() ) { ?>
+										<?php $thumb_id      = get_post_thumbnail_id( get_the_ID() );
+										$img_altr            = get_post_meta( $thumb_id, '_wp_attachment_image_alt', true );
+										$img_alt             = ! empty( $img_altr ) ? $img_altr : $title_attribute;
+										$post_thumbnail_attr = array(
+											'alt'   => esc_attr( $img_alt ),
+										); ?>
 										<figure class="chef-img">
-											<?php the_post_thumbnail( 'full' ); ?>
+											<?php the_post_thumbnail( 'full', $post_thumbnail_attr ); ?>
 										</figure>
 									<?php } ?>
 

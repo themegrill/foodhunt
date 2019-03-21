@@ -71,6 +71,13 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 =Version TBD =
+* Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
+
+=Version 1.2.7 2018-11-27 =
+* Fix - Menu toggle button
+* Tweak - Add alt attributes to missed img tags
+
+=Version 1.2.6 2018-10-26 =
 * Fix - Search toggle button in menu.
 
 = Version 1.2.5 2018-10-08 =

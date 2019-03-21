@@ -1,7 +1,7 @@
 {
   "name": "foodhunt",
   "title": "FoodHunt",
-  "version": "1.2.5",
+  "version": "1.2.7",
   "homepage": "https://themegrill.com/themes/foodhunt",
   "repository": {
     "type": "git",
@@ -16,7 +16,7 @@
     "grunt-contrib-compress": "~1.2.0",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-jshint": "~1.0.0",
-    "grunt-contrib-uglify": "~0.10.0",
+    "grunt-contrib-uglify": "~4.0.0",
     "grunt-contrib-watch": "~0.6.1",
     "grunt-wp-i18n": "~0.5.4"
   },
