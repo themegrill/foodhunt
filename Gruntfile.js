@@ -112,7 +112,7 @@ module.exports = function( grunt ){
 		// Compress files and folders.
 		compress: {
 			options: {
-				archive: 'foodhunt.zip'
+				archive: 'dist/foodhunt.zip'
 			},
 			files: {
 				src: [

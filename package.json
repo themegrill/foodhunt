@@ -24,6 +24,12 @@
     "node": ">=0.8.0",
     "npm": ">=1.1.0"
   },
+  "scripts": {
+    "uglify": "grunt uglify",
+    "makepot": "grunt makepot",
+    "compress": "grunt compress",
+    "build": "npm run uglify && npm run makepot && npm run compress"
+  },
   "dependencies": {
     "grunt-cli": "^1.2.0"
   }
