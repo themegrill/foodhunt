@@ -93,6 +93,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary_one',
 								'menu_id'        => 'menu-left',
+								'menu_class'     => 'nav-menu'
 							) ); ?>
 						</nav><!-- #site-navigation -->
 					</div>
@@ -145,6 +146,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary_two',
 								'menu_id'        => 'menu-right',
+								'menu_class'     => 'nav-menu'
 							) ); ?>
 						</nav> <!-- site-navigation end -->
 					</div>
