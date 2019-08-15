@@ -1837,7 +1837,9 @@ body {
 }
 
 #site-navigation ul li:hover > ul.sub-menu,
-#site-navigation ul li:hover > ul.children {
+#site-navigation ul li:hover > ul.children,
+#site-navigation ul li.focus > ul.sub-menu,
+#site-navigation ul li.focus > ul.children {
 	opacity: 1;
 	visibility: visible;
 	top: 100%;
@@ -1868,7 +1870,9 @@ body {
 }
 
 #site-navigation ul ul li:hover > ul.sub-menu,
-#site-navigation ul ul li:hover > ul.children {
+#site-navigation ul ul li:hover > ul.children,
+#site-navigation ul ul li.focus > ul.sub-menu,
+#site-navigation ul ul li.focus > ul.children {
 	left: 100%;
 	top: 0;
 }
