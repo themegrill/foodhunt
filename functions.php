@@ -141,6 +141,9 @@ function foodhunt_scripts() {
 
 	wp_enqueue_script( 'jquery-ticker', esc_url( get_template_directory_uri() ) . '/js/jquery.ticker' . $suffix . '.js', array('jquery'), '1.2.1', true );
 
+	// Skip link focus fix JS enqueue.
+	wp_enqueue_script( 'foodhunt-skip-link-focus-fix', esc_url( get_template_directory_uri() ) . '/js/skip-link-focus-fix.js', array(), false, true );
+
 	wp_enqueue_script( 'foodhunt-custom', esc_url( get_template_directory_uri() ) . '/js/foodhunt-custom' . $suffix . '.js', array('jquery'), false, true );
 
 	wp_enqueue_script( 'html5', esc_url( get_template_directory_uri() ) . 'js/html5shiv' . $suffix . '.js', array(), '3.7.3', false );
