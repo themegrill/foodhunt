@@ -29,9 +29,9 @@ if ( function_exists( 'wp_body_open' ) ) {
 <?php do_action( 'foodhunt_before' ); ?>
 
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#main"><?php esc_html_e( 'Skip to content', 'foodhunt' ); ?></a>
 
 	<?php
-
 	foodhunt_the_custom_header_markup();
 
 	if ( get_theme_mod( 'foodhunt_slider_activation', '0' ) == '1' && is_front_page() && ! is_home() ) {
