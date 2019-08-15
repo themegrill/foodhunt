@@ -169,3 +169,87 @@ jQuery( document ).ready( function () {
 		}
 	}( container ) );
 } )();
+
+jQuery( document ).ready( function () {
+	var container, menu, links, i, len;
+
+	container = document.getElementsByClassName( 'main-navigation' )[0];
+
+	if ( ! container ) {
+		return;
+	}
+
+	menu = container.getElementsByTagName( 'ul' )[0];
+
+	// Get all the link elements within the menu.
+	links = menu.getElementsByTagName( 'a' );
+
+	// Each time a menu link is focused or blurred, toggle focus.
+	for ( i = 0, len = links.length; i < len; i++ ) {
+		links[i].addEventListener( 'focus', toggleFocus, true );
+		links[i].addEventListener( 'blur', toggleFocus, true );
+	}
+
+	/**
+	 * Sets or removes .focus class on an element.
+	 */
+	function toggleFocus() {
+		var self = this;
+
+		// Move up through the ancestors of the current link until we hit .nav-menu.
+		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+			// On li elements toggle the class .focus.
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+					self.className = self.className.replace( ' focus', '' );
+				} else {
+					self.className += ' focus';
+				}
+			}
+
+			self = self.parentElement;
+		}
+	}
+} );
+
+jQuery( document ).ready( function () {
+	var right_menu_container, right, right_links, i, len;
+
+	right_menu_container = document.getElementsByClassName( 'main-navigation' )[1];
+
+	if ( ! right_menu_container ) {
+		return;
+	}
+
+	right = right_menu_container.getElementsByTagName( 'ul' )[0];
+
+	// Get all the link elements within the menu.
+	right_links = right.getElementsByTagName( 'a' );
+
+	// Each time a menu link is focused or blurred, toggle focus.
+	for ( i = 0, len = right_links.length; i < len; i++ ) {
+		right_links[i].addEventListener( 'focus', rightMenutoggleFocus, true );
+		right_links[i].addEventListener( 'blur', rightMenutoggleFocus, true );
+	}
+
+	/**
+	 * Sets or removes .focus class on an element.
+	 */
+	function rightMenutoggleFocus() {
+		var self = this;
+
+		// Move up through the ancestors of the current link until we hit .nav-menu.
+		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+			// On li elements toggle the class .focus.
+			if ( 'li' === self.tagName.toLowerCase() ) {
+				if ( -1 !== self.className.indexOf( 'focus' ) ) {
+					self.className = self.className.replace( ' focus', '' );
+				} else {
+					self.className += ' focus';
+				}
+			}
+
+			self = self.parentElement;
+		}
+	}
+} );
