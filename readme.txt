@@ -73,6 +73,7 @@ and we will include it within the theme from next version update.
 = Version TBD =
 * Tweak - Update `screen-reader-text` CSS.
 * Tweak - Added `skip-link` to content area.
+* Tweak - Modify menu CSS for keyboard accessibility.
 
 =Version 1.2.8 2019-03-26 =
 * Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
