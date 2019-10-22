@@ -136,7 +136,7 @@ jQuery( document ).ready( function () {
 // Show Submenu on click on touch enabled deviced
 ( function () {
 	var container;
-	container = document.getElementById( 'site-navigation' );
+	container = document.getElementsByClassName( 'main-navigation' );
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.

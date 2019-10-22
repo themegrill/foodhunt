@@ -1751,12 +1751,12 @@ body {
 	width: 44%;
 }
 
-#site-navigation ul {
+.main-navigation ul {
 	list-style: none;
 	margin: 0;
 }
 
-#site-navigation ul li {
+.main-navigation ul li {
 	float: none;
 	padding: 0 15px;
 	position: relative;
@@ -1764,15 +1764,15 @@ body {
 	vertical-align: top;
 }
 
-#site-navigation ul li:first-child {
+.main-navigation ul li:first-child {
 	padding-left: 0;
 }
 
-.right-menu-wrapper #site-navigation ul li:last-child {
+.right-menu-wrapper .main-navigation ul li:last-child {
 	padding-right: 0;
 }
 
-#site-navigation ul li a {
+.main-navigation ul li a {
 	color: #ffffff;
 	position: relative;
 	padding: 50px 0;
@@ -1781,11 +1781,11 @@ body {
 	text-transform: capitalize;
 }
 
-#site-navigation ul li:hover > a {
+.main-navigation ul li:hover > a {
 	color: #d40305;
 }
 
-#site-navigation ul li > a:after {
+.main-navigation ul li > a:after {
 	position: absolute;
 	bottom: -6px;
 	left: 0;
@@ -1802,14 +1802,14 @@ body {
 	transition: all 0.5s ease;
 }
 
-#site-navigation ul li:hover > a:after {
+.main-navigation ul li:hover > a:after {
 	opacity: 1;
 	visibility: visible;
 	bottom: 0;
 }
 
-#site-navigation ul.sub-menu,
-#site-navigation ul.children {
+.main-navigation ul.sub-menu,
+.main-navigation ul.children {
 	min-width: 200px;
 	padding: 0;
 	position: absolute;
@@ -1827,52 +1827,52 @@ body {
 	list-style: none;
 }
 
-#site-navigation ul.sub-menu li:first-child,
-.right-menu-wrapper #site-navigation ul.sub-menu li:last-child,
-#site-navigation ul.sub-menu li,
-#site-navigation ul.children li:first-child,
-.right-menu-wrapper #site-navigation ul.children li:last-child,
-#site-navigation ul.children li {
+.main-navigation ul.sub-menu li:first-child,
+.right-menu-wrapper .main-navigation ul.sub-menu li:last-child,
+.main-navigation ul.sub-menu li,
+.main-navigation ul.children li:first-child,
+.right-menu-wrapper .main-navigation ul.children li:last-child,
+.main-navigation ul.children li {
 	padding: 0;
 }
 
-#site-navigation ul li:hover > ul.sub-menu,
-#site-navigation ul li:hover > ul.children,
-#site-navigation ul li.focus > ul.sub-menu,
-#site-navigation ul li.focus > ul.children {
+.main-navigation ul li:hover > ul.sub-menu,
+.main-navigation ul li:hover > ul.children,
+.main-navigation ul li.focus > ul.sub-menu,
+.main-navigation ul li.focus > ul.children {
 	opacity: 1;
 	visibility: visible;
 	top: 100%;
 }
 
-#site-navigation ul.sub-menu li,
-#site-navigation ul.children li {
+.main-navigation ul.sub-menu li,
+.main-navigation ul.children li {
 	display: block;
 	float: none;
 	text-align: left;
 }
 
-#site-navigation ul.sub-menu li a,
-#site-navigation ul.children li a {
+.main-navigation ul.sub-menu li a,
+.main-navigation ul.children li a {
 	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 	padding: 10px 10px;
 }
 
-#site-navigation ul.sub-menu li > a:after,
-#site-navigation ul.children li > a:after {
+.main-navigation ul.sub-menu li > a:after,
+.main-navigation ul.children li > a:after {
 	display: none;
 }
 
-#site-navigation ul.sub-menu ul.sub-menu,
-#site-navigation ul.children ul.children {
+.main-navigation ul.sub-menu ul.sub-menu,
+.main-navigation ul.children ul.children {
 	top: 0;
 	left: 110%;
 }
 
-#site-navigation ul ul li:hover > ul.sub-menu,
-#site-navigation ul ul li:hover > ul.children,
-#site-navigation ul ul li.focus > ul.sub-menu,
-#site-navigation ul ul li.focus > ul.children {
+.main-navigation ul ul li:hover > ul.sub-menu,
+.main-navigation ul ul li:hover > ul.children,
+.main-navigation ul ul li.focus > ul.sub-menu,
+.main-navigation ul ul li.focus > ul.children {
 	left: 100%;
 	top: 0;
 }

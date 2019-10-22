@@ -89,13 +89,13 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 					<div class="left-menu-wrapper">
 
-						<nav id="site-navigation" class="main-navigation left-nav" role="navigation">
+						<nav id="left-navigation" class="main-navigation left-nav" role="navigation">
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary_one',
 								'menu_id'        => 'menu-left',
 								'menu_class'     => 'nav-menu'
 							) ); ?>
-						</nav><!-- #site-navigation -->
+						</nav><!-- #left-navigation -->
 					</div>
 
 					<div class="logo-text-wrapper">
@@ -142,13 +142,13 @@ if ( function_exists( 'wp_body_open' ) ) {
 							</div>
 						</div><!-- home-search-end -->
 
-						<nav id="site-navigation" class="main-navigation right-nav">
+						<nav id="right-navigation" class="main-navigation right-nav">
 							<?php wp_nav_menu( array(
 								'theme_location' => 'primary_two',
 								'menu_id'        => 'menu-right',
 								'menu_class'     => 'nav-menu'
 							) ); ?>
-						</nav> <!-- site-navigation end -->
+						</nav> <!-- right-navigation end -->
 					</div>
 				</div>
 			</div>
