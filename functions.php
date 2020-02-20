@@ -197,6 +197,13 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/foodhunt.php';
 
+/**
+ * Admin.
+ */
+if ( is_admin() ) {
+	require get_template_directory() . '/inc/admin/tdi-notice.php';
+}
+
 global $foodhunt_duplicate_posts;
 $foodhunt_duplicate_posts = array();
 
