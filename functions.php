@@ -202,6 +202,7 @@ require get_template_directory() . '/inc/foodhunt.php';
  */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-foodhunt-theme-review-notice.php';
 }
 
 global $foodhunt_duplicate_posts;
