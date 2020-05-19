@@ -71,6 +71,7 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = Version TBD =
+* Add - Required header fields: `Tested up to` and `Requires PHP` in style.css.
 * Tweak - Add review notice message.
 
 = Version 1.2.9 2020-02-20 =
