@@ -197,12 +197,6 @@ require get_template_directory() . '/inc/custom-header.php';
  */
 require get_template_directory() . '/inc/foodhunt.php';
 
-/**
- * Admin.
- */
-if ( is_admin() ) {
-	require get_template_directory() . '/inc/admin/tdi-notice.php';
-}
 
 global $foodhunt_duplicate_posts;
 $foodhunt_duplicate_posts = array();
@@ -223,6 +217,8 @@ $foodhunt_version = $theme['Version'];
 /* Calling in the admin area for the Welcome Page */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-foodhunt-admin.php';
+	require get_template_directory() . '/inc/admin/tdi-notice.php';
+	require get_template_directory() . '/inc/admin/class-freedom-welcome-notice.php';
 }
 
 /**
