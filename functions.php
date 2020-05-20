@@ -211,14 +211,15 @@ if ( class_exists( 'TG_Demo_Importer' ) ) {
 /**
  * Assign the FoodHunt version to a variable.
  */
-$theme            = wp_get_theme( 'foodhunt' );
-$foodhunt_version = $theme['Version'];
+$foodhunt_theme = wp_get_theme( 'foodhunt' );
+
+define( 'FOODHUNT_THEME_VERSION', $foodhunt_theme->get( 'Version' ) );
 
 /* Calling in the admin area for the Welcome Page */
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/admin/class-foodhunt-admin.php';
 	require get_template_directory() . '/inc/admin/tdi-notice.php';
-	require get_template_directory() . '/inc/admin/class-freedom-welcome-notice.php';
+	require get_template_directory() . '/inc/admin/class-foodhunt-welcome-notice.php';
 }
 
 /**

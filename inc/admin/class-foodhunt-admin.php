@@ -48,9 +48,8 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 		 * Enqueue styles.
 		 */
 		public function enqueue_styles() {
-			global $foodhunt_version;
 
-			wp_enqueue_style( 'foodhunt-welcome', get_template_directory_uri() . '/css/admin/welcome.css', array(), $foodhunt_version );
+			wp_enqueue_style( 'foodhunt-welcome', get_template_directory_uri() . '/css/admin/welcome.css', array(), FOODHUNT_THEME_VERSION );
 		}
 
 		/**
@@ -59,12 +58,11 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 		 * @access private
 		 */
 		private function intro() {
-			global $foodhunt_version;
 
 			$theme = wp_get_theme( get_template() );
 
 			// Drop minor version if 0
-			$major_version = substr( $foodhunt_version, 0, 3 );
+			$major_version = substr( FOODHUNT_THEME_VERSION, 0, 3 );
 			?>
 			<div class="foodhunt-theme-info">
 				<h1>
@@ -93,7 +91,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 			</p>
 
 			<h2 class="nav-tab-wrapper">
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( empty( $_GET['tab'] ) && $_GET['page'] == 'foodhunt-welcome' ) {
 					echo 'nav-tab-active';
@@ -102,7 +100,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 				" href="<?php echo esc_url( admin_url( add_query_arg( array( 'page' => 'foodhunt-welcome' ), 'themes.php' ) ) ); ?>">
 					<?php echo $theme->display( 'Name' ); ?>
 				</a>
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'supported_plugins' ) {
 					echo 'nav-tab-active';
@@ -125,7 +123,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 				">
 					<?php esc_html_e( 'Supported Plugins', 'foodhunt' ); ?>
 				</a>
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'free_vs_pro' ) {
 					echo 'nav-tab-active';
@@ -148,7 +146,7 @@ if ( ! class_exists( 'FoodHunt_Admin' ) ) :
 				">
 					<?php esc_html_e( 'Free Vs Pro', 'foodhunt' ); ?>
 				</a>
-				<a class="nav-tab 
+				<a class="nav-tab
 				<?php
 				if ( isset( $_GET['tab'] ) && $_GET['tab'] == 'changelog' ) {
 					echo 'nav-tab-active';
