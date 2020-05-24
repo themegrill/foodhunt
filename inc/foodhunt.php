@@ -365,7 +365,7 @@ if ( ! function_exists( 'foodhunt_footer_copyright' ) ) :
 	function foodhunt_footer_copyright() {
 		$site_link = '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" >' . get_bloginfo( 'name', 'display' ) . '</a>';
 
-		$wp_link = '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'foodhunt' ) . '">' . esc_html__( 'WordPress', 'foodhunt' ) . '</a>';
+		$wp_link = '<a href="https://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'foodhunt' ) . '">' . esc_html__( 'WordPress', 'foodhunt' ) . '</a>';
 
 		$tg_link = '<a href="' . 'https://themegrill.com/themes/foodhunt' . '" target="_blank" title="' . esc_attr__( 'ThemeGrill', 'foodhunt' ) . '" rel="author">' . __( 'ThemeGrill', 'foodhunt' ) . '</a>';
 
