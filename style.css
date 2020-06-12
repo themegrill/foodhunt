@@ -1050,6 +1050,20 @@ textarea#comment {
 .site-main .gallery-columns-4 .gallery-item img {
 }
 
+#secondary .gallery-columns-3 {
+	width: 100%;
+	height: auto;
+	display: grid;
+	grid-template-columns: repeat( auto-fill, minmax(25%, 1fr) );
+	grid-gap:3px;
+}
+
+@media screen and (max-width:768px) {
+	#secondary .gallery-columns-3 {
+		grid-template-columns: repeat(4,1fr);
+	}
+}
+
 /* Make sure embeds and iframes fit their containers */
 
 embed,
