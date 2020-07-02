@@ -37,6 +37,15 @@ function foodhunt_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	// Gutenberg align wide layout support.
+	add_theme_support( 'align-wide' );
+
+	// Gutenberg block layout support.
+	add_theme_support( 'wp-block-styles' );
+
+	// Gutenberg editor support.
+	add_theme_support( 'responsive-embeds' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
