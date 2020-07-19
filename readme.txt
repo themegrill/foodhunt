@@ -71,7 +71,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
-* Enhancement - Update http protocol to https to prevent not secure issue.
+* Tweak - Change http protocol to https.
+* Remove - Unrequired deprecated demo config for theme demo lists.
 
 = Version 1.2.9 2020-02-20 =
 * Tweak - Update `screen-reader-text` CSS.
