@@ -233,12 +233,6 @@ if ( is_admin() ) {
 }
 
 /**
- * Load TGMPA Configs.
- */
-require get_template_directory() . '/inc/tgm-plugin-activation/class-tgm-plugin-activation.php';
-require get_template_directory() . '/inc/tgm-plugin-activation/tgmpa-foodhunt.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
