@@ -202,13 +202,6 @@ global $foodhunt_duplicate_posts;
 $foodhunt_duplicate_posts = array();
 
 /**
-* Load Demo Importer Configs.
-*/
-if ( class_exists( 'TG_Demo_Importer' ) ) {
-	require get_template_directory() . '/inc/demo-config.php';
-}
-
-/**
  * Assign the FoodHunt version to a variable.
  */
 $foodhunt_theme = wp_get_theme( 'foodhunt' );
