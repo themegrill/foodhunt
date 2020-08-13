@@ -71,6 +71,8 @@ and we will include it within the theme from next version update.
 
 == Changelog ==
 = TBD =
+* Remove - TGMPA library to recommend plugins.
+* Tweak - Add and improve theme-related notices.
 * Tweak - Change http protocol to https.
 * Remove - Unrequired deprecated demo config for theme demo lists.
 
