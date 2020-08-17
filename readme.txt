@@ -18,9 +18,6 @@ Resources packed within the theme.
   Font Awesome licensed under SIL OFL 1.1, http://scripts.sil.org/OFL
   Code licensed under MIT License, http://www.opensource.org/licenses/MIT
 
-* Image used in screenshot.png: https://pixabay.com/en/pizza-drink-food-386717/
-  Copyright © 2016, PublicDomainImages, CC0 Public Domain, https://creativecommons.org/publicdomain/zero/1.0/deed.en
-
 * HTML5 Shiv v3.7.3, Copyright 2014 Alexander Farkas
   Licenses: MIT/GPL2
   Source: https://github.com/aFarkas/html5shiv
@@ -70,7 +67,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version 1.3.0 2020-08-14 =
 * Remove - TGMPA library to recommend plugins.
 * Tweak - Add and improve theme-related notices.
 * Tweak - Change http protocol to https.
