@@ -386,11 +386,11 @@ function foodhunt_custom_css()
 			{
 				$site_link = '<a href="' . esc_url(home_url('/')) . '" title="' . esc_attr(get_bloginfo('name', 'display')) . '" >' . get_bloginfo('name', 'display') . '</a>';
 
-				$wp_link = '<a href="https://wordpress.org" target="_blank" title="' . esc_attr__('WordPress', 'foodhunt') . '">' . esc_html__('WordPress', 'foodhunt') . '</a>';
+				$wp_link = '<a href="https://wordpress.org" target="_blank" title="' . esc_attr__('WordPress', 'foodhunt') . '" rel="nofollow">' . esc_html__('WordPress', 'foodhunt') . '</a>';
 
-				$tg_link = '<a href="' . 'https://themegrill.com/themes/foodhunt' . '" target="_blank" title="' . esc_attr__('ThemeGrill', 'foodhunt') . '" rel="author">' . __('ThemeGrill', 'foodhunt') . '</a>';
+				$tg_link = '<a href="' . 'https://themegrill.com/themes/foodhunt' . '" target="_blank" title="' . esc_attr__('FoodHunt', 'foodhunt') . '" rel="nofollow">' . __('FoodHunt', 'foodhunt') . '</a>';
 
-				$default_footer_value = sprintf(esc_html__('Copyright &copy; %1$s %2$s.', 'foodhunt'), date('Y'), $site_link) . ' ' . sprintf(esc_html__('Theme: %1$s by %2$s.', 'foodhunt'), 'FoodHunt', $tg_link) . ' ' . sprintf(esc_html__('Powered by %s', 'foodhunt'), $wp_link);
+				$default_footer_value = sprintf(esc_html__('Copyright &copy; %1$s %2$s.', 'foodhunt'), date('Y'), $site_link) . ' ' . sprintf(esc_html__('Theme: %1$s by %2$s.', 'foodhunt'), $tg_link, 'ThemeGrill') . ' ' . sprintf(esc_html__('Powered by %s', 'foodhunt'), $wp_link);
 
 				$foodhunt_footer_copyright = '<div class="copyright">' . $default_footer_value . '</div>';
 				echo $foodhunt_footer_copyright;
