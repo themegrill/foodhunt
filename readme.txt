@@ -67,6 +67,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= TBD =
+* Tweak - Update Screenshot Image.
+
 = Version 1.3.1 2020-12-16 =
 * Tweak - Update footer credit link with `rel="nofollow"` attributes
 
