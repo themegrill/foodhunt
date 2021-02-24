@@ -67,7 +67,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= TBD =
+= Version 1.3.2 2021-02-24 =
 * Tweak - Update Screenshot Image.
 
 = Version 1.3.1 2020-12-16 =
