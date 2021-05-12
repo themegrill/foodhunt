@@ -13,6 +13,10 @@ External resources linked to the theme.
   Licensed under SIL Open Font License, 1.1
 
 Resources packed within the theme.
+* Images used in the screenshot are licensed under Creative Commons Zero (CC0):
+
+  https://pxhere.com/en/photo/954587
+  
 * FontAwesome, http://fontawesome.io/
   Copyright © 2015, Dave Gandy
   Font Awesome licensed under SIL OFL 1.1, http://scripts.sil.org/OFL
@@ -69,6 +73,7 @@ and we will include it within the theme from next version update.
 == Changelog ==
 = Version TBD =
 * Feature - Added RTL support.
+* Tweak - Update screenshot image source link.
 
 = Version 1.3.2 2021-02-24 =
 * Tweak - Update Screenshot Image.
