@@ -78,8 +78,8 @@ class Foodhunt_Upgrade_Notice extends Foodhunt_Notice {
 					),
 					'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
 					'Foodhunt',
-					'<code class="coupon-code">upgrade15</code>',
-					'15%'
+					'<code class="coupon-code">TGFREEUSER</code>',
+					'25%'
 				);
 				?>
 			</p>
