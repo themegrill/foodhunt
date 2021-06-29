@@ -101,7 +101,7 @@ class FoodHunt_Dashboard {
 						<h3><?php esc_html_e( 'Next Steps', 'foodhunt' ); ?></h3>
 						<ul>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-media-text">' . esc_html__( 'Documentation', 'foodhunt' ) . '</a>', esc_url( 'https://docs.themegrill.com/foodhunt' ) ); ?></li>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'foodhunt' ) . '</a>', esc_url( 'https://demo.themegrill.com/foodhunt-demos' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-layout">' . esc_html__( 'Starter Demos', 'foodhunt' ) . '</a>', esc_url( 'https://themegrilldemos.com/foodhunt-demos/' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-migrate">' . esc_html__( 'Premium Version', 'foodhunt' ) . '</a>', esc_url( 'https://themegrill.com/themes/foodhunt' ) ); ?></li>
 						</ul>
 					</div>
