@@ -71,7 +71,7 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
-= Version TBD =
+= Version 1.3.3 2021-08-19 =
 * Feature - Added RTL support.
 * Tweak - Update screenshot image source link.
 * Enhancement - Added CSS font-display property and swap value for better performance.

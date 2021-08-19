@@ -109,7 +109,7 @@ class FoodHunt_Dashboard {
 					<div class="welcome-panel-column">
 						<h3><?php esc_html_e( 'Further Actions', 'foodhunt' ); ?></h3>
 						<ul>
-							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-businesswoman">' . esc_html__( 'Got theme support question?', '' ) . '</a>', esc_url( 'https://wordpress.org/support/theme//' ) ); ?></li>
+							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-businesswoman">' . esc_html__( 'Got theme support question?', 'foodhunt' ) . '</a>', esc_url( 'https://wordpress.org/support/theme/foodhunt/' ) ); ?></li>
 							<li><?php printf( '<a target="_blank" href="%s" class="welcome-icon dashicons-thumbs-up">' . esc_html__( 'Leave a review', 'foodhunt' ) . '</a>', esc_url( 'https://wordpress.org/support/theme/foodhunt/reviews/' ) ); ?></li>
 						</ul>
 					</div>
