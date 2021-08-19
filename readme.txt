@@ -1,6 +1,6 @@
 === FoodHunt ===
 
-FoodHunt is modern style multi purpose theme specially focus for Restaurant websites. However, due to its flexibility and easiness it can be used to create any types of sites. You can get free support in https://themegrill.com/support-forum/ and check the demo at https://demo.themegrill.com/foodhunt/.
+FoodHunt is modern style multi purpose theme specially focus for Restaurant websites. However, due to its flexibility and easiness it can be used to create any types of sites. You can get free support in https://themegrill.com/contact/ and check the demo at https://themegrilldemos.com/foodhunt/.
 
 /**********************************************************/
 
@@ -57,7 +57,7 @@ FoodHunt is distributed under the terms of the GNU GPL
 Get theme instruction at https://docs.themegrill.com/foodhunt/
 
 = Free Support =
-Get free support at https://themegrill.com/support-forum
+Get free support at https://themegrill.com/contact/
 
 = Theme Features Usage =
 All available options can be used from Appearance-> Customize
