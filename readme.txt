@@ -74,6 +74,7 @@ and we will include it within the theme from next version update.
 = Version TBD =
 * Feature - Added RTL support.
 * Tweak - Update screenshot image source link.
+* Enhancement - Added CSS font-display property and swap value for better performance.
 
 = Version 1.3.2 2021-02-24 =
 * Tweak - Update Screenshot Image.
