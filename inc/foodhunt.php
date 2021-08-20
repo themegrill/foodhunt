@@ -100,7 +100,7 @@ if ( ! function_exists( 'foodhunt_header_news' ) ) :
 
 		<div class="header-ticker">
 			<span class="ticker-title">
-				<?php echo esc_html__( get_theme_mod( 'foodhunt_ticker_text', esc_html__( 'Special:', 'foodhunt' ) ) ); ?>
+				<?php echo esc_html( get_theme_mod( 'foodhunt_ticker_text', __( 'Special:', 'foodhunt' ) ) ); ?>
 			</span>
 			<ul>
 				<?php
