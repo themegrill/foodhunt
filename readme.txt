@@ -71,6 +71,9 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.3.4 2023-09-18 =
+* Tweak - Update WordPress tested upto version to 6.3.
+
 = Version 1.3.3 2021-08-19 =
 * Feature - Added RTL support.
 * Tweak - Update screenshot image source link.
